@@ -16,6 +16,7 @@ import StudentHeader from './components/student/StudentHeader';
     import GamesGalleryView from "./views/modules/Games/GamesGalleryView";
     import PersonalBudgetView from "./views/modules/PersonalBudget/PersonalBudgetView";
     import HelpView from "./views/modules/Help/HelpView";
+    import ProfileView from "./views/modules/Profile/ProfileView";
 
 // Not Found
 import NotFoundView from "./views/NotFoundView";
@@ -36,6 +37,8 @@ function Router () {
 
                 {/* Forgot Password View */}
                 <Route path="forgot-password" element={<ForgotPasswordView />} />
+
+                <Route path="profile" element={<ProfileView />} />
             </Route>
 
             {/* Student Views */}
@@ -51,6 +54,9 @@ function Router () {
 
                 {/* Help View */}
                 <Route path="help" element={<HelpView />} />
+
+                {/* Profile View */}
+                <Route path="profile" element={<ProfileView />} />
             </Route>
 
             {/* Not Found */}
