@@ -8,6 +8,9 @@ import Router from './router';
 // Router complement
 import { BrowserRouter } from 'react-router-dom';
 
+// Global Styles
+import "./assets/css/Global-Styles.css";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
