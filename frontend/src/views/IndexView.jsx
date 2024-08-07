@@ -2,7 +2,11 @@ import React from 'react'
 
 const IndexView = () => {
   return (
-    <div>IndexView</div>
+    <main className="content">
+      <h1>Index company View</h1>
+      <br />
+      <h2>Welcome user !</h2>
+    </main>
   )
 }
 
