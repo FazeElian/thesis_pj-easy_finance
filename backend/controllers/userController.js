@@ -1,6 +1,9 @@
 // For get password hashed
 const bcrypt = require('bcrypt');
 
+// For user auth by token
+const jwt = require('jsonwebtoken');
+
 // Model
 const User = require('../models/User');
 
@@ -26,6 +29,25 @@ exports.registerUser = async (req, res) => {
     res.status(201).json({ message: 'User registered successfully', user });
   } catch (error) {
     console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
+// Login function
+exports.login = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.findOne({ where: { email } });
+
+    if (!user || !(await bcrypt.compare(password, user.password))) {
+      return res.status(401).json({ message: 'Invalid credentials' });
+    }
+
+    const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+    res.json({ token });
+  } catch (error) {
     res.status(500).json({ message: 'Server error' });
   }
 };

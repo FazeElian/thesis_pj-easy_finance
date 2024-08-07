@@ -31,7 +31,7 @@ const RegisterView = () => {
       const response = await axios.post('http://localhost:5000/api/users/register', formData);
       console.error(response.data);
       alert("Te has registrado");
-      navigate("/student");
+      navigate("/login");
     } catch (err) {
       console.error(err.response.data);
     }
