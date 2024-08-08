@@ -17,10 +17,10 @@
 
     .header-company--btns {
         display: flex;
-        width: 17%;
+        width: 50%;
         height: 100%;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
     }
 
     .header-company--btn {
@@ -34,6 +34,7 @@
         cursor: pointer;
         border: 0.5px solid gray;
         font-size: 17px;
+        margin-left: 2rem;
     }
 
         .header-company--btn-login {
