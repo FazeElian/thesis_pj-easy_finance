@@ -30,7 +30,7 @@ const LoginView = () => {
       const response = await axios.post('http://localhost:5000/api/users/login', formData);
       localStorage.setItem('token', response.data.token);
       alert("Has iniciado Sesión");
-      navigate('/student');
+      navigate('/student/dashboard');
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
       console.error(err.response?.data?.message || 'Login failed');

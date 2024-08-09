@@ -37,16 +37,12 @@ function Router () {
 
                 {/* Forgot Password View */}
                 <Route path="forgot-password" element={<ForgotPasswordView />} />
-
-                <Route path="profile" element={<ProfileView />} />
-
-                <Route path="student" element={<DashboardView />} /> 
             </Route>
 
             {/* Student Views */}
-            {/* <Route path="student/*" element={<StudentHeader />}> */}
+            <Route path="student/*" element={<StudentHeader />}>
                 {/* Dashboard View */}
-                {/* <Route index element={<DashboardView />} /> */}
+                <Route index path="dashboard" element={<DashboardView />} />
 
                 {/* Games Gallery View */}
                 <Route path="games" element={<GamesGalleryView />} />
@@ -59,7 +55,8 @@ function Router () {
 
                 {/* Profile View */}
                 <Route path="profile" element={<ProfileView />} />
-            {/* </Route> */}
+            </Route>
+
             {/* Not Found */}
             <Route path="*" element={<NotFoundView />} />
         </Routes>

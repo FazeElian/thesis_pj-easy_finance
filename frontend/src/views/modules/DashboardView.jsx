@@ -2,49 +2,47 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-// Styles for this view component
 import "../../assets/css/views/DashboardView.css";
 
 const DashboardView = () => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
     const checkAuth = async () => {
+      // Get token from local storage
       const token = localStorage.getItem('token');
-
+      
+      // Redirection to login view if there's no token
       if (!token) {
-        navigate('/login'); // Redirige al login si no hay token
+        navigate('/login'); 
+        alert("Debes iniciar sesión");
         return;
       }
-
+  
       try {
-        const response = await axios.get('http://localhost:5000/api/student', {
+        // Verify the token with a request to the backend API
+        await axios.get('http://localhost:5000/api/student/dashboard', {
           headers: { Authorization: `Bearer ${token}` },
         });
-        setData(response.data);
       } catch (error) {
         console.error('Token de autenticación no válido o expirado', error);
         localStorage.removeItem('token');
-        navigate('/login'); // Redirige al login si el token es inválido o expirado
-      } finally {
-        setLoading(false);
+
+        // Redirection to login view if the token is invalid or expired
+        navigate('/login');
+        alert("Vuelve a iniciar sesión");
       }
     };
-
+  
     checkAuth();
   }, [navigate]);
+  
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    navigate('/login'); // Redirige al login después de cerrar sesión
+    navigate('/login');
     alert("Has cerrado sesión");
   };
-
-  if (loading) {
-    return <div>Cargando...</div>; // Muestra un mensaje o spinner mientras carga
-  }
 
   return (
     <main className="content">
@@ -53,8 +51,6 @@ const DashboardView = () => {
         Cerrar Sesión
       </button>
       <section className="games-gallery">
-        {/* Asegúrate de que cada tarjeta de juego tenga enlaces y contenido relevantes */}
-        {/* Ejemplo de tarjeta de juego */}
         <div className="card-game">
           <div className="card-game--img">
             <Link to="/game-url">
@@ -67,7 +63,90 @@ const DashboardView = () => {
             <Link to="/game-url" className="btn-play">Play</Link>
           </div>
         </div>
-        {/* Repite el código anterior para más tarjetas de juego */}
+        <div className="card-game">
+          <div className="card-game--img">
+            <Link to="/game-url">
+              <img src="https://www.esrb.org/wp-content/uploads/2020/11/V1_ESRB_blog_Educational-Benefit-Video-Games-01.jpg" alt="Game" />
+            </Link>
+          </div>
+          <div className="card-game--txt">
+            <Link to="/game-url" className="game-name">Game Name</Link>
+            <h2>Game Description</h2>
+            <Link to="/game-url" className="btn-play">Play</Link>
+          </div>
+        </div>
+        <div className="card-game">
+          <div className="card-game--img">
+            <Link to="/game-url">
+              <img src="https://www.esrb.org/wp-content/uploads/2020/11/V1_ESRB_blog_Educational-Benefit-Video-Games-01.jpg" alt="Game" />
+            </Link>
+          </div>
+          <div className="card-game--txt">
+            <Link to="/game-url" className="game-name">Game Name</Link>
+            <h2>Game Description</h2>
+            <Link to="/game-url" className="btn-play">Play</Link>
+          </div>
+        </div>
+        <div className="card-game">
+          <div className="card-game--img">
+            <Link to="/game-url">
+              <img src="https://www.esrb.org/wp-content/uploads/2020/11/V1_ESRB_blog_Educational-Benefit-Video-Games-01.jpg" alt="Game" />
+            </Link>
+          </div>
+          <div className="card-game--txt">
+            <Link to="/game-url" className="game-name">Game Name</Link>
+            <h2>Game Description</h2>
+            <Link to="/game-url" className="btn-play">Play</Link>
+          </div>
+        </div>
+        <div className="card-game">
+          <div className="card-game--img">
+            <Link to="/game-url">
+              <img src="https://www.esrb.org/wp-content/uploads/2020/11/V1_ESRB_blog_Educational-Benefit-Video-Games-01.jpg" alt="Game" />
+            </Link>
+          </div>
+          <div className="card-game--txt">
+            <Link to="/game-url" className="game-name">Game Name</Link>
+            <h2>Game Description</h2>
+            <Link to="/game-url" className="btn-play">Play</Link>
+          </div>
+        </div>
+        <div className="card-game">
+          <div className="card-game--img">
+            <Link to="/game-url">
+              <img src="https://www.esrb.org/wp-content/uploads/2020/11/V1_ESRB_blog_Educational-Benefit-Video-Games-01.jpg" alt="Game" />
+            </Link>
+          </div>
+          <div className="card-game--txt">
+            <Link to="/game-url" className="game-name">Game Name</Link>
+            <h2>Game Description</h2>
+            <Link to="/game-url" className="btn-play">Play</Link>
+          </div>
+        </div>
+        <div className="card-game">
+          <div className="card-game--img">
+            <Link to="/game-url">
+              <img src="https://www.esrb.org/wp-content/uploads/2020/11/V1_ESRB_blog_Educational-Benefit-Video-Games-01.jpg" alt="Game" />
+            </Link>
+          </div>
+          <div className="card-game--txt">
+            <Link to="/game-url" className="game-name">Game Name</Link>
+            <h2>Game Description</h2>
+            <Link to="/game-url" className="btn-play">Play</Link>
+          </div>
+        </div>
+        <div className="card-game">
+          <div className="card-game--img">
+            <Link to="/game-url">
+              <img src="https://www.esrb.org/wp-content/uploads/2020/11/V1_ESRB_blog_Educational-Benefit-Video-Games-01.jpg" alt="Game" />
+            </Link>
+          </div>
+          <div className="card-game--txt">
+            <Link to="/game-url" className="game-name">Game Name</Link>
+            <h2>Game Description</h2>
+            <Link to="/game-url" className="btn-play">Play</Link>
+          </div>
+        </div>
       </section>
     </main>
   );
