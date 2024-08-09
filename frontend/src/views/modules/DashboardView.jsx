@@ -36,20 +36,10 @@ const DashboardView = () => {
   
     checkAuth();
   }, [navigate]);
-  
-
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    navigate('/login');
-    alert("Has cerrado sesión");
-  };
 
   return (
     <main className="content">
       <h1>Galería de Juegos</h1>
-      <button className="btn-log-out" onClick={handleLogout}>
-        Cerrar Sesión
-      </button>
       <section className="games-gallery">
         <div className="card-game">
           <div className="card-game--img">
