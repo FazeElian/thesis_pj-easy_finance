@@ -18,6 +18,10 @@ import StudentHeader from './components/student/StudentHeader';
     import HelpView from "./views/modules/Help/HelpView";
     import ProfileView from "./views/modules/Profile/ProfileView";
 
+// Games View Components
+    // Expense or Need
+    import ExpenseOrNeedView from "./views/modules/Games/ExpenseOrNeed/ExpenseOrNeedView";
+
 // Not Found
 import NotFoundView from "./views/NotFoundView";
 
@@ -45,7 +49,10 @@ function Router () {
                 <Route index path="dashboard" element={<DashboardView />} />
 
                 {/* Games Gallery View */}
-                <Route path="games" element={<GamesGalleryView />} />
+                <Route path="games/*" element={<GamesGalleryView />} />
+                    
+                    {/* Expense or Need - Game View */}
+                    <Route path="games/expense-or-need" element={<ExpenseOrNeedView />} />
 
                 {/* Personal Budget View */}
                 <Route path="personal-budget" element={<PersonalBudgetView />} />

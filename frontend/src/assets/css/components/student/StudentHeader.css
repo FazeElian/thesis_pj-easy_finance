@@ -9,7 +9,8 @@
     justify-content: space-between;
     box-shadow: 0 4px 5px 2px #D9D9D9;
     z-index: 2;
-    font-size: 20px;
+    font-size: 25px;
+    font-family: "Bangers", system-ui;
 }
 
 .nav-logo,
@@ -22,8 +23,13 @@
 
     .nav-user {
         justify-content: flex-end;
-        font-size: 18px;
     }
+
+        .nav-user h2 {
+            font-family: "Bangers", system-ui;
+            font-size: 25px;
+            font-weight: lighter;
+        }
 
         .btn-nav-menu {
             display: flex; 
@@ -81,6 +87,7 @@
     box-shadow: 0 4px 5px 2px #D9D9D9;
     padding: 3.5rem 3rem 2rem;
     z-index: 2;
+    font-family: "Bangers", system-ui;
 }
 
     .nav-side-bar.active{ 
@@ -88,7 +95,8 @@
     }
 
     .nav-side-bar h1 {
-        font-size: 40px;
+        font-size: 45px;
+        font-weight: lighter;
     }
 
 .btn-log-out {
@@ -104,4 +112,6 @@
     font-size: 20px;
     margin: 1.5rem 0 0;
     cursor: pointer;
+    font-family: "Bangers", system-ui;
+    font-weight: lighter;
 }
