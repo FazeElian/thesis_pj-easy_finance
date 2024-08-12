@@ -115,3 +115,49 @@
     font-family: "Bangers", system-ui;
     font-weight: lighter;
 }
+
+/* Responsive 1440px */
+@media (max-width: 1440px) {
+    .header {
+        padding: 1rem 3rem 1rem;
+    }
+
+    .nav-user h2 {
+        font-size: 22px;
+    }
+
+    .nav-logo {
+        font-size: 32px;
+    }
+
+    .item-nav-menu {
+        font-size: 20px;
+    }
+
+    .btn-nav-menu img {
+        width: 30px;
+        height: 35px;
+    }
+}
+
+/* Responsive 1024px  */
+@media (max-width: 1024px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-side-bar {
+        width: 80%;
+        min-width: 300px;
+        padding: 3rem 2.5rem 3rem;
+    }
+
+    .nav-side-bar h1 {
+        font-size: 35px;
+    }
+}
+
+/* Responsive 425px */
+@media (max-width: 425px) {
+
+}
