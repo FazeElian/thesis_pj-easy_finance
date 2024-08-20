@@ -3,7 +3,12 @@ import React from 'react'
 // Styles for users module
 import "../../../assets/css/views/Users/UsersModule.css";
 
+import { useDocumentTitle } from '../../../hooks/useDocumentTitle';
+
 const ForgotPasswordView = () => {
+  // custom hook for tabs title
+  useDocumentTitle("Reestablecer contraseña");
+
   return (
     <main className="content">
       <form className="form">

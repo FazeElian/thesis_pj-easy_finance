@@ -7,7 +7,12 @@ import "../../../../assets/css/views/Games/MemoryConcepts/MemoryConcepts.css";
 // Memory Items
 import MemoryItems from "./MemoryItems";
 
+import { useGameDocumentTitle } from '../../../../hooks/useGameDocumentTitle';
+
 const MemoryConceptsGallery = () => {
+    // custom hook for games tabs title
+    useGameDocumentTitle("Conecta y Aprende");
+
     const [shuffledCards, setShuffledCards] = useState([]);
     const [flippedCards, setFlippedCards] = useState([]);
     const [matchedCards, setMatchedCards] = useState([]);
@@ -64,7 +69,7 @@ const MemoryConceptsGallery = () => {
         <main className="content-game">
             <section className="cont-content--memory-concepts">
                 <div className="top--memory-concepts">
-                    <h1>Conceptos de Memoria</h1>
+                    <h1>Conecta y Aprende</h1>
                     <div className="cont-points--memory-concepts">
                         <h2>Puntos: </h2><h3>{points}</h3>
                     </div>

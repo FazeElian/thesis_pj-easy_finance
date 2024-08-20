@@ -29,7 +29,7 @@
         /* background: linear-gradient(to right, #1e5799 0%,#2ce0bf 19%,#76dd2c 40%,#dba62b 60%,#e02cbf 83%,#1e5799 100%); 
         background-size: 1000px 100%;
         animation: bg 15s linear infinite ; */
-        height: 100vh;
+        height: auto;
     }
 
     .title-view {

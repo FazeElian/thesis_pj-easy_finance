@@ -5,7 +5,12 @@ import axios from 'axios';
 // Styles for users module
 import "../../../assets/css/views/Users/UsersModule.css";
 
+import { useDocumentTitle } from '../../../hooks/useDocumentTitle';
+
 const RegisterView = () => {
+  // custom hook for tabs title
+  useDocumentTitle("Registrarse");
+
   // States for form data -> default values too
   const [ formData, setFormData ] = useState({
     email: '',

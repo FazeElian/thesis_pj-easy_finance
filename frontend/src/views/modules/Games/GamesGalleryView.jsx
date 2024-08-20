@@ -8,7 +8,12 @@ import "../../../assets/sass/backgroundGamesGallery.scss"; // Sass for bg
 // User authentication check custom hook
 import useAuthCheck from "../../../hooks/useAuthCheck";
 
+import { useDocumentTitle } from '../../../hooks/useDocumentTitle';
+
 const GamesGalleryView = () => {
+  // custom hook for tabs title
+  useDocumentTitle("Galería de Juegos");
+
   // User authentication function
   useAuthCheck();
 

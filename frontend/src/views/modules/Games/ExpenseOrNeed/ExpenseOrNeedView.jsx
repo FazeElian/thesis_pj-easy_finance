@@ -9,7 +9,12 @@ import "../../../../assets/css/views/Games/ExpenseOrNeed/ExpenseOrNeedView.css";
 // React beautiful dnd components
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
+import { useGameDocumentTitle } from "../../../../hooks/useGameDocumentTitle";
+
 const ExpenseOrNeedView = () => {
+  // custom hook for tabs title
+  useGameDocumentTitle("¿Gasto o Necesidad?");
+
   // User authentication function
   useAuthCheck();
 
