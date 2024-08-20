@@ -4,10 +4,9 @@
     height: auto;
     flex-wrap: wrap;
     margin: 2rem 0 2rem;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: flex-start;
+    gap: 5rem;
     font-family: "Poppins", sans-serif;
-
 }
 
 .card-game {
@@ -17,7 +16,7 @@
     flex: 25%;
     height: auto;
     background-color: #fff;
-    box-shadow: 0 4px 5px 2px #D9D9D9;
+    /* box-shadow: 0 4px 5px 2px #A7A7A7; */
     border-radius: 5px;
     justify-content: center;
     flex-direction: column;
@@ -32,7 +31,7 @@
 
     .card-game--img:hover {
         transform: scale(1.1);
-        transition: ease-out .5s;
+        transition: ease-out .6s;
     }
 
     .card-game--img img {
@@ -66,14 +65,21 @@
         color: gray;
         margin-top: 3px;
     }
+    
+    .cont-btn-play a {
+        color: white;
+    }
+
+    .cont-btn-play a:hover {
+        color: black;
+    }
 
     .btn-play {
         display: flex;
         height: auto;
-        background-color: #A7A7A7;
+        background-color: #FF0000;
         align-items: center;
         justify-content: center;
-        border: 1px solid black;
         border-radius: 8px;
         margin: 1rem 0 2rem;
         padding: 5px 0 5px;
@@ -81,6 +87,7 @@
     }
 
         .btn-play:hover {
-            opacity: 0.7;
             transition: .3s;
+            background-color: #FFE000;
+            color: black;
         }

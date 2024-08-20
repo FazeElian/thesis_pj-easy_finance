@@ -22,6 +22,9 @@ import StudentHeader from './components/student/StudentHeader';
     // Expense or Need
     import ExpenseOrNeedView from "./views/modules/Games/ExpenseOrNeed/ExpenseOrNeedView";
 
+    // Memory Concepts
+    import MemoryConceptsView from "./views/modules/Games/MemoryConcepts/MemoryConceptsView";
+
 // Not Found
 import NotFoundView from "./views/NotFoundView";
 
@@ -53,6 +56,9 @@ function Router () {
                     
                     {/* Expense or Need - Game View */}
                     <Route path="games/expense-or-need" element={<ExpenseOrNeedView />} />
+
+                    {/* Memory Concepts - Game View */}
+                    <Route path="games/memory-concepts" element={<MemoryConceptsView />} />
 
                 {/* Personal Budget View */}
                 <Route path="personal-budget" element={<PersonalBudgetView />} />
