@@ -5,6 +5,15 @@
     // Gasto
     import Expenses from "../../../../assets/img/memoryGame/Expenses.jpg";
 
+    // Presupuesto Personal
+    import PersonalBudget from "../../../../assets/img/memoryGame/PersonalBudget.jpg";
+
+    // Meta Financiera
+    import FinancialObjective from "../../../../assets/img/memoryGame/FinancialObjective.jpg";
+
+    // Deuda
+    import Debt from "../../../../assets/img/memoryGame/Debt.jpg";
+
 // Ejemplo de MemoryItems
 const MemoryItems = [
     // Ahorro
@@ -13,7 +22,8 @@ const MemoryItems = [
         content: { 
             type: 'text', 
             value: 'Es cuando guardas una parte de tu dinero para usarlo en el futuro', 
-            imageId: 1 
+            imageId: 1,
+            color: "#90FF00" 
         } 
     },
     { 
@@ -22,7 +32,8 @@ const MemoryItems = [
             type: 'image', 
             src: Saving, 
             linkedTextId: 1, 
-            concept: 'Ahorro'
+            concept: 'Ahorro',
+            color: "#90FF00"
         } 
     },
 
@@ -31,8 +42,9 @@ const MemoryItems = [
         id: 3, 
         content: { 
             type: 'text', 
-            value: 'Gasto', 
-            imageId: 2 
+            value: 'Es el dinero que usas para comprar cosas.', 
+            imageId: 2,
+            color: "#FFC200" 
         } 
     },
     { 
@@ -41,83 +53,73 @@ const MemoryItems = [
             type: 'image', 
             src: Expenses, 
             linkedTextId: 2,
-            concept: "Gasto" 
+            concept: "Gasto",
+            color: "#FFC200" 
         } 
     },
 
     // Presupuesto
     { 
-        id: 3, 
-        content: { 
-            type: 'text', 
-            value: 'Presupuesto', 
-            imageId: 3 
-        } 
-    },
-    { 
-        id: 4, 
-        content: { 
-            type: 'image', 
-            // src: , 
-            linkedTextId: 3, 
-            concept: 'Presupuesto'
-        } 
-    },
-
-    // Meta Financiera
-    { 
         id: 5, 
         content: { 
             type: 'text', 
-            value: 'Meta Financiera', 
-            imageId: 4 
+            value: 'Es un plan para decidir en qué gastar tu dinero.', 
+            imageId: 3,
+            color: "#FBFF00"
         } 
     },
     { 
         id: 6, 
         content: { 
             type: 'image', 
-            // src: , 
-            linkedTextId: 5, 
-            concept: 'Meta Financiera'
+            src: PersonalBudget, 
+            linkedTextId: 3, 
+            concept: 'Es un objetivo que quieres alcanzar ahorrando o gastando dinero de manera inteligente.',
+            color: "#FBFF00"
         } 
     },
 
-    // Deseo
+    // Meta Financiera
     { 
         id: 7, 
         content: { 
             type: 'text', 
-            value: 'Deseo', 
-            imageId: 5 
+            value: 'Es un objetivo que quieres alcanzar ahorrando o gastando dinero de manera inteligente.', 
+            imageId: 4,
+            color: "#0059FF",
+            textColor: "#fff"  
         } 
     },
     { 
         id: 8, 
         content: { 
             type: 'image', 
-            // src: , 
-            linkedTextId: 7, 
-            concept: 'Deseo'
+            src: FinancialObjective, 
+            linkedTextId: 4, 
+            concept: 'Meta Financiera',
+            color: "#0059FF",
         } 
     },
 
-    // Necesidad 
+    // Deuda
     { 
         id: 9, 
         content: { 
             type: 'text', 
-            value: 'Deseo', 
-            imageId: 6 
+            value: 'Deuda Concepto', 
+            imageId: 5,
+            color: "#FF0000",
+            textColor: "#FFFFFF"
         } 
     },
     { 
         id: 10, 
         content: { 
             type: 'image', 
-            // src: , 
-            linkedTextId: 9, 
-            concept: 'Deseo'
+            src: Debt, 
+            linkedTextId: 5, 
+            concept: 'Deuda',
+            color: "#FF0000",
         } 
     },
 ];

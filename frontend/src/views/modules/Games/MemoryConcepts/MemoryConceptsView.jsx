@@ -93,15 +93,16 @@ const MemoryConceptsGallery = () => {
                             </div>
                             <div
                                 className="cont-back-item-gallery---memory-concepts"
+                                style={{ backgroundColor: card.content.color }}
                                 onClick={() => handleClick(index)}
                             >
                                 {/* Contenido del reverso de la carta */}
                                 {card.content.type === 'text' ? (
-                                    <h2>{card.content.value}</h2>
+                                    <h2 style={{ color: card.content.textColor }}>{card.content.value}</h2>
                                 ) : (
                                     <div className="back-content-item-gallery--memory-concepts"> 
                                         <img src={card.content.src} alt="Back" />
-                                        <h2>{card.content.concept}</h2>
+                                        {/* <h2>{card.content.concept}</h2> */}
                                     </div>
                                 )}
                             </div>
