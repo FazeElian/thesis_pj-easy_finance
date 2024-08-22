@@ -97,9 +97,12 @@ const MemoryConceptsGallery = () => {
                             >
                                 {/* Contenido del reverso de la carta */}
                                 {card.content.type === 'text' ? (
-                                    <p>{card.content.value}</p>
+                                    <h2>{card.content.value}</h2>
                                 ) : (
-                                    <img src={card.content.src} alt="Back" />
+                                    <div className="back-content-item-gallery--memory-concepts"> 
+                                        <img src={card.content.src} alt="Back" />
+                                        <h2>{card.content.concept}</h2>
+                                    </div>
                                 )}
                             </div>
                         </ReactCardFlip>
