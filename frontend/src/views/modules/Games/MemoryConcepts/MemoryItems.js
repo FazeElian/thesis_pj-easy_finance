@@ -23,7 +23,8 @@ const MemoryItems = [
             type: 'text', 
             value: 'Es cuando guardas una parte de tu dinero para usarlo en el futuro', 
             imageId: 1,
-            color: "#90FF00" 
+            color: "#90FF00", 
+            concept: 'Ahorro'
         } 
     },
     { 
@@ -44,7 +45,8 @@ const MemoryItems = [
             type: 'text', 
             value: 'Es el dinero que usas para comprar cosas.', 
             imageId: 2,
-            color: "#FFC200" 
+            color: "#FFC200",
+            concept: "Gasto" 
         } 
     },
     { 
@@ -65,7 +67,8 @@ const MemoryItems = [
             type: 'text', 
             value: 'Es un plan para decidir en qué gastar tu dinero.', 
             imageId: 3,
-            color: "#FBFF00"
+            color: "#FBFF00", 
+            concept: 'Presupuesto'
         } 
     },
     { 
@@ -74,7 +77,7 @@ const MemoryItems = [
             type: 'image', 
             src: PersonalBudget, 
             linkedTextId: 3, 
-            concept: 'Es un objetivo que quieres alcanzar ahorrando o gastando dinero de manera inteligente.',
+            concept: 'Presupuesto',
             color: "#FBFF00"
         } 
     },
@@ -87,7 +90,8 @@ const MemoryItems = [
             value: 'Es un objetivo que quieres alcanzar ahorrando o gastando dinero de manera inteligente.', 
             imageId: 4,
             color: "#0059FF",
-            textColor: "#fff"  
+            textColor: "#fff", 
+            concept: 'Meta Financiera'  
         } 
     },
     { 
@@ -109,7 +113,8 @@ const MemoryItems = [
             value: 'Deuda Concepto', 
             imageId: 5,
             color: "#FF0000",
-            textColor: "#FFFFFF"
+            textColor: "#FFFFFF", 
+            concept: 'Deuda'
         } 
     },
     { 

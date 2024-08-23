@@ -108,7 +108,7 @@
 
             .cont-back-item-gallery---memory-concepts h2 {
                 font-family: "Poppins", sans-serif;
-                font-size: 25px;
+                font-size: 22px;
                 padding: 0 1.5rem 0;
                 text-align: center;
             }
@@ -138,3 +138,101 @@
             padding: 0 2rem 0;
             line-height: 2rem;
         }
+    
+.cont-popup-matched-cards--memory-concepts {
+    position: fixed;
+    display: flex;
+    bottom: 10%;
+    left: 35.5%;
+    width: 550px;
+    height: 70px;
+    z-index: 1000;
+    border: 1px solid gray;
+    border-radius: 1rem;
+}
+
+    .content-popup-matched-cards--memory-concepts {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background: white;
+        border-radius: 1rem;
+        align-items: center;
+        padding: 0 20px 0;
+        justify-content: space-between;
+    }
+
+    .close-popup-matched-cards--memory-concepts {
+        display: flex;
+        width: auto;
+        height: 100%;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+        .btn-close-popup-matched-cards--memory-concepts {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35px;
+            width: 35px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+        }
+
+            .btn-close-popup-matched-cards--memory-concepts img {
+                display: flex;
+                width: 30px;
+                height: 30px;
+            }
+
+    .text-popup-matched-cards--memory-concepts {
+        display: flex;
+        width: 100%;
+        height: auto;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+    }
+        
+        .text-popup-matched-cards--memory-concepts h2 {
+            font-size: 21px;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .text-popup-matched-cards--memory-concepts h2 p {
+            margin-left: 8px;
+            font-weight: lighter;
+        }
+
+/* Animación de fade in */
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Animación de fade out */
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+/* Keyframes para fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Keyframes para fade out */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
