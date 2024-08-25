@@ -3,55 +3,41 @@
     position: fixed;
     width: 100%;
     height: auto;
-    padding: 1rem 3rem 1rem;
-    background-color: #fff;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 5px 2px #D9D9D9;
+    background: rgb(26,115,48);
+    justify-content: flex-end;
+    background: -moz-radial-gradient(
+        circle, 
+        rgba(26,115,48,1) 0%, 
+        rgba(106,166,46,1) 100%
+    );
+    background: -webkit-radial-gradient(
+        circle, 
+        rgba(26,115,48,1) 0%, 
+        rgba(106,166,46,1) 100%
+    );
+    background: radial-gradient(
+        circle, 
+        rgba(26,115,48,1) 0%, 
+        rgba(106,166,46,1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+        startColorstr="#1a7330",
+        endColorstr="#6aa62e",
+        GradientType=1
+    );
     font-family: "Poppins", sans-serif;
+    padding: 15px 2rem 15px;
 }
 
-    .header-company h1 a{
-        text-decoration: none;
-        color: black;
-    }
+.logo--header-company {
+    display: flex;
+    width: auto;
+    height: auto;
+    align-items: center;
+}
 
-    .header-company--btns {
+    .logo--header-company img {
         display: flex;
-        width: 50%;
-        height: 100%;
-        align-items: center;
-        justify-content: flex-end;
+        width: 140px;
+        height: 140px;
     }
-
-    .header-company--btn {
-        display: flex;
-        width: auto;
-        height: auto;
-        text-decoration: none;
-        color: black;
-        border-radius: 10px;
-        padding: 10px 1.5rem 10px;
-        cursor: pointer;
-        border: 0.5px solid gray;
-        font-size: 17px;
-        margin-left: 2rem;
-    }
-
-        .header-company--btn-login {
-            background-color: #D9D9D9;
-        }
-            
-            .header-company--btn-login:hover {
-                background-color: #fff;
-                transition: .4s;
-            }
-
-        .header-company--btn-register {
-            background-color: #fff;
-        }
-
-            .header-company--btn-register:hover {
-                background-color: #D9D9D9;
-                transition: .4s;
-            }

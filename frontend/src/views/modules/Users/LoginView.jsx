@@ -7,6 +7,10 @@ import "../../../assets/css/views/Users/UsersModule.css";
 
 import { useDocumentTitle } from '../../../hooks/useDocumentTitle';
 
+// Images - Icons
+  // Logo
+  import Logo from "../../../assets/img/Logo (v.02).png";
+
 const LoginView = () => {
   // custom hook for tabs title
   useDocumentTitle("Iniciar Sesión");
@@ -42,39 +46,57 @@ const LoginView = () => {
     }
   };
 
+  // Password visibility states
+  const [ passwordVisible, setPasswordVisible ] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  }
+
   return (
-    <main className="content">
+    <main className="content-index">
       <form className="form" onSubmit={onSubmit}>
+        <img src={Logo} alt="" />
         <h1>Iniciar Sesión</h1>
         <br />
         <div className="form-group">
-          <label htmlFor="email">Correo Electrónico</label>
           <input 
             type="email" 
             value={email}
             onChange={onChange}
             name="email" 
             id="email" 
-            placeholder="Ingresa tu Correo Electrónico" 
+            placeholder="Correo Electrónico" 
             required 
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Contraseña</label>
           <input 
-            type="password"
+            type={passwordVisible ? 'text' : 'password'}            
             value={password}
             onChange={onChange} 
             name="password" 
             id="password" 
-            placeholder="Ingresa tu Contraseña" 
+            placeholder="Contraseña" 
             required 
           />
-          <h2>Olvidaste tu contraseña? <Link to="/forgot-password">Restablécela dando click aquí</Link></h2>
+        </div>
+        <div className="cont-show-password">
+          <input 
+            type="checkbox" 
+            name="show-password" 
+            id="show-password-check"
+            onClick={togglePasswordVisibility} 
+          />
+          <h2>Ver contraseña</h2>
         </div>
         <button className="btn-submit" type="submit">
           Iniciar Sesión
         </button>
+        <div className="register-login-user">
+          <h2>¿Olvidaste tu contraseña? <Link to="/forgot-password">Recupérala aquí</Link></h2>
+          <h2>¿No tienes una cuenta? <Link to="/register">Regístrate aquí.</Link></h2>
+        </div>
       </form>
     </main>
   )

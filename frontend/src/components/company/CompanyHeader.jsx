@@ -4,14 +4,16 @@ import { Link, Outlet } from 'react-router-dom'
 // Styles
 import "../../assets/css/components/company/CompanyHeader.css";
 
+// Images - Icons
+  // Logo
+  import Logo from "../../assets/img/Logo (v.02).png";
+
 const CompanyHeader = () => {
   return (
     <>
       <header className="header-company">
-        <h1><Link to="/">Logo App</Link></h1>
-        <div className="header-company--btns">
-          <Link to="login" className="header-company--btn header-company--btn-login">Iniciar Sesión</Link>
-          <Link to="register" className="header-company--btn header-company--btn-register">Registrarse</Link>
+        <div className="logo--header-company">
+          <Link to="/"><img src={Logo} alt="" /></Link>
         </div>
       </header>
       <Outlet />

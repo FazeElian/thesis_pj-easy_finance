@@ -32,7 +32,7 @@ function Router () {
     return (
         <Routes>
             {/* Company Views */}
-            <Route path="/" element={<CompanyHeader />}>
+            <Route path="/">
                 {/* Index View */}
                 <Route index element={<IndexView />} />
 

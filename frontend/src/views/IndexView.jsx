@@ -7,10 +7,7 @@ const IndexView = () => {
   useDocumentTitle("Página Principal");
 
   return (
-    <main className="content">
-      <h1>Index company View</h1>
-      <br />
-      <h2>Welcome user !</h2>
+    <main className="content content-index">
     </main>
   )
 }

@@ -1,17 +1,27 @@
 .form {
     display: flex;
-    width: 100%;
+    width: 32%;
     height: auto;
     background-color: #fff;
-    box-shadow: 0 4px 5px 2px #D9D9D9;
+    box-shadow: 0 3px 8px 2px #44A68A;
     margin: 1rem 0 1rem;
     flex-direction: column;
     padding: 3rem 2rem 4rem;
+    align-items: center;
 }
 
+    .form img {
+        display: flex;
+        width: 215px;
+        height: 215px;
+    }
+
     .form h1 {
-        font-size: 50px;
+        font-size: 37px;
         font-family: "Poppins", sans-serif;
+        margin-top: 12px;
+        text-shadow: 2px 2px 3px #44A68A;
+        color: black;
     }
 
     .form-group {
@@ -19,7 +29,6 @@
         width: 100%;
         height: auto;
         flex-direction: column;
-        margin-bottom: 2rem;
     }
 
         .form-group label {
@@ -29,49 +38,113 @@
 
         .form-group input {
             display: flex;
-            width: 40%;
+            width: 100%;
             min-width: 300px;
             height: auto;
-            padding: 8px;
+            padding: 8px 16px 8px;
             font-size: 17px;
             margin: 10px 0 0;
             outline: none;
-            border-radius: 7px;
+            border-radius: 4px;
             border: 1px solid gray;
             font-family: "Poppins", sans-serif;
         }
 
             .form-group input:focus {
-                border: 1px solid black;
+                border: 1px solid #44A68A;
             }
 
-        .form-group h2 {
-            font-size: 15px;
-            margin-top: 5px;
+        .cont-show-password {
+            display: flex;
+            width: 100%;
+            height: auto;
+            align-items: center;
+            margin-top: 8px;
         }
 
-            .form-group h2 a {
-                text-decoration: underline;
-                color: black;
+            #show-password-check {
+                display: flex;
+                width: 20px;
+                max-width: 20px;
+                height: 30px;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cont-show-password h2 {
+                display: flex;
+                font-size: 16px;
+                margin-left: 10px;
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
             }
 
     .btn-submit {
         display: flex;
-        width: auto;
-        max-width: 40%;
+        width: 100%;
         height: auto;
-        padding: 7px 1rem 7px;
+        padding: 10px 1rem 10px;
         align-items: center;
         justify-content: center;
         font-size: 18px;
-        border: 1px solid black;
-        border-radius: 7px;
+        border: 1px solid gray;
+        border-radius: 4px;
         cursor: pointer;
-        background-color: #D9D9D9;
+        background: rgb(68,166,138);
+        background: -moz-linear-gradient(
+            90deg, 
+            rgba(68,166,138,1) 0%, 
+            rgba(107,183,191,1) 100%
+        );
+        background: -webkit-linear-gradient(
+            90deg, 
+            rgba(68,166,138,1) 0%, 
+            rgba(107,183,191,1) 100%
+        );
+        background: linear-gradient(
+            90deg, 
+            rgba(68,166,138,1) 0%, 
+            rgba(107,183,191,1) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient(
+            startColorstr="#44a68a",
+            endColorstr="#6bb7bf",
+            GradientType=1
+        );        
         font-family: "Poppins", sans-serif;
+        margin-top: 20px;
     }
 
         .btn-submit:hover {
-            background-color: #fff;
+            opacity: 0.8;
             transition: .3s;
         }
+
+    .register-login-user {
+        display: flex;
+        width: 100%;
+        height: auto;
+        margin-top: 15px;
+        align-items: center;
+        justify-content: center;
+        font-family: "Poppins", sans-serif;
+        flex-direction: column;
+    }
+
+    .register-login-user h2 {
+        width: auto;
+        font-size: 17px;
+        margin-top: 5px;
+    }
+
+        .register-login-user h2 a {
+            font-size: 17px;
+            text-decoration: none;
+            color: black;
+            align-items: center;
+            color: #44A68A;
+        }
+
+            .register-login-user h2 a:hover {
+                text-decoration: underline;
+            }

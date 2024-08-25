@@ -7,16 +7,15 @@ import { useDocumentTitle } from '../../../hooks/useDocumentTitle';
 
 const ForgotPasswordView = () => {
   // custom hook for tabs title
-  useDocumentTitle("Reestablecer contraseña");
+  useDocumentTitle("Recuperar contraseña");
 
   return (
-    <main className="content">
+    <main className="content-index">
       <form className="form">
-        <h1>Restablecer contraseña</h1>
+        <h1>Recuperar contraseña</h1>
         <br />
         <div className="form-group">
-          <label htmlFor="email">Correo Electrónico</label>
-          <input type="email" name="email" id="email" placeholder="Añade un correo electrónico para cambio de contraseña" required />
+          <input type="email" name="email" id="email" placeholder="Correo electrónico para cambio de contraseña" required />
         </div>
         <button className="btn-submit" type="submit">
           Enviar código
