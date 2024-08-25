@@ -10,6 +10,9 @@ import { useDocumentTitle } from '../../../hooks/useDocumentTitle';
 // Images - Icons
   // Logo
   import Logo from "../../../assets/img/Logo (v.02).png";
+  
+  // Arrow left icon
+  import ArrowleftIcon from "../../../assets/img/icons/arrow-left-come-back.png";
 
 const RegisterView = () => {
   // custom hook for tabs title
@@ -55,6 +58,15 @@ const RegisterView = () => {
 
   return (
     <main className="content-index">
+      {/* Come back container */}
+      <div className="cont-come-back--index">
+        <Link to="/">
+          <img src={ArrowleftIcon} alt="Volver" />
+          <h2>Volver</h2>
+        </Link>
+      </div>
+
+      {/* Form */}
       <form className="form" onSubmit={onSubmit}>
         <img src={Logo} alt="" />
         <h1>Registrarse</h1>

@@ -73,3 +73,13 @@
         animation: bg 10s linear infinite;    
     }
 }
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+      opacity: 0; /* Comienza totalmente transparente */
+    }
+    to {
+      opacity: 1; /* Termina totalmente opaco */
+    }
+}

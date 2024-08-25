@@ -1,3 +1,41 @@
+.cont-come-back--index {
+    display: flex;
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    width: auto;
+    height: auto;
+}
+
+    .cont-come-back--index a {
+        display: flex;
+        width: auto;
+        align-items: center;
+        background-color: #44A68A;
+        padding: 10px 2rem 10px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+        text-decoration: none;
+    }
+
+    .cont-come-back--index a h2 {
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .cont-come-back--index img {
+        width: 30px;
+        height: 30px;
+        margin-right: 7px;
+    }
+
+        .cont-come-back--index a:hover {
+            box-shadow: 1px 1px 6px 1px #fff;
+            transition: .4s;
+        }
+
 .form {
     display: flex;
     width: 32%;
@@ -7,6 +45,7 @@
     flex-direction: column;
     padding: 3rem 2rem 3rem;
     align-items: center;
+    border-radius: 4px;
 }
 
     .form img {
@@ -112,6 +151,7 @@
         );        
         font-family: "Poppins", sans-serif;
         margin-top: 20px;
+        color: white;
     }
 
         .btn-submit:hover {
@@ -197,6 +237,15 @@
     .register-login-user h2 a {
         font-size: 14px;
     }
+
+    .cont-come-back--index a h2{
+        font-size: 16px;
+    }
+
+    .cont-come-back--index img {
+        width: 25px;
+        height: 25px;
+    }
 }
 
 /* Responsive 1280px */
@@ -246,6 +295,26 @@
     .register-login-user h2 a {
         font-size: 13px;
     }
+
+    .cont-come-back--index {
+        font-size: 14px;
+        top: 2.5rem;
+        left: 2.5rem;
+    }
+
+    .cont-come-back--index a {
+        padding: 10px;
+    }
+
+    .cont-come-back--index a h2 {
+        display: none;
+    }
+
+    .cont-come-back--index img {
+        width: 25px;
+        height: 25px;
+        margin: 0;
+    }
 }
 
 /* Responsive 768px */
@@ -262,5 +331,9 @@
         box-shadow: none;
         border-radius: 4px;
         margin: 2rem 0 2rem;
+    }
+
+    .cont-come-back--index {
+        display: none;
     }
 }
