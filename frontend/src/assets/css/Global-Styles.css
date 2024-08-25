@@ -57,3 +57,19 @@
     .content-game-horizontal {
         flex-direction: row;
     }
+
+/* Responsive 425px */
+@media (max-width: 425px) {
+    .content-index {
+        background: linear-gradient(
+            to right, 
+            #1e5799 0%,
+            #44A1A6 25%,
+            #44A648 40%,
+            #44A68A 60%,
+            #1e5799 100%
+        ); 
+        background-size: 10000px 100%;
+        animation: bg 10s linear infinite;    
+    }
+}

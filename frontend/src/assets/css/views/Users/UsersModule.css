@@ -4,9 +4,8 @@
     height: auto;
     background-color: #fff;
     box-shadow: 0 3px 8px 2px #44A68A;
-    margin: 1rem 0 1rem;
     flex-direction: column;
-    padding: 3rem 2rem 4rem;
+    padding: 3rem 2rem 3rem;
     align-items: center;
 }
 
@@ -39,7 +38,6 @@
         .form-group input {
             display: flex;
             width: 100%;
-            min-width: 300px;
             height: auto;
             padding: 8px 16px 8px;
             font-size: 17px;
@@ -58,8 +56,8 @@
             display: flex;
             width: 100%;
             height: auto;
-            align-items: center;
             margin-top: 8px;
+            align-items: center;
         }
 
             #show-password-check {
@@ -69,12 +67,13 @@
                 height: 30px;
                 margin: 0;
                 padding: 0;
+                align-items: center;
             }
 
             .cont-show-password h2 {
                 display: flex;
                 font-size: 16px;
-                margin-left: 10px;
+                margin-left: 7px;
                 font-family: "Poppins", sans-serif;
                 font-weight: 400;
             }
@@ -129,16 +128,20 @@
         justify-content: center;
         font-family: "Poppins", sans-serif;
         flex-direction: column;
+        text-align: center;
     }
 
     .register-login-user h2 {
         width: auto;
-        font-size: 17px;
         margin-top: 5px;
     }
 
+        .register-login-user h2,
         .register-login-user h2 a {
             font-size: 17px;
+        }
+
+        .register-login-user h2 a {
             text-decoration: none;
             color: black;
             align-items: center;
@@ -148,3 +151,116 @@
             .register-login-user h2 a:hover {
                 text-decoration: underline;
             }
+
+/* Responsive 1440px */
+@media (max-width: 1440px) {
+    .form {
+        min-width: 520px;
+        width: 40%;
+        padding: 2.5rem 2rem 2rem;
+    }
+
+    .form img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .form h1 {
+        font-size: 34px;
+    }
+
+    .form-group input {
+        padding: 8px 15px 8px;
+        font-size: 16px;
+    }
+
+    .cont-show-password {
+        align-items: flex-start;
+    }
+
+    #show-password-check {
+        width: 18px;
+        height: 18px;
+    }
+
+    .cont-show-password h2 {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+
+    .btn-submit {
+        font-size: 17px;
+        padding: 8px 1rem 8px;
+    }
+
+    .register-login-user h2,
+    .register-login-user h2 a {
+        font-size: 14px;
+    }
+}
+
+/* Responsive 1280px */
+@media (max-width: 1280px) {
+    .form img {
+        width: 190px;
+        height: 190px;
+    }
+
+    .form h1 {
+        font-size: 32px;
+    }
+}
+
+/* Responsive 1024px */
+@media (max-width: 1024px) {
+    .form {
+        min-width: 480px;
+        width: 20%;
+        padding: 2.5rem 2rem 2rem;
+    }
+
+    .form img {
+        width: 175px;
+        height: 175px;
+    }
+
+    .form h1 {
+        font-size: 30px;
+    }
+
+    .form-group input {
+        padding: 7px 12px 7px;
+        font-size: 15px;
+    }
+
+    .cont-show-password {
+        align-items: flex-start;
+    }
+
+    .btn-submit {
+        font-size: 16px;
+        padding: 7px 1rem 7px;
+    }
+
+    .register-login-user h2,
+    .register-login-user h2 a {
+        font-size: 13px;
+    }
+}
+
+/* Responsive 768px */
+@media (max-width: 768px) {
+    .form {
+        min-width: 420px;
+    }
+}
+
+/* Responsive 425px */
+@media (max-width: 425px) {
+    .form {
+        min-width: 90%;
+        box-shadow: none;
+        border-radius: 4px;
+        margin: 2rem 0 2rem;
+    }
+}
