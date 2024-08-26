@@ -1,0 +1,29 @@
+{
+  "name": "thesis_pj-easy_finance",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Easy Finance - Thesis Project (In Progress) </h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd server && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FazeElian/thesis_pj-easy_finance.git"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.0",
+    "nodemon": "^3.1.4",
+    "sequelize": "^6.37.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
