@@ -41,6 +41,11 @@ const LoginView = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:5000/api/users/login', formData);
+      console.error(response.data);
+
+      // Verify if the form is collecting the data from inputs
+      console.log(formData);
+
       localStorage.setItem('token', response.data.token);
       alert("Has iniciado Sesión");
       navigate('/student/dashboard');

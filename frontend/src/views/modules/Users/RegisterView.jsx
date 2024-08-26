@@ -42,6 +42,10 @@ const RegisterView = () => {
     try {
       const response = await axios.post('http://localhost:5000/api/users/register', formData);
       console.error(response.data);
+
+      // Verify if the form is collecting the data from inputs
+      console.log(formData);
+      
       alert("Te has registrado");
       navigate("/login");
     } catch (err) {
