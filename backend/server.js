@@ -10,7 +10,7 @@ const userRoutes = require('./routes/userRoutes');
 // Student
 const studentRoutes = require('./routes/studentRoutes');
 
-const app = express();
+const app = express(); 
 
 app.use(cors());
 app.use(express.json());
