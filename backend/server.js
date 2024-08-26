@@ -20,21 +20,14 @@ app.use('/api/users', userRoutes);
 app.use('/api/student', studentRoutes);
 
 // Port config
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5000;
 
 // Static files from frontend
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 // Manage any route different from any API, redirecting to index.html
 app.get('/*', (req, res) => {
-  res.sendFile(
-    path.join(__dirname, '../frontend/build/index.html'),
-    function (err) {
-      if (err) {
-        res.status(500).send(err);
-      }
-    }
-  );
+  res.sendFile(path.join(__dirname, '../frontend/build/', 'index.html'));
 });
 
 sequelize.sync().then(() => {
