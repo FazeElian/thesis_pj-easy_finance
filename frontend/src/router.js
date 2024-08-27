@@ -64,7 +64,7 @@ function Router () {
                     path="register" 
                     element={
                         <Suspense fallback={<LoadingView />}>
-                            <IndexView />
+                            <RegisterView />
                         </Suspense>   
                     } 
                 />
