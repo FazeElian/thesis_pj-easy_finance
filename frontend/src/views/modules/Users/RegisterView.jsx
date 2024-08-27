@@ -40,7 +40,9 @@ const RegisterView = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/users/register', formData);
+      const BaseAppUrl = process.env.APP_URL || 'http://localhost:5000';
+
+      const response = await axios.post(`${BaseAppUrl}/api/users/login`, formData);      
       console.error(response.data);
 
       // Verify if the form is collecting the data from inputs
