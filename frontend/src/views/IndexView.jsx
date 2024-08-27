@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "../assets/css/views/IndexView.css";
 
 // Images - Icons
-import Logo from "../assets/img/Logo (v.02).png";
+import Logo from "../assets/img/Logo (v.02).webp";
 
 const IndexView = () => {
   // custom hook for tabs title

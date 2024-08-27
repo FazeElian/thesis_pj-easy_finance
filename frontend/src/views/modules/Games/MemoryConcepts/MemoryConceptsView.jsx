@@ -12,7 +12,7 @@ import { useGameDocumentTitle } from '../../../../hooks/useGameDocumentTitle';
 
 // Images - Icons
     // Close popup icon
-    import ClosePopUpIcon from "../../../../assets/img/icons/close-popup.png";
+    import ClosePopUpIcon from "../../../../assets/img/icons/close-popup.webp";
 
 const MemoryConceptsGallery = () => {
     // custom hook for games tabs title

@@ -7,7 +7,7 @@ import "../../../assets/css/views/Users/UsersModule.css";
 
 // Images - Icons
   // Arrow left icon
-  import ArrowleftIcon from "../../../assets/img/icons/arrow-left-come-back.png";
+  import ArrowleftIcon from "../../../assets/img/icons/arrow-left-come-back.webp";
 
 const ForgotPasswordView = () => {
   // custom hook for tabs title

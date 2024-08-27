@@ -10,10 +10,10 @@ import { useDocumentTitle } from '../../../hooks/useDocumentTitle';
 
 // Images - Icons
   // Logo
-  import Logo from "../../../assets/img/Logo (v.02).png";
+  import Logo from "../../../assets/img/Logo (v.02).webp";
 
   // Arrow left icon
-  import ArrowleftIcon from "../../../assets/img/icons/arrow-left-come-back.png";
+  import ArrowleftIcon from "../../../assets/img/icons/arrow-left-come-back.webp";
 
 const LoginView = () => {
   // custom hook for tabs title

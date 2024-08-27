@@ -6,7 +6,7 @@ import "../../assets/css/components/student/StudentHeader.css";
 
 // Images - icons
   // Menu Icon
-  import MenuIcon from "../../assets/img/icons/menu.png";
+  import MenuIcon from "../../assets/img/icons/menu.webp";
 
 const StudentHeader = () => {
   const navigate = useNavigate();

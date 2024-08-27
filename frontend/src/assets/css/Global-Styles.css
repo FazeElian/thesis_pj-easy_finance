@@ -34,7 +34,7 @@
     }
 
     .content-index {
-        background-image: url("../img/IndexBackground.png");
+        background-image: url("../img/IndexBackground.webp");
         background-size: cover;
         min-height: 100vh;
         align-items: center;

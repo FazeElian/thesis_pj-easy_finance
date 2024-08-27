@@ -1,18 +1,18 @@
 // Imágenes
     // Ahorro
-    import Saving from "../../../../assets/img/memoryGame/Saving.jpg";
+    import Saving from "../../../../assets/img/memoryGame/Saving.webp";
 
     // Gasto
-    import Expenses from "../../../../assets/img/memoryGame/Expenses.jpg";
+    import Expenses from "../../../../assets/img/memoryGame/Expenses.webp";
 
     // Presupuesto Personal
-    import PersonalBudget from "../../../../assets/img/memoryGame/PersonalBudget.jpg";
+    import PersonalBudget from "../../../../assets/img/memoryGame/PersonalBudget.webp";
 
     // Meta Financiera
-    import FinancialObjective from "../../../../assets/img/memoryGame/FinancialObjective.jpg";
+    import FinancialObjective from "../../../../assets/img/memoryGame/FinancialObjective.webp";
 
     // Deuda
-    import Debt from "../../../../assets/img/memoryGame/Debt.jpg";
+    import Debt from "../../../../assets/img/memoryGame/Debt.webp";
 
 // Ejemplo de MemoryItems
 const MemoryItems = [

@@ -6,7 +6,7 @@ import "../../assets/css/components/company/CompanyHeader.css";
 
 // Images - Icons
   // Logo
-  import Logo from "../../assets/img/Logo (v.02).png";
+  import Logo from "../../assets/img/Logo (v.02).webp";
 
 const CompanyHeader = () => {
   return (
