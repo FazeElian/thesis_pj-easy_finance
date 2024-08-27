@@ -12,7 +12,11 @@ const studentRoutes = require('./routes/studentRoutes');
 
 const app = express(); 
 
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:5000', 'https://easy--finance-c55d8109a10d.herokuapp.com/'],
+  credentials: true,
+}));
+
 app.use(express.json());
 
 // Register the routes
