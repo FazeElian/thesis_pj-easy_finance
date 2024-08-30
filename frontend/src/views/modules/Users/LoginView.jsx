@@ -38,9 +38,9 @@ const LoginView = () => {
   // When the form is submit
   const onSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const BaseAppUrl = process.env.APP_URL || 'http://localhost:5000';
 
+    const BaseAppUrl = process.env.REACT_APP_URL;
+    try {
       const response = await axios.post(`${BaseAppUrl}/api/users/login`, formData);
       console.error(response.data);
 
@@ -52,7 +52,7 @@ const LoginView = () => {
       navigate('/student/dashboard');
     } catch (err) {
       console.error(err.response ? err.response.data : err.message);
-      console.error(err.response?.data?.message || 'Login failed');
+      console.error('Error: ' + err.response?.data?.message);
     }
   };
 

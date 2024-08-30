@@ -12,10 +12,7 @@ const studentRoutes = require('./routes/studentRoutes');
 
 const app = express(); 
 
-app.use(cors({
-  origin: ['http://localhost:5000', 'https://easy--finance-c55d8109a10d.herokuapp.com/'],
-  credentials: true,
-}));
+app.use(cors({ origin: 'http://localhost:3000' }));
 
 app.use(express.json());
 
@@ -24,7 +21,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/student', studentRoutes);
 
 // Port config
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 // Static files from frontend
 app.use(express.static(path.join(__dirname, '../frontend/build')));
