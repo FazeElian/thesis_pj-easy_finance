@@ -2,28 +2,61 @@
     display: flex;
     width: 100%;
     height: auto;
-    padding: 2rem 7rem 1rem;
+    padding: 0 7rem 1rem;
     flex-direction: column;
+    align-items: center;
 }
 
     .top--memory-concepts {
         display: flex;
         width: 100%;
+        position: fixed;
         height: auto;
-        padding: 8px 0 8px;
-        justify-content: space-between;
+        padding: 20px 4rem 20px;
+        justify-content: center;
+        gap: 2rem;
         align-items: center;
         font-family: "Poppins", sans-serif;
-        margin: 0 0 3rem;
+        background-color: #5ABFAD;
+        z-index: 2;
+        margin: -0.6rem 0 0;
+        /* border: 2px solid #4C4C4C; */
+        /* border-bottom: none; */
     }
 
-    .top--memory-concepts h1 {
-        font-size: 2rem;
-    }
+        .content-top--memory-concepts {
+            display: flex;
+            width: auto;
+            height: auto;
+            border-radius: 2rem;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-        .top--memory-concepts h1,
-        .cont-btn-reset--memory-concepts {
-            width: 25%;
+    .cont-time--memory-concepts {
+        display: flex;
+        width: auto;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border: 1px solid #0B9D85;
+        padding: 8px 4rem 8px;
+        padding-right: 7.5rem;
+        border-radius: 2rem;
+        margin-right: -5rem;
+    }
+        
+        .cont-time--memory-concepts h2,
+        .cont-time--memory-concepts h3 {
+            margin-left: 8px;
+        }
+
+        .cont-time--memory-concepts h2,
+        .cont-time--memory-concepts h3,
+        .cont-points--memory-concepts h2,
+        .cont-points--memory-concepts h3 {
+            font-size: 24px;
         }
 
     .cont-points--memory-concepts {
@@ -32,10 +65,11 @@
         align-items: center;
         justify-content: center;
         font-size: 18px;
-        background-color: #D9D9D9;
-        padding: 7px 4rem 7px;
+        background-color: #0B9D85;
+        border: 1px solid #0B9D85;
+        padding: 8px 4em 8px;
         border-radius: 2rem;
-        border: 1px solid gray;
+        color: white;
     }
         
         .cont-points--memory-concepts h2,
@@ -43,82 +77,59 @@
             margin-left: 8px;
         }
 
-    .cont-btn-reset--memory-concepts {
-        display: flex;
-        height: auto;
-        justify-content: flex-end;
-    }
-
-        .btn-reset--memory-concepts {
-            display: flex;
-            width: auto;
-            height: auto;
-            padding: 10px 2rem 10px;
-            background-color: #D9D9D9;
-            border: 1px solid black;
-            font-family: "Poppins", sans-serif;
-            border-radius: 1rem;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
 .gallery--memory-concepts {
     display: flex;
     width: 100%;
     height: auto;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 4rem;
     justify-content: center;
+    margin: 7rem 0 0;
 }
 
-    /* .item-gallery--memory-concepts {
+    .cont-front-item-gallery---memory-concepts {
         display: flex;
-        width: 300px;
-        height: 300px;
+        width: 285px;
+        height: 285px;
         align-items: center;
         justify-content: center;
-        background-color: #d9d9d9;
-        border: 1px solid gray;
-        border-radius: 1rem;
-    } */
+        background-color: #0B9D85;
+        border: 2px solid black;
+        border-radius: 2rem;
+        cursor: pointer;
+        opacity: .7;
+    }
 
-        .cont-front-item-gallery---memory-concepts {
-            display: flex;
-            width: 300px;
-            height: 300px;
-            align-items: center;
-            justify-content: center;
-            background-color: #A7A7A7;
-            border: 1px solid gray;
-            border-radius: 2rem;
-            cursor: pointer;
+        .cont-front-item-gallery---memory-concepts img {
+            width: 175px;
+            height: 175px;
         }
 
-        .cont-back-item-gallery---memory-concepts {
-            display: flex;
-            width: 300px;
-            height: 300px;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid gray;
-            border-radius: 2rem;
-            color: black;
-            cursor: pointer;
+    .cont-back-item-gallery---memory-concepts {
+        display: flex;
+        width: 285px;
+        height: 285px;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid black;
+        border-radius: 2rem;
+        color: black;
+        cursor: pointer;
+    }
+
+        .cont-back-item-gallery---memory-concepts h2 {
+            font-family: "Poppins", sans-serif;
+            font-size: 22px;
+            padding: 0 1.5rem 0;
+            text-align: center;
         }
 
-            .cont-back-item-gallery---memory-concepts h2 {
-                font-family: "Poppins", sans-serif;
-                font-size: 22px;
-                padding: 0 1.5rem 0;
-                text-align: center;
-            }
-
-            .cont-back-item-gallery---memory-concepts img {
-                width: 100%;
-                height: 100%;
-                border-radius: 2.5rem;
-                padding: 0 1rem 0;
-            }
+        .cont-back-item-gallery---memory-concepts img {
+            width: 100%;
+            height: 100%;
+            border-radius: 2.5rem;
+            padding: 0 1rem 0;
+        }
 
     .back-content-item-gallery--memory-concepts {
         display: flex;
@@ -234,5 +245,207 @@
     }
     to {
         opacity: 0;
+    }
+}
+
+/* Responsive 1440px */
+@media (max-width: 1440px) {
+    .top--memory-concepts {
+        margin: -1.7rem 0 0;
+        padding: 15px 4rem 15px;
+    }
+
+    .gallery--memory-concepts {
+        margin: 6rem 0 0;
+        gap: 3rem;
+    }
+
+    .cont-time--memory-concepts,
+    .cont-points--memory-concepts {
+        padding: 7px 3.5rem 7px;
+    }
+
+    .cont-time--memory-concepts {
+        padding-right: 7rem;
+    }
+
+    .cont-time--memory-concepts h2,
+    .cont-time--memory-concepts h3,
+    .cont-points--memory-concepts h2,
+    .cont-points--memory-concepts h3 {
+        font-size: 21px;
+    }
+
+    .cont-front-item-gallery---memory-concepts,
+    .cont-back-item-gallery---memory-concepts {
+        width: 250px;
+        height: 250px;
+        border-radius: 1.5rem;
+    }
+
+        .cont-front-item-gallery---memory-concepts img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .cont-back-item-gallery---memory-concepts h2 {
+            font-size: 18px;
+            padding: 0 1.5rem 0;
+        }
+}
+
+/* Responsive 1024px */
+@media (max-width: 1024px) {
+    .gallery--memory-concepts {
+        margin: 6rem 0 0;
+        gap: 3rem;
+    }
+
+    .top--memory-concepts {
+        margin: -2.6rem 0 0;
+        padding: 13px 4rem 13px;
+    }
+
+    .cont-front-item-gallery---memory-concepts,
+    .cont-back-item-gallery---memory-concepts {
+        width: 220px;
+        height: 220px;
+        border-radius: 1rem;
+    }
+
+    .cont-front-item-gallery---memory-concepts img {
+        width: 125px;
+        height: 125px;
+    }
+
+    .cont-back-item-gallery---memory-concepts img {
+        border-radius: 2rem;
+    }
+}
+
+/* Responsive 768px */
+@media (max-width: 768px) {
+    .gallery--memory-concepts {
+        min-width: 130%;
+        margin: 8rem 0 0;
+        gap: 2rem;
+    }
+
+    .content-top--memory-concepts {
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .cont-time--memory-concepts {
+        padding-right: 0;
+        padding: 8px 4rem 8px;
+    }
+
+    .cont-time--memory-concepts,
+    .cont-points--memory-concepts {
+        width: 70%;
+        min-width: 300px;
+        padding: 8px 0 8px;
+        margin: 0;
+    }
+
+    .cont-back-item-gallery---memory-concepts img {
+        border-radius: 2rem;
+    }
+}
+
+/* Responsive 425px */
+@media (max-width: 425px) {
+    .top--memory-concepts {
+        margin: -3.3rem 0 0;
+        padding: 13px 4rem 13px;
+    }
+
+    .cont-time--memory-concepts h2,
+    .cont-time--memory-concepts h3,
+    .cont-points--memory-concepts h2,
+    .cont-points--memory-concepts h3 {
+        font-size: 18px;
+    }
+
+    .gallery--memory-concepts {
+        min-width: 200%;
+        margin: 7rem 0 0;
+        gap: 2rem;
+    }
+
+    .cont-back-item-gallery---memory-concepts h2 {
+        font-size: 11.5px;
+        padding: 0.5rem;
+    }
+
+    .cont-front-item-gallery---memory-concepts,
+    .cont-back-item-gallery---memory-concepts {
+        width: 130px;
+        height: 130px;
+        border-radius: 0.7rem;
+    }
+
+    .cont-front-item-gallery---memory-concepts img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cont-back-item-gallery---memory-concepts img {
+        border-radius: 1.5rem;
+        padding: 0 10px 0;
+    }
+}
+
+/* Responsive 375px */
+@media (max-width: 375px) {
+    .gallery--memory-concepts {
+        min-width: 240%;
+        margin: 7rem 0 0;
+        gap: 2rem;
+    }
+
+    .cont-front-item-gallery---memory-concepts,
+    .cont-back-item-gallery---memory-concepts {
+        width: 125px;
+        height: 125px;
+        border-radius: 0.5rem;
+    }
+
+    .cont-front-item-gallery---memory-concepts img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .cont-back-item-gallery---memory-concepts h2 {
+        font-size: 10px;
+        padding: 5px;
+    }
+}
+
+/* Responsive 338px */
+@media (max-width: 338px) {
+    .gallery--memory-concepts {
+        min-width: 240%;
+        margin: 7rem 0 0;
+        gap: 3rem;
+    }
+
+    .cont-front-item-gallery---memory-concepts,
+    .cont-back-item-gallery---memory-concepts {
+        width: 200px;
+        height: 200px;
+        border-radius: 0.7rem;
+    }
+
+    .cont-front-item-gallery---memory-concepts img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .cont-back-item-gallery---memory-concepts h2 {
+        font-size: 15px;
+        padding: 10px;
     }
 }
