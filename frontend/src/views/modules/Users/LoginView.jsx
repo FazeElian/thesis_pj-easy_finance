@@ -74,7 +74,7 @@ const LoginView = () => {
       </div>
 
       {/* Form */}
-      <form className="form" onSubmit={onSubmit}>
+      <form className="form">
         <img src={Logo} alt="" />
         <h1>Iniciar Sesión</h1>
         <br />
@@ -109,7 +109,7 @@ const LoginView = () => {
           />
           <h2>Ver contraseña</h2>
         </div>
-        <button className="btn-submit" type="submit">
+        <button className="btn-submit" type="submit" onClick={() => navigate("/student/games/")}>
           Iniciar Sesión
         </button>
         <div className="register-login-user">

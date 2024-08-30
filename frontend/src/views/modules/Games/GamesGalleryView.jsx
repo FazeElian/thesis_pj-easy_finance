@@ -15,7 +15,7 @@ const GamesGalleryView = () => {
   useDocumentTitle("Galería de Juegos");
 
   // User authentication function
-  useAuthCheck();
+  // useAuthCheck();
 
   const baseRouteGame = "/student/games";
 

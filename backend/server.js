@@ -8,7 +8,7 @@ const path = require("path");
 const userRoutes = require('./routes/userRoutes');
 
 // Student
-const studentRoutes = require('./routes/studentRoutes');
+// const studentRoutes = require('./routes/studentRoutes');
 
 const app = express(); 
 
