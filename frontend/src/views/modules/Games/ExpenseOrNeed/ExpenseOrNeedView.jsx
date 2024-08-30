@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 // User authentication check custom hook
-import useAuthCheck from "../../../../hooks/useAuthCheck";
+// import useAuthCheck from "../../../../hooks/useAuthCheck";
 
 // Styles for this component
 import "../../../../assets/css/views/Games/ExpenseOrNeed/ExpenseOrNeedView.css";
@@ -16,7 +16,7 @@ const ExpenseOrNeedView = () => {
   useGameDocumentTitle("¿Gasto o Necesidad?");
 
   // User authentication function
-  useAuthCheck();
+  // useAuthCheck();
 
   // const [columns, setColumns] = useState(columnsFromBackend);
 

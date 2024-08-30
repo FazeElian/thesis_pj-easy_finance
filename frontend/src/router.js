@@ -1,8 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 // Base Components
-import CompanyHeader from './components/company/CompanyHeader';
-import StudentHeader from './components/student/StudentHeader';
+import Header from './components/Header';
 
 // Lazy loading optimization
 import { lazy, Suspense } from "react";
@@ -16,8 +15,6 @@ import { lazy, Suspense } from "react";
 
     // Student
     const DashboardView = lazy(() => import("./views/modules/DashboardView"));
-    const GamesGalleryView = lazy(() => import("./views/modules/Games/GamesGalleryView"));
-    const PersonalBudgetView = lazy(() => import("./views/modules/PersonalBudget/PersonalBudgetView"))
     const HelpView = lazy(() => import("./views/modules/Help/HelpView"))
     const ProfileView = lazy(() => import("./views/modules/Profile/ProfileView"));
 
@@ -81,7 +78,7 @@ function Router () {
             </Route>
 
             {/* Student Views */}
-            <Route path="student/*" element={<StudentHeader />}>
+            <Route path="student/*" element={<Header />}>
                 {/* Dashboard View */}
                 <Route 
                     index 
@@ -93,16 +90,7 @@ function Router () {
                     } 
                 />
 
-                {/* Games Gallery View */}
-                <Route 
-                    path="games/*" 
-                    element={
-                        <Suspense fallback={<LoadingView />}>
-                            <GamesGalleryView />
-                        </Suspense>   
-                    } 
-                />
-                    
+                {/* Games Routes */}
                     {/* Expense or Need - Game View */}
                     <Route 
                         path="games/expense-or-need"
@@ -122,16 +110,6 @@ function Router () {
                             </Suspense>   
                         } 
                     />
-
-                {/* Personal Budget View */}
-                <Route 
-                    path="personal-budget" 
-                    element={
-                        <Suspense fallback={<LoadingView />}>
-                            <PersonalBudgetView />
-                        </Suspense>   
-                    } 
-                />
 
                 {/* Help View */}
                 <Route 

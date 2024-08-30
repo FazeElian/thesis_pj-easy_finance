@@ -2,13 +2,16 @@ import { useState, useEffect, useRef } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom"
 
 // Styles for this component
-import "../../assets/css/components/student/StudentHeader.css";
+import "../assets/css/components/Header.css";
 
 // Images - icons
-  // Menu Icon
-  import MenuIcon from "../../assets/img/icons/menu.webp";
+  // App Logo
+  import Logo from "../assets/img/Logo (v.02).webp";
 
-const StudentHeader = () => {
+  // User Icon
+  import UserIcon from "../assets/img/icons/user.png";
+
+const Header = () => {
   const navigate = useNavigate();
 
   // Log out function
@@ -17,7 +20,6 @@ const StudentHeader = () => {
     navigate('/login');
     alert("Has cerrado sesión con éxito");
   };
-
   
   // Side bar menu states
   const [ sideBarMenu, setSideBarMenu ] = useState();
@@ -62,32 +64,32 @@ const StudentHeader = () => {
   return (
     <>
       <header className="header">
-        <nav className="nav-logo">
-          Logo
-        </nav>
-        <nav className="nav-menu">
-          <Link to="/student/dashboard" className="item-nav-menu">Inicio</Link>
-          <Link to="/student/games" className="item-nav-menu">Galería de Juegos</Link>
-          <Link to="/student/personal-budget" className="item-nav-menu">Mi Presupuesto</Link>
-          <Link to="/student/help" className="item-nav-menu">Ayuda</Link>
-        </nav>
-        <nav className="nav-user">
+        <div className="header-block">
+          <h1>Galería de Juegos</h1>
+        </div>
+        <div className="header-block-logo">
+          <Link to="/student/dashboard/">
+            <img src={Logo} alt="" />
+          </Link>
+        </div>
+        <div className="header-block header-block-menu">
           <button className="btn-nav-menu" onClick={handleMenu}>
-            <h2>Menú</h2>
-            <img src={MenuIcon} alt="Nav Menu button" />
+            <img src={UserIcon} alt="Nav Menu button" />
           </button>
-        </nav>
-        <nav className={ `nav-side-bar ${sideBarMenu ? "active" : ""}` } ref={sideBarMenuRef}>
-          <h1>Menú Lateral</h1>
+        </div>
+        {/* }
+          <nav className={ `nav-side-bar ${sideBarMenu ? "active" : ""}` } ref={sideBarMenuRef}>
+            <h1>Menú Lateral</h1>
 
-          <button className="btn-log-out" onClick={Logout}>
-            Cerrar Sesión
-          </button>
-        </nav>
+            <button className="btn-log-out" onClick={Logout}>
+              Cerrar Sesión
+            </button>
+          </nav> 
+        */}
       </header>
       <Outlet />
     </>
   )
 }
 
-export default StudentHeader
+export default Header

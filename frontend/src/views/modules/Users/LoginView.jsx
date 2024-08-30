@@ -109,7 +109,7 @@ const LoginView = () => {
           />
           <h2>Ver contraseña</h2>
         </div>
-        <button className="btn-submit" type="submit" onClick={() => navigate("/student/games/")}>
+        <button className="btn-submit" type="submit" onClick={() => navigate("/student/dashboard/")}>
           Iniciar Sesión
         </button>
         <div className="register-login-user">
