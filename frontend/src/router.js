@@ -9,6 +9,7 @@ import { lazy, Suspense } from "react";
 // Views Components
     // Company
     const IndexView = lazy(() => import("./views/IndexView"))
+    const Index2View = lazy(() => import("./views/Index2View"))
     const LoginView = lazy(() => import("./views/modules/Users/LoginView"))
     const RegisterView = lazy(() => import("./views/modules/Users/RegisterView"))
     const ForgotPasswordView = lazy(() => import("./views/modules/Users/ForgotPasswordView"))
@@ -42,6 +43,16 @@ function Router () {
                     element={
                         <Suspense fallback={<LoadingView />}>
                             <IndexView />
+                        </Suspense>   
+                    } 
+                />
+
+                {/* Index2 View */}
+                <Route 
+                    path="index2"
+                    element={
+                        <Suspense fallback={<LoadingView />}>
+                            <Index2View />
                         </Suspense>   
                     } 
                 />
