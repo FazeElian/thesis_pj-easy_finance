@@ -12,7 +12,7 @@ import "../assets/css/views/Index2View.css";
 
     // Games
     import Game1Img from "../assets/img/Game1.jpg";
-    import Game2Img from "../assets/img/Game2.png";
+    import Game2Img from "../assets/img/Game2.jpg";
 
 const Index2View = () => {
   return (

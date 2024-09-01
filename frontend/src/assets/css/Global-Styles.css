@@ -48,6 +48,8 @@
 
     .content-game-horizontal {
         flex-direction: row;
+        padding: 11rem 0 0;
+        max-height: 96.5vh;
     }
 
 /* Responsive 1024px */
