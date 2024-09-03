@@ -9,7 +9,7 @@ import Router from './router';
 import { BrowserRouter } from 'react-router-dom';
 
 // Global Styles
-import "./assets/css/Global-Styles.css";
+import "./assets/sass/_GlobalStyles.scss";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

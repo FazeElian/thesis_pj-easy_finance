@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 // Base Components
-import Header from './components/Header';
+import Header from "./components/Header";
 
 // Lazy loading optimization
 import { lazy, Suspense } from "react";

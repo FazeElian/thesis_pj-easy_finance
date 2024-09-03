@@ -1,86 +1,73 @@
-import { useState, useEffect, useRef } from "react";
-import { Link, Outlet } from "react-router-dom"
+import React, { useState } from 'react'
 
 // Styles for this component
-import "../assets/css/components/Header.css";
+import "../assets/sass/components/Header.scss";
 
-// Images - icons
-  // App Logo
+// Navigation between routes
+import { Link } from 'react-router-dom';
+
+// imgs - Icons
+  // Logo
   import Logo from "../assets/img/Logo (v.02).webp";
 
-  // User Icon
-  import UserIcon from "../assets/img/icons/user.png";
+  // Menu Icon
+  import MenuIcon from "../assets/img/icons/menu.webp";
 
-const Header = () => {  
-  // Side bar menu states
-  const [ sideBarMenu, setSideBarMenu ] = useState();
+  // Home Icon
+  import HomeIcon from "../assets/img/icons/home.png";
 
-  // Handle Menu function
-  const handleMenu = () => {
-    setSideBarMenu(!sideBarMenu);
+  // Games Icon
+  import GamesIcon from "../assets/img/icons/games.png";
+
+  // About Icon
+  import AboutIcon from "../assets/img/icons/about.png";
+
+  // Research Project Icon
+  import ResearchProjectIcon from "../assets/img/icons/research-project.png";
+
+const Header = () => {
+  // Side bar Menu states
+  const [ sideBar, setSideBar ] = useState(false);
+
+  // Handle Side bar function
+  const handleSideBar = () => {
+    setSideBar(!sideBar);
   }
 
-  useEffect(() => {
-    const handleScrollMenu = () => {
-      const scrollThreshold = 200; // Scroll amount
-      if (window.scrollY > scrollThreshold && sideBarMenu) {
-        setSideBarMenu(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScrollMenu);
-
-    return () => {
-      window.removeEventListener('scroll', handleScrollMenu);
-    };
-  }, [sideBarMenu]);   
-
-  // Side bar menu container reference
-  const sideBarMenuRef = useRef(null);
-
-  // When the user clicks outside the side bar container function
-  const handleClickOutside = (event) => {
-    if (sideBarMenuRef.current && !sideBarMenuRef.current.contains(event.target)) {
-      setSideBarMenu(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
   return (
-    <>
-      <header className="header">
-        <div className="header-block">
-          <h1>Galería de Juegos</h1>
-        </div>
-        <div className="header-block-logo">
-          <Link to="/student/dashboard/">
-            <img src={Logo} alt="" />
+    <header className="header bg-yellow">
+      <nav className="nav-logo">
+        <Link href="/">
+          <img src={Logo} alt="Logo" />
+          <h1>Easy <br />Finance</h1>
+        </Link>
+      </nav>
+      <button className="btn-nav-menu bg-blue" onClick={handleSideBar}>
+        <img src={MenuIcon} alt="Menu" />
+      </button>
+      <nav className={ `nav-side-bar ${sideBar ? "active" : ""}` }>
+        <h2>Menú de Navegación</h2>
+        <ul className="side-bar-items">
+          <Link href="/" className="side-bar-item">
+            <img src={HomeIcon} alt="Inicio" />
+            <h2>Inicio</h2>
           </Link>
-        </div>
-        <div className="header-block header-block-menu">
-          <button className="btn-nav-menu" onClick={handleMenu}>
-            <img src={UserIcon} alt="Nav Menu button" />
-          </button>
-        </div>
-        {/* }
-          <nav className={ `nav-side-bar ${sideBarMenu ? "active" : ""}` } ref={sideBarMenuRef}>
-            <h1>Menú Lateral</h1>
-
-            <button className="btn-log-out" onClick={Logout}>
-              Cerrar Sesión
-            </button>
-          </nav> 
-        */}
-      </header>
-      <Outlet />
-    </>
+          <Link href="/juegos" className="side-bar-item">
+            <img src={GamesIcon} alt="Juegos" />
+            <h2>Juegos</h2>
+          </Link>
+          <Link href="/" className="side-bar-item">
+            <img src={AboutIcon} alt="Acerca de" />
+            <h2>Acerca de</h2>
+          </Link>
+          <Link href="/" className="side-bar-item">
+            <img src={ResearchProjectIcon} alt="Proyecto de Investigación" />
+            <h2>Proyecto de Investigación</h2>
+          </Link>
+        </ul>
+      </nav>
+    </header>
   )
 }
 
-export default Header
+export default Header;

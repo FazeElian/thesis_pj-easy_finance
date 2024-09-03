@@ -1,0 +1,137 @@
+// App
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Fonts */
+    /* Fredoka */
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+    /* Fraunces */
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+// Base colors - Colors palette
+$red: #F25260;
+$blue: #38A6A6;
+$green: #8BBF73;
+$yellow: #F2BB16;
+$orange: #F28D35;
+
+// Low opacity of base colors
+$orange-low-opacity: #FBDFC6;
+$blue-low-opacity: #84BFB9;
+$red-low-opacity: #F299A9;
+
+// Fonts
+$fredoka-font: "Fredoka", sans-serif;
+$fraunces-font: "Fraunces", serif;
+
+.bg-red {
+    background-color: $red;
+}
+
+.bg-blue {
+    background-color: $blue;
+}
+
+.bg-green {
+    background-color: $green;
+}
+
+.bg-yellow {
+    background-color: $yellow;
+}
+
+.bg-orange {
+    background-color: $orange;
+}
+
+.bg-blue-red {
+    background: rgb(132,191,185);
+    background: -moz-linear-gradient(90deg, 
+        rgba(132,191,185,1) 50%, 
+        rgba(242,153,169,1) 50%
+    );
+    background: -webkit-linear-gradient(
+        90deg, 
+        rgba(132,191,185,1) 50%, 
+        rgba(242,153,169,1) 50%
+    );
+    background: linear-gradient(
+        90deg, 
+        rgba(132,191,185,1) 50%, 
+        rgba(242,153,169,1) 50%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+        startColorstr=$blue-low-opacity,
+        endColorstr=$red-low-opacity,
+        GradientType=1
+    );
+}
+
+.py-content {
+    padding: 9.9rem 8rem 0;
+    padding-left: 9rem;
+}
+
+.py-top {
+    padding-top: 9.9rem;
+}
+
+// Responsive 1440px
+@media (max-width: 1440px) {
+    .py-content {
+        padding: 7.8rem 8rem 0;
+    }
+    
+    .py-top {
+        padding-top: 7.8rem;
+    }
+}
+
+// Responsive 1024px
+@media (max-width: 1024px) {
+    .py-content {
+        padding: 7.4rem 8rem 0;
+    }
+    
+    .py-top {
+        padding-top: 7.4rem;
+    }
+
+    .bg-blue-red {
+        background: rgb(132,191,185);
+        background: -moz-linear-gradient(180deg, 
+            rgba(132,191,185,1) 50%, 
+            rgba(242,153,169,1) 50%
+        );
+        background: -webkit-linear-gradient(
+            180deg, 
+            rgba(132,191,185,1) 50%, 
+            rgba(242,153,169,1) 50%
+        );
+        background: linear-gradient(
+            180deg, 
+            rgba(132,191,185,1) 50%, 
+            rgba(242,153,169,1) 50%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient(
+            startColorstr=$blue-low-opacity,
+            endColorstr=$red-low-opacity,
+            GradientType=1
+        );
+    }
+}
+
+// Responsive 768px
+@media (max-width: 768px) {
+    .py-content {
+        padding: 7rem 8rem 0;
+    }
+    
+    .py-top {
+        padding-top: 7rem;
+    }
+}
