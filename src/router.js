@@ -18,8 +18,7 @@ const LoadingView = lazy(() => import("./views/other/LoadingView"));
 function Router () {
     return (
         <Routes>
-            {/* Company Views */}
-            <Route path="/*" element={<Header />}>
+            <Route path="/" element={<Header />}>
                 {/* Index View */}
                 <Route 
                     index 
