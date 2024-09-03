@@ -13,13 +13,6 @@ import "../assets/css/components/Header.css";
 
 const Header = () => {
   const navigate = useNavigate();
-
-  // Log out function
-  const Logout = () => {
-    localStorage.removeItem('token');
-    navigate('/login');
-    alert("Has cerrado sesión con éxito");
-  };
   
   // Side bar menu states
   const [ sideBarMenu, setSideBarMenu ] = useState();
