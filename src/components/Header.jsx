@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 
 // Styles for this component
 import "../assets/css/components/Header.css";
@@ -11,9 +11,7 @@ import "../assets/css/components/Header.css";
   // User Icon
   import UserIcon from "../assets/img/icons/user.png";
 
-const Header = () => {
-  const navigate = useNavigate();
-  
+const Header = () => {  
   // Side bar menu states
   const [ sideBarMenu, setSideBarMenu ] = useState();
 
