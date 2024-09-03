@@ -29,22 +29,22 @@ export default function IndexView() {
           </div>
           <div className="games-gallery-items">
             <div className="item-games-gallery">
-              <Link href="/juegos/glosario">
+              <Link to="/juegos/glosario">
                 <img src={Glosary} alt="Juego 1" />
               </Link>
             </div>
             <div className="item-games-gallery">
-              <Link href="/juegos/conecta-y-aprende">
+              <Link to="/juegos/conecta-y-aprende">
                 <img src={Game1} alt="Juego 1" />
               </Link>            
             </div>
             <div className="item-games-gallery">
-              <Link href="/juegos/supervivencia-financiera">
+              <Link to="/juegos/supervivencia-financiera">
                 <img src={Game2} alt="Juego 1" />
               </Link>            
             </div>
             <div className="item-games-gallery">
-              <Link href="/juegos/compra-y-ahorra">
+              <Link to="/juegos/compra-y-ahorra">
                 <img src={Game3} alt="Juego 1" />
               </Link>            
             </div>

@@ -7,8 +7,21 @@ import Header from "./components/Header";
 import { lazy, Suspense } from "react";
 
 // Views Components
-const IndexView = lazy(() => import("./views/IndexView"));
+    // Index
+    const IndexView = lazy(() => import("./views/IndexView"));
 
+    // Games
+    const GamesView = lazy(() => import("./views/GamesView"));
+
+    // Glosary
+    const GlosaryView = lazy(() => import("./views/GlosaryView"));
+
+    // // Connect And Learn
+    const ConnectAndLearnView = lazy(() => import("./views/ConnectAndLearnView.jsx"));
+
+    // Financial Supervivence
+    const FinancialSupervivenceView = lazy(() => import("./views/FinancialSupervivenceView"));
+        
 // Not Found
 const NotFoundView = lazy(() => import("./views/other/NotFoundView"));
 
@@ -27,6 +40,42 @@ function Router () {
                             <IndexView />
                         </Suspense>   
                     } 
+                />
+            </Route>
+
+            {/* Games Views */}
+            <Route path="juegos/*" element={<Header />}>
+                <Route 
+                    index
+                    element={
+                        <Suspense fallback={<LoadingView />}>
+                            <GamesView />
+                        </Suspense>   
+                    }
+                />
+                <Route 
+                    path="glosario"
+                    element={
+                        <Suspense fallback={<LoadingView />}>
+                            <GlosaryView />
+                        </Suspense>   
+                    }
+                />
+                <Route 
+                    path="conecta-y-aprende"
+                    element={
+                        <Suspense fallback={<LoadingView />}>
+                            <ConnectAndLearnView />
+                        </Suspense>   
+                    }
+                />
+                <Route 
+                    path="supervivencia-financiera"
+                    element={
+                        <Suspense fallback={<LoadingView />}>
+                            <FinancialSupervivenceView />
+                        </Suspense>   
+                    }
                 />
             </Route>
 
