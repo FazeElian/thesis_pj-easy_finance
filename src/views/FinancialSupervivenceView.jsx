@@ -11,7 +11,7 @@ import items from '../assets/js/FinancialSupervivenceItems';
 
 const FinancialSupervivenceView = () => {
   const [shuffledItems, setShuffledItems] = useState([]);
-  const [setCurrentItemIndex] = useState(0);
+  const [currentIndexItem ,setCurrentItemIndex] = useState(0);
   const [columns, setColumns] = useState({
     nonClasified: {
       items: []
