@@ -39,7 +39,7 @@ const Header = () => {
     <>
       <header className="header bg-yellow">
         <nav className="nav-logo">
-          <Link href="/">
+          <Link to="/">
             <img src={Logo} alt="Logo" />
             <h1>Easy <br />Finance</h1>
           </Link>
@@ -50,19 +50,19 @@ const Header = () => {
         <nav className={ `nav-side-bar ${sideBar ? "active" : ""}` }>
           <h2>Menú de Navegación</h2>
           <ul className="side-bar-items">
-            <Link href="/" className="side-bar-item">
+            <Link to="/" className="side-bar-item" onClick={() => setSideBar(false)}>
               <img src={HomeIcon} alt="Inicio" />
               <h2>Inicio</h2>
             </Link>
-            <Link href="/juegos" className="side-bar-item">
+            <Link to="/juegos/" className="side-bar-item" onClick={() => setSideBar(false)}>
               <img src={GamesIcon} alt="Juegos" />
               <h2>Juegos</h2>
             </Link>
-            <Link href="/" className="side-bar-item">
+            <Link to="/" className="side-bar-item" onClick={() => setSideBar(false)}>
               <img src={AboutIcon} alt="Acerca de" />
               <h2>Acerca de</h2>
             </Link>
-            <Link href="/" className="side-bar-item">
+            <Link to="/" className="side-bar-item" onClick={() => setSideBar(false)}>
               <img src={ResearchProjectIcon} alt="Proyecto de Investigación" />
               <h2>Proyecto de Investigación</h2>
             </Link>
