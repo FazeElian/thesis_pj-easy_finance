@@ -210,6 +210,9 @@ const FinancialSupervivenceView = () => {
           </Droppable>
         </DragDropContext>
       </section>
+      <div style={{ display: 'none' }}>
+        {currentIndexItem + 1}
+      </div>
     </main>
   );
 }
