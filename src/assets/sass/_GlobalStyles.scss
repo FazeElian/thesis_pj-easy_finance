@@ -23,6 +23,7 @@ $orange: #F28D35;
 $orange-low-opacity: #FBDFC6;
 $blue-low-opacity: #84BFB9;
 $red-low-opacity: #F299A9;
+$yellow-low-opacity: #FAE4A2;
 
 // Fonts
 $fredoka-font: "Fredoka", sans-serif;
@@ -34,6 +35,10 @@ $fraunces-font: "Fraunces", serif;
 
 .bg-blue {
     background-color: $blue;
+}
+
+.bg-blue-low-opacity {
+    background-color: $blue-low-opacity;
 }
 
 .bg-green {
@@ -71,6 +76,11 @@ $fraunces-font: "Fraunces", serif;
     );
 }
 
+.content-cards {
+    padding: 9.9rem 9rem 0;
+    padding-right: 8.5rem;
+}
+
 .py-content {
     padding: 9.9rem 8rem 0;
     padding-left: 9rem;
@@ -80,8 +90,117 @@ $fraunces-font: "Fraunces", serif;
     padding-top: 9.9rem;
 }
 
+.rainbow-text {
+    display: inline-block;
+    animation: rainbow 3s linear infinite;
+    text-shadow:
+        -1px -1px 0 gray,
+        1px -1px 0 gray,
+        -1px 1px 0 gray,
+        1px 1px 0 gray
+    ;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+    display: none;
+    animation: fadeOut 0.5s forwards;
+}
+
+// Rainbow text animation
+@keyframes rainbow {
+    0% {
+        color: #FF0000;
+    }
+    16% {
+        color: #FF7F00;
+    }
+    33% {
+        color: #FFFF00;
+    }
+    50% {
+        color: #00FF00;
+    }
+    66% {
+        color: #0000FF;
+    }
+    83% {
+        color: #4B0082;
+    }
+    100% {
+        color: #9400D3;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-1000px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+    80% {
+        transform: translateY(-40px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-20px);
+    }
+    40% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+    60% {
+        transform: translateY(-30px);
+    }
+    80% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(-1000px);
+    }
+}
+
 // Responsive 1440px
 @media (max-width: 1440px) {
+    .content-cards {
+        padding: 7.8rem 7rem 0;
+        padding-right: 6.5rem;
+    }
+
     .py-content {
         padding: 7.8rem 8rem 0;
     }
@@ -93,6 +212,11 @@ $fraunces-font: "Fraunces", serif;
 
 // Responsive 1024px
 @media (max-width: 1024px) {
+    .content-cards {
+        padding: 7.4rem 5.5rem 0;
+        padding-right: 5rem;
+    }
+        
     .py-content {
         padding: 7.4rem 8rem 0;
     }
@@ -127,6 +251,11 @@ $fraunces-font: "Fraunces", serif;
 
 // Responsive 768px
 @media (max-width: 768px) {
+    .content-cards {
+        padding: 7rem 3rem 0;
+        padding-right: 2.5rem;
+    }
+
     .py-content {
         padding: 7rem 8rem 0;
     }

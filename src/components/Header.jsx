@@ -15,16 +15,16 @@ import { Link } from 'react-router-dom';
   import MenuIcon from "../assets/img/icons/menu.webp";
 
   // Home Icon
-  import HomeIcon from "../assets/img/icons/home.png";
+  import HomeIcon from "../assets/img/icons/home.webp";
 
   // Games Icon
-  import GamesIcon from "../assets/img/icons/games.png";
+  import GamesIcon from "../assets/img/icons/games.webp";
 
   // About Icon
-  import AboutIcon from "../assets/img/icons/about.png";
+  import AboutIcon from "../assets/img/icons/about.webp";
 
   // Research Project Icon
-  import ResearchProjectIcon from "../assets/img/icons/research-project.png";
+  import ResearchProjectIcon from "../assets/img/icons/research-project.webp";
 
 const Header = () => {
   // Side bar Menu states
