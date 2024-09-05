@@ -108,7 +108,6 @@
 }
 
 .popup-cards-matched--connect-and-learn {
-    display: flex;
     position: absolute;
     top: 0;
     left: 0;
@@ -124,6 +123,15 @@
     font-family: $fraunces-font;
     flex-direction: column;
     padding: 2.5rem 3rem 1rem;
+
+    &.fade-in {
+        display: flex;
+        opacity: 1;
+    }
+
+    &.fade-out {
+        display: none;
+    }
 
     .close-popup-cards-matched--connect-and-learn {
         display: flex;
@@ -313,8 +321,7 @@
 }
 
 .popup-results--connect-and-learn {
-    opacity: 0;
-    display: none;
+    display: flex;
     position: absolute;
     top: 3.9rem;
     left: 0;

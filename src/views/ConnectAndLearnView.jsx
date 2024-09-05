@@ -284,7 +284,7 @@ const ConnectAndLearnView = () => {
                 <div className="top-popup-results--connect-and-learn">
                   <h1 className="rainbow-text">Felicitaciones !</h1>
                   <h2>Has emparejado correctamente todas las cartas!</h2>
-                  <Link href="https://forms.gle/kx1tbuTDoHhYeBPz8" className="btn-continue--connect-and-learn" target='_blank'>
+                  <Link to="https://forms.gle/kx1tbuTDoHhYeBPz8" className="btn-continue--connect-and-learn" target="_blank" rel="noopener noreferrer">
                     Continuar
                   </Link>
                 </div>
