@@ -6,10 +6,10 @@ import "../assets/sass/views/IndexView.scss";
 
 // Images - Icons
   // Games
-  import Glosary from "../assets/img/Glosary.jpg";
-  import Game1 from "../assets/img/Game1.jpg";
-  import Game2 from "../assets/img/Game2.jpg";
-  import Game3 from "../assets/img/Game3.jpg";
+  import Glosary from "../assets/img/Glosary.webp";
+  import Game1 from "../assets/img/Game1.webp";
+  import Game2 from "../assets/img/Game2.webp";
+  import Game3 from "../assets/img/Game3.webp";
 
 export default function IndexView() {
   return (
