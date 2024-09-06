@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 // Styles for this component
 import "../../assets/sass/views/GlosaryView.scss";
@@ -13,6 +14,9 @@ import "../../assets/sass/views/ItemGlosaryView.scss";
 
   // Right Arrow icon
   import RightArrowNextIcon from "../../assets/img/icons/arrow-right-next.png";
+
+  // Left Arrow Icon
+  import LeftArrowComeBackIcon from "../../assets/img/icons/left-arrow-come-back.png";
   
 const BasicConceptsView = () => {
   return (
@@ -41,6 +45,9 @@ const BasicConceptsView = () => {
         <button className="btn-next--glosary bg-yellow">
           <img src={RightArrowNextIcon} alt="" />
         </button>
+        <Link to="/glosario" className="btn-come-back--glosary">
+          <img src={LeftArrowComeBackIcon} alt="" />
+        </Link>
       </main>
     </>
   )
