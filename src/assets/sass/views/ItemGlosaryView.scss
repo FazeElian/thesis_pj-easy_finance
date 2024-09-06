@@ -1,0 +1,153 @@
+// Global styles
+@import "../_GlobalStyles";
+
+.body--glosary {
+    display: flex;
+    width: auto;
+    height: auto;
+    margin-top: 3rem;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 300px;
+        height: 305px;
+    }
+
+    .body-group--glosary {
+        display: flex;
+        width: 37.5%;
+        height: auto;
+        align-items: flex-start;
+
+        .btn-audio--glosary {
+            display: flex;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            border: none;
+        }
+
+        h2 {
+            font-family: $fraunces-font;
+            margin-left: 1rem;
+        }
+    }
+
+    .body-group-big--glosary {
+        margin-top: 2rem;
+        align-items: center;
+
+        button {
+            width: auto;
+            height: auto;
+            padding: 15px;
+            cursor: pointer;
+
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 550;
+        }
+    }
+
+    .body-group-small--glosary {
+        margin-top: 1rem;
+
+        button {
+            width: 45px;
+            height: 45px;
+            padding: 15px;
+            cursor: pointer;
+
+            img {
+                width: 21px;
+                height: 21px;
+            }
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+}
+
+// Responsive 1440px
+@media (max-width: 1440px) {
+    .body--glosary {
+        img {
+            width: 275px;
+            height: 280px;
+        }
+
+        .body-group--glosary {
+            width: 360px;
+        }
+
+        .body-group-big--glosary {
+            margin-top: 1rem;
+            
+            button {
+                img {
+                    width: 26px;
+                    height: 26px;
+                }
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+
+        .body-group-small--glosary {            
+            button {
+                width: auto;
+                height: auto;
+                img {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+
+            h2 {
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+// Responsive 425px
+@media (max-width: 425px) {
+    .body--glosary {
+        margin-top: 2rem;
+        img {
+            width: 240px;
+            height: 240px;
+        }
+
+        .body-group--glosary {
+            width: 265px;
+        }
+
+        .body-group-big--glosary {
+            margin-top: 1rem;
+
+            h2 {
+                font-size: 26px;
+            }
+        }
+
+        .body-group-small--glosary {            
+            h2 {
+                width: 90%;
+                font-size: 16px;
+            }
+        }
+    }
+}
