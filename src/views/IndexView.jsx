@@ -15,7 +15,6 @@ export default function IndexView() {
   return (
     <>
       <main className="py-top">
-        <div className="bg-red block-small"></div>
         <section className="banner">
           <div className="banner-content">
             <h1>Jugando aprendes, ahorrando creces: </h1>
