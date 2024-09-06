@@ -10,6 +10,9 @@ import "../../assets/sass/views/ItemGlosaryView.scss";
   
   // Listen Audio icon
   import ListenAudioIcon from "../../assets/img/icons/listen-audio.png";
+
+  // Right Arrow icon
+  import RightArrowNextIcon from "../../assets/img/icons/arrow-right-next.png";
   
 const BasicConceptsView = () => {
   return (
@@ -35,6 +38,9 @@ const BasicConceptsView = () => {
             </div>
           </div>
         </main>
+        <button className="btn-next--glosary bg-yellow">
+          <img src={RightArrowNextIcon} alt="" />
+        </button>
       </main>
     </>
   )
