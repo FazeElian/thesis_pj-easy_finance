@@ -19,6 +19,12 @@ $green: #8BBF73;
 $yellow: #F2BB16;
 $orange: #F28D35;
 
+// Medium opacity of base colors
+$orange-medium-opacity: #F2B885;
+$blue-medium-opacity: #A9D9D4;
+$red-medium-opacity: #F299A9;
+$yellow-medium-opacity: #F7D673;
+
 // Low opacity of base colors
 $orange-low-opacity: #FBDFC6;
 $blue-low-opacity: #84BFB9;
@@ -31,6 +37,10 @@ $fraunces-font: "Fraunces", serif;
 
 .bg-red {
     background-color: $red;
+}
+
+.bg-red-medium-opacity {
+    background-color: $red-medium-opacity;
 }
 
 .bg-blue {
@@ -49,8 +59,16 @@ $fraunces-font: "Fraunces", serif;
     background-color: $yellow;
 }
 
+.bg-yellow-medium-opacity {
+    background-color: $yellow-medium-opacity;
+}
+
 .bg-orange {
     background-color: $orange;
+}
+
+.bg-orange-medium-opacity {
+    background-color: $orange-medium-opacity;
 }
 
 .bg-blue-red {
@@ -88,6 +106,16 @@ $fraunces-font: "Fraunces", serif;
 
 .py-top {
     padding-top: 9.9rem;
+}
+
+.content-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-column {
+    flex-direction: column;
 }
 
 .rainbow-text {

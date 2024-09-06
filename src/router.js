@@ -16,6 +16,15 @@ import { lazy, Suspense } from "react";
     // Glosary
     const GlosaryView = lazy(() => import("./views/GlosaryView"));
 
+        // Basic Concepts
+        const BasicConceptsView = lazy(() => import("./views/Glosary/BasicConceptsView.jsx"));
+
+        // Financial Entities
+        const FinancialEntitiesView = lazy(() => import("./views/Glosary/FinancialEntitiesView.jsx"));
+
+        // Financial Attitudes
+        const FinancialAttitudesView = lazy(() => import("./views/Glosary/FinancialAttitudesView.jsx"));
+
     // // Connect And Learn
     const ConnectAndLearnView = lazy(() => import("./views/ConnectAndLearnView.jsx"));
 
@@ -43,6 +52,42 @@ function Router () {
                 />
             </Route>
 
+            {/* Glosary Views */}
+            <Route path="glosario/*" element={<Header />}>
+                <Route 
+                    index
+                    element={
+                        <Suspense fallback={<LoadingView />}>
+                            <GlosaryView />
+                        </Suspense>   
+                    }
+                />
+                <Route 
+                    path="conceptos-basicos"
+                    element={
+                        <Suspense fallback={<LoadingView />}>
+                            <BasicConceptsView />
+                        </Suspense>   
+                    }
+                />
+                <Route 
+                    path="entidades-financieras"
+                    element={
+                        <Suspense fallback={<LoadingView />}>
+                            <FinancialEntitiesView />
+                        </Suspense>   
+                    }
+                />
+                <Route 
+                    path="actitudes-financieras"
+                    element={
+                        <Suspense fallback={<LoadingView />}>
+                            <FinancialAttitudesView />
+                        </Suspense>   
+                    }
+                />
+            </Route>
+        
             {/* Games Views */}
             <Route path="juegos/*" element={<Header />}>
                 <Route 
@@ -50,14 +95,6 @@ function Router () {
                     element={
                         <Suspense fallback={<LoadingView />}>
                             <GamesView />
-                        </Suspense>   
-                    }
-                />
-                <Route 
-                    path="glosario"
-                    element={
-                        <Suspense fallback={<LoadingView />}>
-                            <GlosaryView />
                         </Suspense>   
                     }
                 />

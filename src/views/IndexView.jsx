@@ -29,7 +29,7 @@ export default function IndexView() {
           </div>
           <div className="games-gallery-items">
             <div className="item-games-gallery">
-              <Link to="/juegos/glosario">
+              <Link to="/glosario">
                 <img src={Glosary} alt="Juego 1" />
               </Link>
             </div>
