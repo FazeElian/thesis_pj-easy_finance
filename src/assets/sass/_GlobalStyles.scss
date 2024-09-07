@@ -19,6 +19,9 @@ $green: #8BBF73;
 $yellow: #F2BB16;
 $orange: #F28D35;
 
+// Other colors
+$gray: #EFF0F2;
+
 // Medium opacity of base colors
 $orange-medium-opacity: #F2B885;
 $blue-medium-opacity: #A9D9D4;
@@ -193,6 +196,26 @@ $fraunces-font: "Fraunces", serif;
     animation: rightBounce 0.5s forwards;
 }
 
+.table-prods-w-75 {
+    display: flex;
+    width: 75%;
+    align-items: flex-start;
+
+    #slct-prod {
+        display: flex;
+        min-width: 27px;
+        min-height: 27px;
+        margin-right: 10px;
+        accent-color: $yellow;
+    }
+}
+
+.table-prods-w-25 {
+    display: flex;
+    width: 25%;
+    align-items: center;
+}
+
 // Rainbow text animation
 @keyframes rainbow {
     0% {
@@ -307,6 +330,14 @@ $fraunces-font: "Fraunces", serif;
     
     .py-top {
         padding-top: 7.8rem;
+    }
+
+    .table-prods-w-75 {
+        #slct-prod {
+            display: flex;
+            min-width: 24px;
+            min-height: 24px;
+        }
     }
 }
 
