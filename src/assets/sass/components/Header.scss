@@ -58,7 +58,7 @@
     width: 27.5%;
     min-width: 450px;
     height: 100vh;
-    background-color: $orange-low-opacity;
+    background-color: $blue-low-opacity;
     position: fixed;
     left: 0;
     top: 158px;
@@ -69,6 +69,7 @@
     padding: 4rem 3rem 4rem;
     text-align: center;
     align-items: center;
+    border: 3px solid $blue;
 
     h2 {
         width: 80%;
@@ -96,7 +97,7 @@
             height: auto;
             align-items: center;
             padding: 1rem;
-            border: 3px solid $orange-low-opacity;
+            border: 3px solid $blue-low-opacity;
 
             img {
                 display: flex;
@@ -114,7 +115,7 @@
         }
 
             .side-bar-item:hover {
-                border-bottom: 3px solid $orange;
+                border-bottom: 3px solid $blue;
                 transition: .2s;
             }
     }
@@ -212,7 +213,7 @@
             margin-top: 2rem;
 
             .side-bar-item {
-                border: 2px solid $orange-low-opacity;
+                border: 2px solid $blue-low-opacity;
                 
                 h2 {
                     font-size: 20px;
@@ -225,7 +226,7 @@
             }
 
                 .side-bar-item:hover {
-                    border-bottom: 2px solid $orange;
+                    border-bottom: 2px solid $blue;
                 }
         }
     }

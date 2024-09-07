@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom';
 
+// Header component
+import Header from '../components/Header';
+
 import ReactCardFlip from 'react-card-flip';
 
 // Styles for this component
@@ -24,6 +27,7 @@ import Items from "../assets/js/ConnectAndLearnItems";
 
   // Medal Icon
   import MedalIcon from "../assets/img/icons/medal.webp";
+
 
 const ConnectAndLearnView = () => {
   const [shuffledCards, setShuffledCards] = useState([]);
@@ -196,6 +200,12 @@ const ConnectAndLearnView = () => {
 
   return (
     <>
+      {/* Header */}
+      <Header 
+        bgColor="bg-yellow-low-opacity" 
+        btnColor="bg-yellow"
+      />
+
       <main className="content-cards bg-blue-low-opacity">
         <div className="score-time--connect-and-learn">
           <div className="item-score-time--connect-and-learn time--connect-and-learn"><b>Tiempo:</b>{formatTime(time)}</div>

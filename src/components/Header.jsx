@@ -26,7 +26,7 @@ import { Link } from 'react-router-dom';
   // Research Project Icon
   import ResearchProjectIcon from "../assets/img/icons/research-project.webp";
 
-const Header = () => {
+const Header = (props) => {
   // Side bar Menu states
   const [ sideBar, setSideBar ] = useState(false);
 
@@ -37,14 +37,14 @@ const Header = () => {
 
   return (
     <>
-      <header className="header bg-yellow">
+      <header className={`header ${props.bgColor}`}>
         <nav className="nav-logo">
           <Link to="/">
             <img src={Logo} alt="Logo" />
             <h1>Easy <br />Finance</h1>
           </Link>
         </nav>
-        <button className="btn-nav-menu bg-blue" onClick={handleSideBar}>
+        <button className={`btn-nav-menu ${props.btnColor}`} onClick={handleSideBar}>
           <img src={MenuIcon} alt="Menu" />
         </button>
         <nav className={ `nav-side-bar ${sideBar ? "active" : ""}` }>

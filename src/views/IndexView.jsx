@@ -1,6 +1,9 @@
 // Navigation between routes
 import { Link } from "react-router-dom";
 
+// Header component
+import Header from "../components/Header";
+
 // Styles for this view
 import "../assets/sass/views/IndexView.scss";
 
@@ -14,6 +17,12 @@ import "../assets/sass/views/IndexView.scss";
 export default function IndexView() {
   return (
     <>
+      {/* Header */}
+      <Header 
+        bgColor="bg-blue-low-opacity" 
+        btnColor="bg-blue"
+      />
+
       <main className="py-top">
         <section className="banner">
           <div className="banner-content">

@@ -1,8 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 
-// Base Components
-import Header from "./components/Header";
-
 // Lazy loading optimization
 import { lazy, Suspense } from "react";
 
@@ -30,6 +27,9 @@ import { lazy, Suspense } from "react";
 
     // Financial Supervivence
     const FinancialSupervivenceView = lazy(() => import("./views/FinancialSupervivenceView"));
+
+    // Buy and Save
+    const BuyAndSaveView = lazy(() => import("./views/BuyAndSaveView.jsx"));
         
 // Not Found
 const NotFoundView = lazy(() => import("./views/other/NotFoundView"));
@@ -40,7 +40,7 @@ const LoadingView = lazy(() => import("./views/other/LoadingView"));
 function Router () {
     return (
         <Routes>
-            <Route path="/" element={<Header />}>
+            <Route path="/">
                 {/* Index View */}
                 <Route 
                     index 
@@ -53,7 +53,7 @@ function Router () {
             </Route>
 
             {/* Glosary Views */}
-            <Route path="glosario/*" element={<Header />}>
+            <Route path="glosario/*">
                 <Route 
                     index
                     element={
@@ -89,7 +89,7 @@ function Router () {
             </Route>
         
             {/* Games Views */}
-            <Route path="juegos/*" element={<Header />}>
+            <Route path="juegos/*">
                 <Route 
                     index
                     element={
@@ -111,6 +111,14 @@ function Router () {
                     element={
                         <Suspense fallback={<LoadingView />}>
                             <FinancialSupervivenceView />
+                        </Suspense>   
+                    }
+                />
+                <Route 
+                    path="compra-y-ahorra"
+                    element={
+                        <Suspense fallback={<LoadingView />}>
+                            <BuyAndSaveView />
                         </Suspense>   
                     }
                 />

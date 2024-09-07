@@ -27,9 +27,9 @@ $yellow-medium-opacity: #F7D673;
 
 // Low opacity of base colors
 $orange-low-opacity: #FBDFC6;
-$blue-low-opacity: #84BFB9;
+$blue-low-opacity: #AFDBDB;
 $red-low-opacity: #F299A9;
-$yellow-low-opacity: #FAE4A2;
+$yellow-low-opacity: #FBEBB9;
 
 // Fonts
 $fredoka-font: "Fredoka", sans-serif;
@@ -61,6 +61,10 @@ $fraunces-font: "Fraunces", serif;
 
 .bg-yellow-medium-opacity {
     background-color: $yellow-medium-opacity;
+}
+
+.bg-yellow-low-opacity {
+    background-color: $yellow-low-opacity;
 }
 
 .bg-orange {
