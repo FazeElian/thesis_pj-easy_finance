@@ -3,11 +3,11 @@
 
 .body--glosary {
     display: flex;
-    width: auto;
+    width: 440px;
     height: auto;
-    margin-top: 3rem;
     align-items: center;
     justify-content: center;
+    margin-top: 2rem;
 
     img {
         width: 300px;
@@ -15,65 +15,48 @@
     }
 
     .body-group--glosary {
-        display: flex;
-        width: 37.5%;
-        height: auto;
-        align-items: flex-start;
-
-        .btn-audio--glosary {
+        .content-body-group--glosary {
             display: flex;
-            border-radius: 50%;
-            align-items: center;
-            justify-content: center;
-            border: none;
-        }
-
-        h2 {
-            font-family: $fraunces-font;
-            margin-left: 1rem;
-        }
-    }
-
-    .body-group-big--glosary {
-        margin-top: 2rem;
-        align-items: center;
-
-        button {
             width: auto;
             height: auto;
-            padding: 15px;
-            cursor: pointer;
+            align-items: flex-start;
+            justify-content: center;
 
-            img {
-                width: 30px;
-                height: 30px;
+            .btn-audio--glosary {
+                display: flex;
+                border-radius: 50%;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                padding: 1rem;
+                cursor: pointer;
+                margin-top: 1rem;
+        
+                img {
+                    width: 28px;
+                    height: 28px;
+                }
             }
-        }
 
-        h2 {
-            font-size: 28px;
-            font-weight: 550;
-        }
-    }
+            .text-body--glosary {
+                display: flex;
+                width: auto;
+                flex-direction: column;
+                padding-left: 1rem;
+                padding-top: 1rem;
+                font-family: $fraunces-font;
 
-    .body-group-small--glosary {
-        margin-top: 1rem;
+                h2 {
+                    font-size: 32px;
+                    font-weight: 550;
+                }
 
-        button {
-            width: 45px;
-            height: 45px;
-            padding: 15px;
-            cursor: pointer;
-
-            img {
-                width: 21px;
-                height: 21px;
+                p {
+                    font-size: 18px;
+                    margin-top: 10px;
+                }
             }
-        }
-
-        h2 {
-            font-size: 18px;
-            font-weight: 500;
+        
         }
     }
 }
@@ -132,35 +115,25 @@
 
         .body-group--glosary {
             width: 360px;
-        }
-
-        .body-group-big--glosary {
             margin-top: 1rem;
-            
-            button {
-                img {
-                    width: 26px;
-                    height: 26px;
+
+            .content-body-group--glosary {
+                .btn-audio--glosary {
+                    img {
+                        width: 22px;
+                        height: 22px;
+                    }
                 }
-            }
 
-            h2 {
-                font-size: 24px;
-            }
-        }
+                .text-body--glosary {
+                    h2 {
+                        font-size: 28px;
+                    }
 
-        .body-group-small--glosary {            
-            button {
-                width: auto;
-                height: auto;
-                img {
-                    width: 18px;
-                    height: 18px;
+                    p {
+                        font-size: 17px;
+                    }
                 }
-            }
-
-            h2 {
-                font-size: 17px;
             }
         }
     }
@@ -180,6 +153,7 @@
         height: 45px;
         right: 82%;
         bottom: 50%;
+        
         img {
             width: 45px;
             height: 45px;
@@ -201,6 +175,36 @@
 
 // Responsive 1024px
 @media(max-width: 1024px) {
+    .body--glosary {
+        img {
+            width: 260px;
+            height: 260px;
+        }
+
+        .body-group--glosary {
+            margin-top: 0;
+
+            .content-body-group--glosary {
+                .btn-audio--glosary {
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                .text-body--glosary {
+                    h2 {
+                        font-size: 25px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
     .btn-next--glosary {
         width: 55px;
         height: 55px;
@@ -224,6 +228,33 @@
 
 // Responsive 768px
 @media (max-width: 768px){
+    .body--glosary {
+        img {
+            width: 265px;
+            height: 265px;
+        }
+
+        .body-group--glosary {
+            max-width: 340px;
+
+            .content-body-group--glosary {
+                .btn-audio--glosary {
+                    padding: 14px;
+                    img {
+                        width: 19px;
+                        height: 19px;
+                    }
+                }
+
+                .text-body--glosary {
+                    h2 {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
     .btn-come-back--glosary {
         height: 42.5px;
         right: 82%;
@@ -245,21 +276,6 @@
 
         .body-group--glosary {
             width: 265px;
-        }
-
-        .body-group-big--glosary {
-            margin-top: 1rem;
-
-            h2 {
-                font-size: 26px;
-            }
-        }
-
-        .body-group-small--glosary {            
-            h2 {
-                width: 90%;
-                font-size: 16px;
-            }
         }
     }
 
