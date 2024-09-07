@@ -28,6 +28,7 @@ const FinancialEntitiesView = () => {
             <Header 
                 bgColor="bg-blue-low-opacity" 
                 btnColor="bg-blue"
+                bderColor="bder-blue-3"
             />
 
             <main className="py-top">

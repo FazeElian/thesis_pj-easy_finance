@@ -23,9 +23,6 @@ import { Link } from 'react-router-dom';
   // About Icon
   import AboutIcon from "../assets/img/icons/about.webp";
 
-  // Research Project Icon
-  import ResearchProjectIcon from "../assets/img/icons/research-project.webp";
-
 const Header = (props) => {
   // Side bar Menu states
   const [ sideBar, setSideBar ] = useState(false);
@@ -47,24 +44,20 @@ const Header = (props) => {
         <button className={`btn-nav-menu ${props.btnColor}`} onClick={handleSideBar}>
           <img src={MenuIcon} alt="Menu" />
         </button>
-        <nav className={ `nav-side-bar ${sideBar ? "active" : ""}` }>
+        <nav className={ `nav-side-bar ${props.bgColor} ${props.bderColor} ${sideBar ? "active" : ""}` }>
           <h2>Menú de Navegación</h2>
           <ul className="side-bar-items">
-            <Link to="/" className="side-bar-item" onClick={() => setSideBar(false)}>
+            <Link to="/" className="side-bar-item bder-yellow-3--hover" onClick={() => setSideBar(false)}>
               <img src={HomeIcon} alt="Inicio" />
               <h2>Inicio</h2>
             </Link>
-            <Link to="/juegos/" className="side-bar-item" onClick={() => setSideBar(false)}>
+            <Link to="/juegos/" className="side-bar-item bder-yellow-3--hover" onClick={() => setSideBar(false)}>
               <img src={GamesIcon} alt="Juegos" />
               <h2>Juegos</h2>
             </Link>
-            <Link to="/" className="side-bar-item" onClick={() => setSideBar(false)}>
+            <Link to="/" className="side-bar-item bder-yellow-3--hover" onClick={() => setSideBar(false)}>
               <img src={AboutIcon} alt="Acerca de" />
               <h2>Acerca de</h2>
-            </Link>
-            <Link to="/" className="side-bar-item" onClick={() => setSideBar(false)}>
-              <img src={ResearchProjectIcon} alt="Proyecto de Investigación" />
-              <h2>Proyecto de Investigación</h2>
             </Link>
           </ul>
         </nav>

@@ -58,7 +58,6 @@
     width: 27.5%;
     min-width: 450px;
     height: 100vh;
-    background-color: $blue-low-opacity;
     position: fixed;
     left: 0;
     top: 158px;
@@ -69,7 +68,6 @@
     padding: 4rem 3rem 4rem;
     text-align: center;
     align-items: center;
-    border: 3px solid $blue;
 
     h2 {
         width: 80%;
@@ -97,7 +95,7 @@
             height: auto;
             align-items: center;
             padding: 1rem;
-            border: 3px solid $blue-low-opacity;
+            border: 3px solid transparent;
 
             img {
                 display: flex;
@@ -111,13 +109,7 @@
                 font-size: 25px;
                 font-weight: 450;
             }
-
         }
-
-            .side-bar-item:hover {
-                border-bottom: 3px solid $blue;
-                transition: .2s;
-            }
     }
 }
 
