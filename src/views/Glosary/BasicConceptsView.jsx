@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // Styles for this component
@@ -19,12 +19,18 @@ import "../../assets/sass/views/ItemGlosaryView.scss";
   import LeftArrowComeBackIcon from "../../assets/img/icons/left-arrow-come-back.png";
   
 const BasicConceptsView = () => {
-  // Next button states
-  const [ nextBtn, setNextBtn ] = useState(false);
+  // States for handling items and the current item index
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [nextBtn, setNextBtn] = useState(false);
+  const [animationClass, setAnimationClass] = useState(false);
 
-  // Animation
-  const [ animationClass, setAnimationClass ] = useState(false);
-    
+  // Array of items with paragraphs and names
+  const items = [
+    { title: 'Ahorrar', text: 'Es guardar parte del dinero para usarlo en el futuro. Ayuda a alcanzar metas importantes en lugar de gastarlo todo de inmediato.', img: Saving },
+    { title: 'Invertir', text: 'Es utilizar tu dinero para comprar algo que puede aumentar su valor con el tiempo. Ayuda a generar ingresos adicionales.', img: LeftArrowComeBackIcon },
+    { title: 'Presupuesto', text: 'Es un plan que te ayuda a gestionar tus ingresos y gastos. Permite controlar y planificar el uso del dinero.', img: Saving },
+  ];
+
   // Voice Audio
   const exampleSound = useRef(null);
 
@@ -42,6 +48,19 @@ const BasicConceptsView = () => {
     }, 2000);
   }
 
+  // Function to show the next item
+  const handleNextItem = () => {
+    if (currentIndex === items.length - 1) {
+      // Show alert when reaching the last item
+      alert("Has llegado al final de los conceptos.");
+    } else {
+      // Move to the next item
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    }
+    setNextBtn(false); // Hide the button until next sound is played
+    setAnimationClass(""); // Remove the bounce animation
+  }
+
   return (
     <>
       <main className="py-top">
@@ -50,15 +69,15 @@ const BasicConceptsView = () => {
             <div className="title-section--glosary bg-yellow">Conceptos Básicos</div>
           </div>
           <div className="body--glosary flex-column">
-            <img src={Saving} alt="" />
+            <img src={items[currentIndex].img} alt="" />
             <div className="body-group--glosary">
               <div className="content-body-group--glosary">
                 <button className="btn-audio--glosary bg-yellow" onClick={handleSound}>
                   <img src={ListenAudioIcon} alt="" />
                 </button>
                 <div className="text-body--glosary">
-                  <h2>Ahorrar</h2>
-                  <p>Es guardar parte del dinero para usarlo en el futuro. Ayuda a alcanzar metas importantes en lugar de gastarlo todo de inmediato.</p>
+                  <h2>{items[currentIndex].title}</h2>
+                  <p>{items[currentIndex].text}</p>
                 </div>
               </div>
             </div>
@@ -66,11 +85,11 @@ const BasicConceptsView = () => {
         </main>
 
         {nextBtn && (
-          <button className={`btn-next--glosary bg-yellow ${animationClass}`}>
+          <button className={`btn-next--glosary bg-yellow ${animationClass}`} onClick={handleNextItem}>
             <img src={RightArrowNextIcon} alt="" />
           </button>
         )}
-        
+
         <Link to="/glosario" className="btn-come-back--glosary">
           <img src={LeftArrowComeBackIcon} alt="" />
         </Link>
@@ -79,4 +98,4 @@ const BasicConceptsView = () => {
   )
 }
 
-export default BasicConceptsView
+export default BasicConceptsView;
