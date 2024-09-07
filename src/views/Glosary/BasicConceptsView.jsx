@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 // Styles for this component
@@ -19,6 +19,29 @@ import "../../assets/sass/views/ItemGlosaryView.scss";
   import LeftArrowComeBackIcon from "../../assets/img/icons/left-arrow-come-back.png";
   
 const BasicConceptsView = () => {
+  // Next button states
+  const [ nextBtn, setNextBtn ] = useState(false);
+
+  // Animation
+  const [ animationClass, setAnimationClass ] = useState(false);
+    
+  // Voice Audio
+  const exampleSound = useRef(null);
+
+  useEffect(() => {
+    exampleSound.current = new Audio("/sounds/MatchSound.mp3");
+  }, []);
+
+  const handleSound = () => {
+    exampleSound.current.play();
+
+    // Time to set next button after audio
+    setTimeout(() => {
+      setNextBtn(true);
+      setAnimationClass("right-bounce");
+    }, 2000);
+  }
+
   return (
     <>
       <main className="py-top">
@@ -29,7 +52,7 @@ const BasicConceptsView = () => {
           <div className="body--glosary flex-column">
             <img src={Saving} alt="" />
             <div className="body-group--glosary body-group-big--glosary">
-              <button className="btn-audio--glosary bg-yellow">
+              <button className="btn-audio--glosary bg-yellow" onClick={handleSound}>
                 <img src={ListenAudioIcon} alt="" />
               </button>
               <h2>Ahorrar</h2>
@@ -42,9 +65,13 @@ const BasicConceptsView = () => {
             </div>
           </div>
         </main>
-        <button className="btn-next--glosary bg-yellow">
-          <img src={RightArrowNextIcon} alt="" />
-        </button>
+
+        {nextBtn && (
+          <button className={`btn-next--glosary bg-yellow ${animationClass}`}>
+            <img src={RightArrowNextIcon} alt="" />
+          </button>
+        )}
+        
         <Link to="/glosario" className="btn-come-back--glosary">
           <img src={LeftArrowComeBackIcon} alt="" />
         </Link>

@@ -138,6 +138,10 @@ $fraunces-font: "Fraunces", serif;
     animation: fadeOut 0.5s forwards;
 }
 
+.right-bounce {
+    animation: rightBounce 0.5s forwards;
+}
+
 // Rainbow text animation
 @keyframes rainbow {
     0% {
@@ -178,6 +182,23 @@ $fraunces-font: "Fraunces", serif;
     }
     to {
         opacity: 0;
+    }
+}
+
+@keyframes rightBounce {
+    0% {
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(-30px);
+    }
+    80% {
+        transform: translateX(40px);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 
