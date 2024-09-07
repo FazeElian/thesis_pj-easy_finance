@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+// Header component
+import Header from '../../components/Header';
+
 // Styles for this component
 import "../../assets/sass/views/GlosaryView.scss";
 import "../../assets/sass/views/ItemGlosaryView.scss";
@@ -21,6 +24,12 @@ import "../../assets/sass/views/ItemGlosaryView.scss";
 const FinancialEntitiesView = () => {
     return (
         <>
+            {/* Header */}
+            <Header 
+                bgColor="bg-blue-low-opacity" 
+                btnColor="bg-blue"
+            />
+
             <main className="py-top">
                 <main className="content-centered flex-column">
                     <div className="top--glosary">
