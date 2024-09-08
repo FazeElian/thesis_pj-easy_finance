@@ -14,12 +14,18 @@ import "../assets/sass/views/IndexView.scss";
   import Game2 from "../assets/img/Game2.webp";
   import Game3 from "../assets/img/Game3.webp";
 
+// Custom hook for document title
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
+
 export default function IndexView() {
+  // Custom title
+  useDocumentTitle("Inicio");
+
   return (
     <>
       {/* Header */}
-      <Header 
-        bgColor="bg-blue-low-opacity" 
+      <Header
+        bgColor="bg-blue-low-opacity"
         btnColor="bg-blue"
         bderColor="bder-blue-3"
       />
@@ -45,17 +51,17 @@ export default function IndexView() {
             <div className="item-games-gallery">
               <Link to="/juegos/conecta-y-aprende">
                 <img src={Game1} alt="Juego 1" />
-              </Link>            
+              </Link>
             </div>
             <div className="item-games-gallery">
               <Link to="/juegos/supervivencia-financiera">
                 <img src={Game2} alt="Juego 1" />
-              </Link>            
+              </Link>
             </div>
             <div className="item-games-gallery">
               <Link to="/juegos/compra-y-ahorra">
                 <img src={Game3} alt="Juego 1" />
-              </Link>            
+              </Link>
             </div>
           </div>
         </section>

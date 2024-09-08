@@ -17,8 +17,13 @@ import "../assets/sass/views/GlosaryView.scss";
   // Financial Attitudes
   import FinancialAttitudes from "../assets/img/GlosaryView/FinancialAttitudes.webp";
 
+// Custom hook for document title
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 const GlosaryView = () => {
+  // Custom title
+  useDocumentTitle("Glosario");
+
   return (
     <>
       {/* Header */}

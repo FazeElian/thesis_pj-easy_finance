@@ -21,7 +21,13 @@ import "../../assets/sass/views/ItemGlosaryView.scss";
 // Items 
 import Items from '../../assets/js/Glosary/FinancialAttitudes';
 
+// Custom hook for glosary document title
+import { useGlosaryDocumentTitle } from '../../hooks/useGlosaryDocumentTitle';
+
 const FinancialAttitudesView = () => {
+  // Custom title
+  useGlosaryDocumentTitle("Actitudes Financieras");
+
   // Routes redirection
   const navigate = useNavigate();
 

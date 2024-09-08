@@ -21,7 +21,13 @@ import "../../assets/sass/views/ItemGlosaryView.scss";
 // Items 
 import Items from '../../assets/js/Glosary/BasicConcepts';
 
+// Custom hook for glosary document title
+import { useGlosaryDocumentTitle } from '../../hooks/useGlosaryDocumentTitle';
+
 const BasicConceptsView = () => {
+  // Custom title
+  useGlosaryDocumentTitle("Conceptos Básicos");
+
   // Routes redirection
   const navigate = useNavigate();
 

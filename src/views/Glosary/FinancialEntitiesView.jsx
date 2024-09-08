@@ -21,7 +21,13 @@ import "../../assets/sass/views/ItemGlosaryView.scss";
 // Items 
 import Items from '../../assets/js/Glosary/FinancialEntities';
 
+// Custom hook for glosary document title
+import { useGlosaryDocumentTitle } from '../../hooks/useGlosaryDocumentTitle';
+
 const FinancialEntitiesView = () => {
+  // Custom title
+  useGlosaryDocumentTitle("Entidades Financieras");
+
   // Routes redirection
   const navigate = useNavigate();
 

@@ -30,8 +30,13 @@ import items from '../assets/js/FinancialSupervivenceItems';
   // Medal icon
   import MedalIcon from "../assets/img/icons/medal.webp";
 
+// Custom hook for game document title
+import { useGameDocumentTitle } from "../hooks/useGameDocumentTitle";
 
 const FinancialSupervivenceView = () => {
+  // Custom title
+  useGameDocumentTitle("Supervivencia Financiera");
+
   const [shuffledItems, setShuffledItems] = useState([]);
   const [currentIndexItem ,setCurrentItemIndex] = useState(0);
   const [columns, setColumns] = useState({

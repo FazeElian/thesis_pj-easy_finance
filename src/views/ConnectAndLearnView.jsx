@@ -28,8 +28,13 @@ import Items from "../assets/js/ConnectAndLearnItems";
   // Medal Icon
   import MedalIcon from "../assets/img/icons/medal.webp";
 
+// Custom hook for game document title
+import { useGameDocumentTitle } from "../hooks/useGameDocumentTitle";
 
 const ConnectAndLearnView = () => {
+  // Custom title
+  useGameDocumentTitle("Conecta y Aprende");
+
   const [shuffledCards, setShuffledCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);

@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const NotFoundView = () => {
+const NotFoundView = (title) => {
+  useEffect(() => {
+    document.title = `Error 404 | Página no encontrada`;
+  }, [title]);
+
   return (
-    <div>NotFoundView</div>
+    <div>Página no Encontrada</div>
   )
 }
 

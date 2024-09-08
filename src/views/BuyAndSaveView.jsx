@@ -32,7 +32,13 @@ import "../assets/sass/views/ConnectAndLearnView.scss";
 // Items
 import Items from '../assets/js/BuyAndSaveItems';
 
+// Custom hook for game document title
+import { useGameDocumentTitle } from "../hooks/useGameDocumentTitle";
+
 const BuyAndSaveView = () => {
+  // Custom title
+  useGameDocumentTitle("Compra y Ahorra");
+
   // Pop ups states
   const [ welcomePopUp, setWelcomePopUp ] = useState(false);
   const [ instructionsPopUp, setInstructionsPopUp ] = useState(false);
