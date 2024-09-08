@@ -130,6 +130,7 @@ const FinancialSupervivenceView = () => {
           } else {
             // Show results pop up
             setResultsPopUp(true);
+            setAnimationResultsClass("bounce-in");
             return prevIndex;
           }
         });
@@ -167,6 +168,7 @@ const FinancialSupervivenceView = () => {
   const [ resultsPopUp, setResultsPopUp ] = useState(false);
   const [ welcomePopUp, setWelcomePopUp ] = useState(false);
   const [animationClass, setAnimationClass] = useState("");
+  const [animationResultsClass, setAnimationResultsClass] = useState("");
 
   // Hook useEffect to close the popup auto after 1.5 sec
   useEffect(() => {
@@ -353,7 +355,7 @@ const FinancialSupervivenceView = () => {
           )}
 
           {resultsPopUp && (
-            <div className={`popup-results--connect-and-learn ${animationClass}`}>
+            <div className={`popup-results--connect-and-learn ${animationResultsClass}`}>
               <div className="content-popup-results--connect-and-learn">
                 <div className="top-popup-results--connect-and-learn">
                   <h1 className="rainbow-text">Felicitaciones !</h1>
