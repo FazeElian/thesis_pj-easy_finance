@@ -53,7 +53,7 @@ const BasicConceptsView = () => {
   const handleNextItem = () => {
     if (currentIndex === Items.length - 1) {
       // Show alert when reaching the last item
-      alert("Has llegado al final de los conceptos.");
+      alert("Has llegado al final de los Conceptos Básicos!");
       navigate("/glosario");
     } else {
       // Move to the next item

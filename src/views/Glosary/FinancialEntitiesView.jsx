@@ -53,7 +53,7 @@ const FinancialEntitiesView = () => {
   const handleNextItem = () => {
     if (currentIndex === Items.length - 1) {
       // Show alert when reaching the last item
-      alert("Has llegado al final de las entidades financieras.");
+      alert("Has llegado al final de las Entidades Financieras!");
       navigate("/glosario");
     } else {
       // Move to the next item
