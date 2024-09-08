@@ -48,6 +48,7 @@ const ConnectAndLearnView = () => {
   const [popUpVisible, setPopUpVisible] = useState(false);
   const [matchedConcept, setMatchedConcept] = useState("");
   const [animationClass, setAnimationClass] = useState("");
+  const [animationResultsClass, setAnimationResultsClass] = useState("");
 
   // Hook useEffect to close the popup auto after 1.5 sec
   useEffect(() => {
@@ -105,12 +106,10 @@ const ConnectAndLearnView = () => {
       
       // Check if the cards match
       const match = (
-        firstCard.content.type === 'text' && secondCard.content.type === 'image' && 
+        firstCard.content.concept === secondCard.content.concept && 
         secondCard.content.linkedTextId === firstCard.content.imageId
-      ) || (
-        firstCard.content.type === 'image' && secondCard.content.type === 'text' && 
-        firstCard.content.linkedTextId === secondCard.content.imageId
       );
+
       if (match) {
         setMatchedCards(prev => [...prev, firstIndex, secondIndex]);
         setPoints(prevPoints => prevPoints + 100);
@@ -172,7 +171,7 @@ const ConnectAndLearnView = () => {
 
       // Show alert
       setResultsPopUp(true);
-      setAnimationClass("bounce-in")
+      setAnimationResultsClass("bounce-in")
     }
   }, [matchedCards, shuffledCards.length]);
 
@@ -232,16 +231,11 @@ const ConnectAndLearnView = () => {
               </div>
               <div
                 className="cont-back-card--connect-and-learn"
-                style={{ backgroundColor: card.content.color }}
                 onClick={() => handleClick(index)}
               >
-                {card.content.type === 'text' ? (
-                  <h2 style={{ color: card.content.textColor, textShadow: card.content.borderTextColor }}>{card.content.value}</h2>
-                ) : (
-                  <div className="back-content-item-gallery--memory-concepts"> 
-                    <img src={card.content.src} alt="Back" loading="lazy" />
-                  </div>
-                )}
+                <div className="back-content-item-gallery--memory-concepts"> 
+                  <img src={card.content.src} alt="Back" loading="lazy" />
+                </div>
               </div>
             </ReactCardFlip>
           ))}
@@ -295,7 +289,7 @@ const ConnectAndLearnView = () => {
           )}
 
           {resultsPopUp && (
-            <div className={`popup-results--connect-and-learn ${animationClass}`}>
+            <div className={`popup-results--connect-and-learn ${animationResultsClass}`}>
               <div className="content-popup-results--connect-and-learn">
                 <div className="top-popup-results--connect-and-learn">
                   <h1 className="rainbow-text">Felicitaciones !</h1>
