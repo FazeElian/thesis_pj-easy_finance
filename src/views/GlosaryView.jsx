@@ -9,13 +9,13 @@ import "../assets/sass/views/GlosaryView.scss";
 
 // Images - Icons
   // Basic Concepts
-  import BasicConcepts from "../assets/img/GlosaryView/BasicConcepts.png";
+  import BasicConcepts from "../assets/img/GlosaryView/BasicConcepts.webp";
 
   // Financial Entities
-  import FinancialEntities from "../assets/img/GlosaryView/FinancialEntities.png";
+  import FinancialEntities from "../assets/img/GlosaryView/FinancialEntities.webp";
 
   // Financial Attitudes
-  import FinancialAttitudes from "../assets/img/GlosaryView/FinancialAttitudes.png";
+  import FinancialAttitudes from "../assets/img/GlosaryView/FinancialAttitudes.webp";
 
 
 const GlosaryView = () => {

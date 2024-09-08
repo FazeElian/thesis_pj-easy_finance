@@ -8,7 +8,7 @@ import "../assets/sass/views/BuyAndSaveView.scss";
 
 // Images - icons
   // People
-  import People from "../assets/img/BuyAndSaveView/people.png";
+  import People from "../assets/img/BuyAndSaveView/people.webp";
 
 // Items
 import Items from '../assets/js/BuyAndSaveItems';

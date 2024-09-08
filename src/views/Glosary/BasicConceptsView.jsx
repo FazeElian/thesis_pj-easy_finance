@@ -10,13 +10,13 @@ import "../../assets/sass/views/ItemGlosaryView.scss";
 
 // Images - Icons
   // Listen Audio icon
-  import ListenAudioIcon from "../../assets/img/icons/listen-audio.png";
+  import ListenAudioIcon from "../../assets/img/icons/listen-audio.webp";
 
   // Right Arrow icon
-  import RightArrowNextIcon from "../../assets/img/icons/arrow-right-next.png";
+  import RightArrowNextIcon from "../../assets/img/icons/arrow-right-next.webp";
 
   // Left Arrow Icon
-  import LeftArrowComeBackIcon from "../../assets/img/icons/left-arrow-come-back.png";
+  import LeftArrowComeBackIcon from "../../assets/img/icons/left-arrow-come-back.webp";
   
 // Items 
 import Items from '../../assets/js/Glosary/BasicConcepts';

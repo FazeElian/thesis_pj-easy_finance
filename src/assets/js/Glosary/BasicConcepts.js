@@ -1,26 +1,26 @@
 // Images and audio
     // Save
-    import SaveImg from "../../img/GlosaryView/BasicConcepts/Saving.png";
+    import SaveImg from "../../img/GlosaryView/BasicConcepts/Saving.webp";
     import SaveAudio from "../../audios/BasicConcepts/Save.mp3";
 
     // Personal Budget
-    import PersonalBudgetImg from "../../img/GlosaryView/BasicConcepts/PersonalBudget.png";
+    import PersonalBudgetImg from "../../img/GlosaryView/BasicConcepts/PersonalBudget.webp";
     import PersonalBudgetAudio from "../../audios/BasicConcepts/PersonalBudget.mp3";
 
     // Spend
-    import SpendImg from "../../img/GlosaryView/BasicConcepts/Spend.png";
+    import SpendImg from "../../img/GlosaryView/BasicConcepts/Spend.webp";
     import SpendAudio from "../../audios/BasicConcepts/Spend.mp3";
 
     // Need
-    import NeedImg from "../../img/GlosaryView/BasicConcepts/Need.png";
+    import NeedImg from "../../img/GlosaryView/BasicConcepts/Need.webp";
     import NeedAudio from "../../audios/BasicConcepts/Need.mp3";
 
     // Financial Objective
-    import FinancialObjectiveImg from "../../img/GlosaryView/BasicConcepts/FinancialObjective.png";
+    import FinancialObjectiveImg from "../../img/GlosaryView/BasicConcepts/FinancialObjective.webp";
     import FinancialObjectiveAudio from "../../audios/BasicConcepts/FinancialObjective.mp3";
 
     // Debt
-    import DebtImg from "../../img/GlosaryView/BasicConcepts/Debt.png";
+    import DebtImg from "../../img/GlosaryView/BasicConcepts/Debt.webp";
     import DebtAudio from "../../audios/BasicConcepts/Debt.mp3";
 
 const items = [
