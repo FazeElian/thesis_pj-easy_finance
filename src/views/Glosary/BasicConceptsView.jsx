@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // Header component
 import Header from '../../components/Header';
@@ -9,9 +9,6 @@ import "../../assets/sass/views/GlosaryView.scss";
 import "../../assets/sass/views/ItemGlosaryView.scss";
 
 // Images - Icons
-  // Saving item
-  import Saving from "../../assets/img/GlosaryView/BasicConcepts/Saving.png";
-  
   // Listen Audio icon
   import ListenAudioIcon from "../../assets/img/icons/listen-audio.png";
 
@@ -21,41 +18,43 @@ import "../../assets/sass/views/ItemGlosaryView.scss";
   // Left Arrow Icon
   import LeftArrowComeBackIcon from "../../assets/img/icons/left-arrow-come-back.png";
   
+// Items 
+import Items from '../../assets/js/Glosary/BasicConcepts';
+
 const BasicConceptsView = () => {
+  // Routes redirection
+  const navigate = useNavigate();
+
   // States for handling items and the current item index
   const [currentIndex, setCurrentIndex] = useState(0);
   const [nextBtn, setNextBtn] = useState(false);
   const [animationClass, setAnimationClass] = useState(false);
 
   // Array of items with paragraphs and names
-  const items = [
-    { title: 'Ahorrar', text: 'Es guardar parte del dinero para usarlo en el futuro. Ayuda a alcanzar metas importantes en lugar de gastarlo todo de inmediato.', img: Saving },
-    { title: 'Invertir', text: 'Es utilizar tu dinero para comprar algo que puede aumentar su valor con el tiempo. Ayuda a generar ingresos adicionales.', img: LeftArrowComeBackIcon },
-    { title: 'Presupuesto', text: 'Es un plan que te ayuda a gestionar tus ingresos y gastos. Permite controlar y planificar el uso del dinero.', img: Saving },
-  ];
 
   // Voice Audio
-  const exampleSound = useRef(null);
+  const AudioVoice = useRef(new Audio(Items[0].audio));
 
   useEffect(() => {
-    exampleSound.current = new Audio("/sounds/MatchSound.mp3");
-  }, []);
+    AudioVoice.current.src = Items[currentIndex].audio;
+  }, [currentIndex]);
 
   const handleSound = () => {
-    exampleSound.current.play();
+    AudioVoice.current.play();
 
     // Time to set next button after audio
     setTimeout(() => {
       setNextBtn(true);
       setAnimationClass("right-bounce");
-    }, 2000);
+    }, 5500);
   }
 
   // Function to show the next item
   const handleNextItem = () => {
-    if (currentIndex === items.length - 1) {
+    if (currentIndex === Items.length - 1) {
       // Show alert when reaching the last item
       alert("Has llegado al final de los conceptos.");
+      navigate("/glosario");
     } else {
       // Move to the next item
       setCurrentIndex((prevIndex) => prevIndex + 1);
@@ -79,15 +78,15 @@ const BasicConceptsView = () => {
             <div className="title-section--glosary bg-yellow">Conceptos Básicos</div>
           </div>
           <div className="body--glosary flex-column">
-            <img src={items[currentIndex].img} alt="" />
+            <img src={Items[currentIndex].img} alt="" />
             <div className="body-group--glosary">
               <div className="content-body-group--glosary">
                 <button className="btn-audio--glosary bg-yellow" onClick={handleSound}>
                   <img src={ListenAudioIcon} alt="" />
                 </button>
                 <div className="text-body--glosary">
-                  <h2>{items[currentIndex].title}</h2>
-                  <p>{items[currentIndex].text}</p>
+                  <h2>{Items[currentIndex].title}</h2>
+                  <p>{Items[currentIndex].description}</p>
                 </div>
               </div>
             </div>
