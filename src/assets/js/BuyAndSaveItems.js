@@ -1,43 +1,43 @@
 const Items = [
     {
         id: "1",
-        name: "Product 1",
-        price: "1.000 $"
+        name: "Pan Tajado",
+        price: "1.800 $"
     },
     {
         id: "2",
-        name: "Product 2",
-        price: "2.000 $"
+        name: "Mermelada",
+        price: "700 $"
     },
     {
         id: "3",
-        name: "Product 3",
-        price: "3.000 $"
+        name: "Salsa de Chocolate",
+        price: "1.000 $"
     },
     {
         id: "4",
-        name: "Product 4",
-        price: "4.000 $"
+        name: "Jamón",
+        price: "750 $"
     },
     {
         id: "5",
-        name: "Product 5",
-        price: "5.000 $"
+        name: "Gaseosa",
+        price: "2.000 $"
     },
     {
         id: "6",
-        name: "Product 6",
-        price: "6.000 $"
+        name: "Queso",
+        price: "1.000 $"
     },
     {
         id: "7",
-        name: "Product 7",
-        price: "7.000 $"
+        name: "Lechuga",
+        price: "800 $"
     },
     {
         id: "8",
-        name: "Product 8",
-        price: "8.000 $"
+        name: "Tomate",
+        price: "1.200 $"
     },
 ];
 
