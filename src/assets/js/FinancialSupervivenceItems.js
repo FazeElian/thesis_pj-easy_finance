@@ -29,8 +29,11 @@
     // Laptop
     import Laptop from "../img/FinancialSupervivenceView/laptop.webp";
 
-    // Washing Machine
+    // Ice Cream
     import IceCream from "../img/FinancialSupervivenceView/ice-cream.webp";
+
+    // Toy Train
+    import ToyTrain from "../img/FinancialSupervivenceView/toy-train.webp";
 
 const items = [
     // Needs
@@ -91,7 +94,7 @@ const items = [
     },
     { 
         id: "12", 
-        img: IceCream,
+        img: ToyTrain,
         section: "expenses" 
     },
 ];
