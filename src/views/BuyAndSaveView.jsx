@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 // Header component
 import Header from '../components/Header'
@@ -43,6 +44,9 @@ const BuyAndSaveView = () => {
   const [ welcomePopUp, setWelcomePopUp ] = useState(false);
   const [ instructionsPopUp, setInstructionsPopUp ] = useState(false);
   const [animationClass, setAnimationClass] = useState("");
+
+  // Pop up results states
+  const [ resultsPopUp, setResultsPopUp ] = useState(false);
 
   // Close welcome pop up function
   const closeWelcomePopUp = () => {
@@ -104,6 +108,60 @@ const BuyAndSaveView = () => {
     }, 1000);
   };
 
+  // Selected items states
+  const [selectedItems, setSelectedItems] = useState({});
+
+  const handleCheckboxChange = (id) => {
+    setSelectedItems((prevSelectedItems) => ({
+      ...prevSelectedItems,
+      [id]: !prevSelectedItems[id]
+    }));
+  };
+
+  // Pay function
+  const handlePay = () => {
+    // Filter the correct items that the user selected
+    const selectedItemsIds = Object.keys(selectedItems).filter(id => selectedItems[id]);
+    const correctItems = Items.filter(item => item.correct && selectedItems[item.id]);
+    const incorrectItems = Items.filter(item => !item.correct && selectedItems[item.id]);
+
+    // If the user select more than 5 items
+    if (selectedItemsIds.length > 5) {
+      alert('Puedes seleccionar un máximo de 5 productos.');
+      return;
+    }
+      
+    // If the user select less than 5 items
+    if (selectedItemsIds.length < 5) {
+      alert("Debes seleccionar al menos 5 productos")
+      return;
+    }
+
+    // Names of the products selected
+    // eslint-disable-next-line no-unused-vars
+    const correctItemsNames = correctItems.map(item => item.name).join(', ');
+    const incorrectItemsNames = incorrectItems.map(item => item.name).join(', ');
+
+    // Mensaje de confirmación
+    let message = `Has seleccionado estos productos: ${selectedItemsIds.map(id => Items.find(item => item.id === id).name).join(', ')}. ¿Deseas continuar?`;
+
+    // Show confirmation message
+    // eslint-disable-next-line no-restricted-globals
+    const userConfirmed = confirm(message);
+
+    if (userConfirmed) {
+      if (correctItems.length === Items.filter(item => item.correct).length) {
+        setResultsPopUp(true);
+        setAnimationClass("bounce-in");
+      } else {
+        alert(`Has seleccionado estos productos innesesarios: ${incorrectItemsNames}.`);
+        alert(`Has seleccionado estos productos innesesarios: ${incorrectItemsNames}.`);
+      }
+    } else {
+      alert('Acción cancelada.');
+    }
+  };
+
   return (
     <>
       {/* Header */}
@@ -134,8 +192,14 @@ const BuyAndSaveView = () => {
                   <tbody className="tb-table-prods--buy-and-save" key={item.id}>
                     <td className="tb-item-table-prods--buy-and-save">
                       <div className="table-prods-w-75">
-                        <input type="checkbox" name={item.id} id="slct-prod" />
-                        {item.name} 
+                        <input
+                          type="checkbox"
+                          name={item.id}
+                          id="slct-prod"
+                          checked={!!selectedItems[item.id]}
+                          onChange={() => handleCheckboxChange(item.id)}
+                        />
+                        {item.name}
                       </div>
                       <div className="table-prods-w-25">
                         {item.price}
@@ -150,7 +214,7 @@ const BuyAndSaveView = () => {
               </div>
 
               <div className="cont-btn-pay--buy-and-save">
-                <button className="btn-pay--buy-and-save">Pagar</button>
+                <button className="btn-pay--buy-and-save" onClick={handlePay}>Pagar</button>
               </div>
             </div>
           </div>
@@ -167,7 +231,7 @@ const BuyAndSaveView = () => {
             <div className="top-popup-welcome--connect-and-learn">
               <img src={Logo} alt="Logo" loading="lazy" />
               <h2>Bievenido a</h2>
-              <h3>Supervivencia Financiera!</h3>
+              <h3>Compra y Ahorra!</h3>
             </div>
             <div className="bottom-popup-welcome--connect-and-learn">
               <h2>Aquí hay algunas instrucciones antes de empezar el juego:</h2>
@@ -201,6 +265,20 @@ const BuyAndSaveView = () => {
               <h1>Misión: <h2>Preparar un Sándwich:</h2></h1>
               <img src={SandWich} alt="" />
               <p>Elige los productos necesarios de acuerdo a tu Presupuesto. Solo puedes elegir <b>(5)</b></p>
+            </div>
+          </div>
+        )}
+
+        {resultsPopUp && (
+          <div className={`popup-results--connect-and-learn ${animationClass}`}>
+            <div className="content-popup-results--connect-and-learn">
+              <div className="top-popup-results--connect-and-learn">
+                <h1 className="rainbow-text">Felicitaciones !</h1>
+                <h2>Has seleccionado correctamente los productos!</h2>
+                <Link to="https://forms.gle/57mQ32uRK4t4gPFg9" className="btn-continue--connect-and-learn" target='_blank'>
+                  Continuar
+                </Link>
+              </div>
             </div>
           </div>
         )}
