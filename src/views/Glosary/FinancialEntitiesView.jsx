@@ -17,12 +17,18 @@ import "../../assets/sass/views/ItemGlosaryView.scss";
 
   // Left Arrow Icon
   import LeftArrowComeBackIcon from "../../assets/img/icons/left-arrow-come-back.webp";
-  
+
+  // Right arrow white - pop up
+  import RightArrowNextWhiteIcon from "../../assets/img/icons/right-arrow-white.png";
+
 // Items 
 import Items from '../../assets/js/Glosary/FinancialEntities';
 
 // Custom hook for glosary document title
 import { useGlosaryDocumentTitle } from '../../hooks/useGlosaryDocumentTitle';
+
+// Lesson Completed Pop Up component
+import LessonCompletedPopUp from '../../components/LessonCompletedPopUp';
 
 const FinancialEntitiesView = () => {
   // Custom title
@@ -35,12 +41,14 @@ const FinancialEntitiesView = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [nextBtn, setNextBtn] = useState(false);
   const [animationClass, setAnimationClass] = useState(false);
-
-  // Array of items with paragraphs and names
+  const [animationPopUpClass, setAnimationPopUpClass] = useState(false);
 
   // Voice Audio
   const AudioVoice = useRef(new Audio(Items[0].audio));
-
+  
+  // Congratulations Audio
+  const CongratulationsSound = useRef(new Audio("/sounds/CongratulationsSound.mp3"));
+  
   useEffect(() => {
     AudioVoice.current.src = Items[currentIndex].audio;
   }, [currentIndex]);
@@ -59,8 +67,10 @@ const FinancialEntitiesView = () => {
   const handleNextItem = () => {
     if (currentIndex === Items.length - 1) {
       // Show alert when reaching the last item
-      alert("Has llegado al final de las Entidades Financieras!");
-      navigate("/glosario");
+      CongratulationsSound.current.play();
+
+      setNextLessonPopUp(true);
+      setAnimationPopUpClass("bounce-in");
     } else {
       // Move to the next item
       setCurrentIndex((prevIndex) => prevIndex + 1);
@@ -69,6 +79,9 @@ const FinancialEntitiesView = () => {
     setAnimationClass(""); // Remove the bounce animation
   }
 
+  // Next lesson pop up states
+  const [ nextLessonPopUp, setNextLessonPopUp ] = useState(false);
+  
   return (
     <>
       {/* Header */}
@@ -103,6 +116,18 @@ const FinancialEntitiesView = () => {
           <button className={`btn-next--glosary bg-orange ${animationClass}`} onClick={handleNextItem}>
             <img src={RightArrowNextIcon} alt="" />
           </button>
+        )}
+
+        {/* Next Lesson pop up */}
+        {nextLessonPopUp && (
+          <LessonCompletedPopUp 
+            color= "#F28D35"
+            btnTextColor= "#FFF"
+            lesson="Entidades Financieras"
+            img={RightArrowNextWhiteIcon}
+            nextLessonUrl="/glosario/actitudes-financieras/"
+            className={`popup-lesson-completed--glosary flex-column ${animationPopUpClass}`}
+          />
         )}
 
         <Link to="/glosario" className="btn-come-back--glosary">
