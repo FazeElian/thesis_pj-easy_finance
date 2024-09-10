@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Header component
 import Header from '../../components/Header';
@@ -7,6 +7,9 @@ import Header from '../../components/Header';
 // Styles for this component
 import "../../assets/sass/views/GlosaryView.scss";
 import "../../assets/sass/views/ItemGlosaryView.scss";
+
+  // Pop ups
+  import "../../assets/sass/components/PopUps.scss";
 
 // Images - Icons
   // Listen Audio icon
@@ -18,28 +21,32 @@ import "../../assets/sass/views/ItemGlosaryView.scss";
   // Left Arrow Icon
   import LeftArrowComeBackIcon from "../../assets/img/icons/left-arrow-come-back.webp";
   
+  // Right arrow white - pop up
+  import RightArrowNextWhiteIcon from "../../assets/img/icons/right-arrow-white.png";
+
 // Items 
 import Items from '../../assets/js/Glosary/BasicConcepts';
 
 // Custom hook for glosary document title
 import { useGlosaryDocumentTitle } from '../../hooks/useGlosaryDocumentTitle';
+import LessonCompletedPopUp from '../../components/LessonCompletedPopUp';
 
 const BasicConceptsView = () => {
   // Custom title
   useGlosaryDocumentTitle("Conceptos Básicos");
 
-  // Routes redirection
-  const navigate = useNavigate();
-
   // States for handling items and the current item index
   const [currentIndex, setCurrentIndex] = useState(0);
   const [nextBtn, setNextBtn] = useState(false);
   const [animationClass, setAnimationClass] = useState(false);
-
-  // Array of items with paragraphs and names
+  const [animationPopUpClass, setAnimationPopUpClass] = useState(false);
 
   // Voice Audio
   const AudioVoice = useRef(new Audio(Items[0].audio));
+  
+  // Congratulations Audio
+  const CongratulationsSound = useRef(new Audio("/sounds/CongratulationsSound.mp3"));
+  
 
   useEffect(() => {
     AudioVoice.current.src = Items[currentIndex].audio;
@@ -59,8 +66,10 @@ const BasicConceptsView = () => {
   const handleNextItem = () => {
     if (currentIndex === Items.length - 1) {
       // Show alert when reaching the last item
-      alert("Has llegado al final de los Conceptos Básicos!");
-      navigate("/glosario");
+      CongratulationsSound.current.play();
+
+      setNextLessonPopUp(true);
+      setAnimationPopUpClass("bounce-in");
     } else {
       // Move to the next item
       setCurrentIndex((prevIndex) => prevIndex + 1);
@@ -68,6 +77,9 @@ const BasicConceptsView = () => {
     setNextBtn(false); // Hide the button until next sound is played
     setAnimationClass(""); // Remove the bounce animation
   }
+
+  // Next lesson pop up states
+  const [ nextLessonPopUp, setNextLessonPopUp ] = useState(false);
 
   return (
     <>
@@ -103,6 +115,18 @@ const BasicConceptsView = () => {
           <button className={`btn-next--glosary bg-yellow ${animationClass}`} onClick={handleNextItem}>
             <img src={RightArrowNextIcon} alt="" />
           </button>
+        )}
+  
+        {/* Next Lesson pop up */}
+        {nextLessonPopUp && (
+          <LessonCompletedPopUp 
+            color= "#F2BB16"
+            btnTextColor= "#FFF"
+            lesson="Conceptos Básicos"
+            img={RightArrowNextWhiteIcon}
+            nextLessonUrl="/glosario/entidades-financieras/"
+            className={`popup-lesson-completed--glosary flex-column ${animationPopUpClass}`}
+          />
         )}
 
         <Link to="/glosario" className="btn-come-back--glosary">
