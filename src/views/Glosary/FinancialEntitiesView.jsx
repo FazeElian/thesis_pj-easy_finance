@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Header component
 import Header from '../../components/Header';
@@ -33,9 +33,6 @@ import LessonCompletedPopUp from '../../components/LessonCompletedPopUp';
 const FinancialEntitiesView = () => {
   // Custom title
   useGlosaryDocumentTitle("Entidades Financieras");
-
-  // Routes redirection
-  const navigate = useNavigate();
 
   // States for handling items and the current item index
   const [currentIndex, setCurrentIndex] = useState(0);
