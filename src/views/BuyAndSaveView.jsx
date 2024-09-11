@@ -226,10 +226,10 @@ const BuyAndSaveView = () => {
             txtColor="#F2BB16"
             closeFunction={closeWelcomePopUp}
             imgInstruction1={CartIcon}
-            txtInstruction1="Mira el objeto en el centro de la pantalla. Decide si lo necesitas o es un gasto extra."
+            txtInstruction1="Selecciona solo lo necesario para preparar un sándwich."
             imgInstruction2={SaveIcon}
-            txtInstruction2="Usa el mouse para arrastrar el objeto hacia el lado correcto: 'Gasto' o 'Necesidad'."
-            txtInstruction3="¡Ganas puntos cada vez que clasificas correctamente! Si te equivocas, no te preocupes, intenta de nuevo y sigue practicando."
+            txtInstruction2="No gastes más de tu presupuesto y ahorra la cantidad indicada."
+            txtInstruction3="Antes de finalizar tu compra, revisa si has ahorrado la cantidad necesaria. Si lo logras, ¡felicidades! Si no, vuelve a ajustar."
           />
         )}
 

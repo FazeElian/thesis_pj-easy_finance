@@ -28,17 +28,14 @@ const WelcomePopUp = (props) => {
             <ul className="items-bottom-popup-welcome--connect-and-learn">
                 <li className="item-bottom-popup-welcome--connect-and-learn">
                     <img src={props.imgInstruction1} alt='' loading="lazy" />
-                    {/* Selecciona solo lo necesario para preparar un sándwich. */}
                     {props.txtInstruction1}
                 </li>
                 <li className="item-bottom-popup-welcome--connect-and-learn">
                     <img src={props.imgInstruction2} alt='' loading="lazy" />
-                    {/* No gastes más de tu presupuesto y ahorra lo máximo posible. */}
                     {props.txtInstruction2}                
                 </li>
                 <li className="item-bottom-popup-welcome--connect-and-learn">
                     <img src={MedalIcon} alt='' loading="lazy" />
-                    {/* Antes de finalizar tu compra, revisa si has ahorrado la cantidad necesaria. Si lo logras, ¡felicidades! Si no, vuelve a ajustar.     */}
                     {props.txtInstruction3}            
                 </li>
             </ul>
