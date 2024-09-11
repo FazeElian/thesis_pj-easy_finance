@@ -1,7 +1,7 @@
 // Global styles
 @import "../_GlobalStyles";
 
-.popup-welcome--connect-and-learn {
+.popup-welcome--pop-up {
     opacity: 0;
     display: none;
     position: absolute;
@@ -31,13 +31,13 @@
         opacity: 1;
     }
 
-    .close-popup-welcome--connect-and-learn {
+    .close-popup-welcome--pop-up {
         display: flex;
         width: 100%;
         height: auto;
         justify-content: flex-end;
 
-        .btn-close-popup-welcome--connect-and-learn {
+        .btn-close-popup-welcome--pop-up {
             width: auto;
             height: auto;
             background: transparent;
@@ -51,7 +51,7 @@
         }
     }
 
-    .top-popup-welcome--connect-and-learn {
+    .top-popup-welcome--pop-up {
         display: flex;
         width: 100%;
         height: 300px;
@@ -83,7 +83,7 @@
         }
     }
 
-    .bottom-popup-welcome--connect-and-learn {
+    .bottom-popup-welcome--pop-up {
         display: flex;
         width: 100%;
         height: auto;
@@ -97,7 +97,7 @@
             font-size: 20px;
         }
 
-        .items-bottom-popup-welcome--connect-and-learn{
+        .items-bottom-popup-welcome--pop-up{
             display: flex;
             width: 100%;
             height: auto;
@@ -106,7 +106,7 @@
             margin-top: 1.5rem;
             gap: 1.2rem;
 
-            .item-bottom-popup-welcome--connect-and-learn{
+            .item-bottom-popup-welcome--pop-up{
                 display: flex;
                 width: 100%;
                 height: auto;
@@ -195,14 +195,179 @@
     }
 }
 
+.popup-cards-matched--pop-up {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 600px;
+    height: 350px;
+    background-color: $yellow-low-opacity;
+    border-radius: 10px;
+    border: 2px solid $yellow;
+    align-items: center;
+    font-family: $fraunces-font;
+    flex-direction: column;
+    padding: 2.5rem 3rem 1rem;
+
+    &.fade-in {
+        display: flex;
+        opacity: 1;
+    }
+
+    &.fade-out {
+        display: none;
+    }
+
+    .close-popup-cards-matched--pop-up {
+        display: flex;
+        width: 100%;
+        height: auto;
+        justify-content: flex-end;
+
+        .btn-close-popup-cards-matched--pop-up {
+            width: auto;
+            height: auto;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+
+            img {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+
+    .text-popup-cards-matched--pop-up {
+        display: flex;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 3rem;
+
+        h1 {
+            font-size: 42px;
+            font-weight: 600;
+            color: $yellow;
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000
+            ;
+        }
+
+        h2 {
+            margin: 10px 0 0;
+            font-weight: 450;
+
+            p {
+                font-size: 35px;
+                font-weight: 500;
+                margin-top: 1.5rem;
+                color: $yellow;
+                text-shadow:
+                    -1px -1px 0 #000,
+                    1px -1px 0 #000,
+                    -1px 1px 0 #000,
+                    1px 1px 0 #000
+                ;
+            }
+        }
+    }
+}
+
+.popup-results--pop-up {
+    display: flex;
+    position: absolute;
+    top: 3.9rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 600px;
+    height: 400px;
+    background-color: $yellow-low-opacity;
+    border-radius: 10px;
+    border: 2px solid $yellow;
+    align-items: center;
+    justify-content: center;
+    font-family: $fraunces-font;
+    flex-direction: column;
+    z-index: 1;
+    padding: 0 2rem 0;
+    background-image: url("/assets/img/ConfettiBackground.webp");
+    background-size: cover;
+
+    &.bounce-in {
+        display: flex;
+        animation: bounceIn 1s forwards;
+        opacity: 1;
+    };
+
+    .content-popup-results--pop-up {
+        display: flex;
+        width: 100%;
+        height: 50%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 1rem 0 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 800;
+            background-color: transparent;
+            border-radius: 50%;
+        }
+
+        .btn-continue--pop-up {
+            display: flex;
+            width: auto;
+            max-width: 200px;
+            height: auto;
+            background-color: $yellow;
+            margin-top: 2rem;
+            text-decoration: none;
+            padding: 12px 2rem 12px;
+            color: black;
+            border: 2px solid black;
+            font-size: 20px;
+            font-weight: 650;
+            border-radius: 1rem;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem auto 0;
+        }
+        
+        .btn-continue--pop-up:hover {
+            background-color: white;
+            border: 2px solid $yellow;
+            transition: .3s ease-in;
+            color: $yellow;
+        }
+    }
+}
+
 // Responsive 1440px
 @media (max-width: 1440px) {
-    .popup-welcome--connect-and-learn {
+    .popup-welcome--pop-up {
         width: 520px;
         height: 600px;
 
-        .close-popup-welcome--connect-and-learn {
-            .btn-close-popup-welcome--connect-and-learn {
+        .close-popup-welcome--pop-up {
+            .btn-close-popup-welcome--pop-up {
                 img {
                     width: 30px;
                     height: 30px;
@@ -210,7 +375,7 @@
             }
         }
 
-        .top-popup-welcome--connect-and-learn {
+        .top-popup-welcome--pop-up {
             height: auto;
             img {
                 width: 127px;
@@ -227,16 +392,16 @@
             }
         }
 
-        .bottom-popup-welcome--connect-and-learn {
+        .bottom-popup-welcome--pop-up {
             h2 {
                 font-size: 16px;
                 margin: 1rem 0 0;
             }
 
-            .items-bottom-popup-welcome--connect-and-learn {
+            .items-bottom-popup-welcome--pop-up {
                 margin-top: 1rem;
 
-                .item-bottom-popup-welcome--connect-and-learn {
+                .item-bottom-popup-welcome--pop-up {
                     font-size: 15px;
 
                     img {
@@ -274,6 +439,54 @@
             }
         }
     }
+
+    .popup-cards-matched--pop-up {
+        height: 320px;
+        .close-popup-cards-matched--pop-up {
+            .btn-close-popup-cards-matched--pop-up {
+                img {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+
+        .text-popup-cards-matched--pop-up {
+            margin-top: 1.2rem;
+
+            h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 23px;
+
+                p {
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+
+    .popup-results--pop-up {
+        width: 550px;
+        height: 350px;
+
+        .content-popup-results--pop-up {
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .btn-continue--pop-up {
+                margin-top: 1rem;
+                font-size: 18px;
+            }
+        }
+    }
 }
 
 // Responsive 1024px
@@ -305,11 +518,41 @@
             }
         }
     }
+
+    .popup-cards-matched--pop-up {
+        width: 560px;
+        height: 300px;
+
+        .close-popup-cards-matched--pop-up {
+            .btn-close-popup-cards-matched--pop-up {
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+
+        .text-popup-cards-matched--pop-up {
+            margin-top: 1rem;
+
+            h1 {
+                font-size: 35px;
+            }
+
+            h2 {
+                font-size: 21px;
+
+                p {
+                    font-size: 35px;
+                }
+            }
+        }
+    }
 }
 
 // Responsive 768px
 @media (max-width: 768px) {
-    .popup-welcome--connect-and-learn {
+    .popup-welcome--pop-up {
         width: 70%;
         min-width: 500px;
     }
@@ -342,33 +585,92 @@
             }
         }
     }
+
+    .popup-cards-matched--pop-up {
+        width: 425px;
+        height: 270px;
+        padding: 2rem 2.5rem 2rem;
+
+        .close-popup-cards-matched--pop-up {
+            .btn-close-popup-cards-matched--pop-up {
+                img {
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+        }
+
+        .text-popup-cards-matched--pop-up {
+            margin-top: .9rem;
+
+            h1 {
+                font-size: 34px;
+            }
+
+            h2 {
+                font-size: 18px;
+
+                p {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+    .popup-results--pop-up {
+        width: 65%;
+        height: 300px;
+
+        .content-popup-results--pop-up {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 17px;
+            }
+
+            .btn-continue--pop-up {
+                margin-top: 1rem;
+                font-size: 16px;
+                padding: 10px 2rem 10px;
+            }
+        }
+    }
 }
 
 // Responsive 600px
 @media (max-width: 600px) {
-    .popup-welcome--connect-and-learn {
+    .popup-welcome--pop-up {
         width: 50%;
         min-width: 455px;
         height: auto;
         max-height: 600px;
         padding: 2rem 2.5rem 2rem;
     }
+
+    .popup-results--pop-up {
+        width: 70%;
+        min-width: 425px;
+        height: auto;
+        max-height: 300px;
+    }
 }
 
 // Responsive 425px
 @media (max-width: 425px) {
-    .popup-welcome--connect-and-learn {
+    .popup-welcome--pop-up {
         top: 10rem;
         width: 90%;
         min-width: 280px;
         min-height: 700px;
         padding: 3rem 2rem 2.5rem;
 
-        .top-popup-welcome--connect-and-learn {
+        .top-popup-welcome--pop-up {
             text-align: center;
         }
 
-        .bottom-popup-welcome--connect-and-learn {
+        .bottom-popup-welcome--pop-up {
             height: auto;
         }
     }
@@ -401,11 +703,57 @@
             }
         }
     }
+
+    .popup-cards-matched--pop-up {
+        width: 320px;
+        height: 220px;
+        padding: 1.5rem;
+
+        .close-popup-cards-matched--pop-up {
+            .btn-close-popup-cards-matched--pop-up {
+                img {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+
+        .text-popup-cards-matched--pop-up {
+            margin-top: 12px;
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 18px;
+
+                p {
+                    font-size: 26px;
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+
+    .popup-results--pop-up {
+        width: 90%;
+        min-width: 320px;
+        height: auto;
+        max-height: 300px;
+        padding: 0 1rem 0;
+
+        .content-popup-results--pop-up {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    }
 }
 
 // Responsive 360px
 @media (max-width: 360px) {
-    .popup-welcome--connect-and-learn {
+    .popup-welcome--pop-up {
         top: 14rem;
         min-height: 750px;
         padding: 3rem 2rem 2.5rem;
@@ -414,7 +762,7 @@
 
 // Responsive 320px
 @media (max-width: 320px) {
-    .popup-welcome--connect-and-learn {
+    .popup-welcome--pop-up {
         top: 16rem;
         min-height: 800px;
         padding: 3rem 2rem 2.5rem;

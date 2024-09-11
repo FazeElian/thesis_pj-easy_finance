@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom';
 
 // Header component
 import Header from '../components/Header';
@@ -31,6 +30,7 @@ import { useGameDocumentTitle } from "../hooks/useGameDocumentTitle";
 
 // Welcome Pop up component
 import WelcomePopUp from '../components/WelcomePopUp';
+import ResultsPopUp from '../components/ResultsPopUp';
 
 const ConnectAndLearnView = () => {
   // Custom title
@@ -46,25 +46,25 @@ const ConnectAndLearnView = () => {
   const [isRunning, setIsRunning] = useState(false);
   
   // Pop up states
-  const [popUpVisible, setPopUpVisible] = useState(false);
+  const [popUpCardsMatched, setPopUpCardsMatched] = useState(false);
   const [matchedConcept, setMatchedConcept] = useState("");
   const [animationClass, setAnimationClass] = useState("");
   const [animationResultsClass, setAnimationResultsClass] = useState("");
 
   // Hook useEffect to close the popup auto after 1.5 sec
   useEffect(() => {
-    if (popUpVisible) {
+    if (popUpCardsMatched) {
       const timer = setTimeout(() => {
         setAnimationClass("fade-out");
         const closeTimer = setTimeout(() => {
-          setPopUpVisible(false);
+          setPopUpCardsMatched(false);
         }, 10000);
         return () => clearTimeout(closeTimer);
       }, 4000);
       return () => clearTimeout(timer);
     }
-    setPopUpVisible(false);
-  }, [popUpVisible]);
+    setPopUpCardsMatched(false);
+  }, [popUpCardsMatched]);
   
   // Correct answer effect sound
   const matchSound = useRef(null);
@@ -127,7 +127,7 @@ const ConnectAndLearnView = () => {
         // Show the pop up with the concept
         const concept = firstCard.content.concept || secondCard.content.concept;
         setMatchedConcept(concept);
-        setPopUpVisible(true);
+        setPopUpCardsMatched(true);
 
         setMatchedConcept(concept);
       } else {
@@ -244,7 +244,7 @@ const ConnectAndLearnView = () => {
           {/* Welcome pop up */}
           {welcomePopUp && (
             <WelcomePopUp 
-              className={`popup-welcome--connect-and-learn bg-yellow-low-opacity bder-yellow-3 ${animationClass}`}
+              className={`popup-welcome--pop-up bg-yellow-low-opacity bder-yellow-3 ${animationClass}`}
               nameGame="Conecta y Aprende"
               txtColor="#F2BB16"
               closeFunction={closeWelcomePopUp}
@@ -257,14 +257,14 @@ const ConnectAndLearnView = () => {
           )}
 
           {/* Matched cards pop up */}
-          {popUpVisible && (
-            <div className={`popup-cards-matched--connect-and-learn ${animationClass}`}>
-              <div className="close-popup-cards-matched--connect-and-learn">
-                <button className="btn-close-popup-cards-matched--connect-and-learn" onClick={() => setPopUpVisible(false)}>
+          {popUpCardsMatched && (
+            <div className={`popup-cards-matched--pop-up ${animationClass}`}>
+              <div className="close-popup-cards-matched--pop-up">
+                <button className="btn-close-popup-cards-matched--pop-up" onClick={() => setPopUpCardsMatched(false)}>
                   <img src={ClosePopUpIcon} alt="Cerrar" loading="lazy" />
                 </button>
               </div>
-              <div className="text-popup-cards-matched--connect-and-learn">
+              <div className="text-popup-cards-matched--pop-up">
                 <h1 className="rainbow-text">Buen trabajo!</h1>
                 <h2>Has emparejado el concepto: <br /><p>{matchedConcept}</p></h2>
               </div>
@@ -272,17 +272,11 @@ const ConnectAndLearnView = () => {
           )}
 
           {resultsPopUp && (
-            <div className={`popup-results--connect-and-learn ${animationResultsClass}`}>
-              <div className="content-popup-results--connect-and-learn">
-                <div className="top-popup-results--connect-and-learn">
-                  <h1 className="rainbow-text">Felicitaciones !</h1>
-                  <h2>Has emparejado correctamente todas las cartas!</h2>
-                  <Link to="https://forms.gle/kx1tbuTDoHhYeBPz8" className="btn-continue--connect-and-learn" target="_blank" rel="noopener noreferrer">
-                    Continuar
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <ResultsPopUp 
+              className={`popup-results--pop-up ${animationResultsClass}`}
+              message="Has emparejado correctamente todas las cartas!"
+              formLink="https://forms.gle/kx1tbuTDoHhYeBPz8"
+            />
           )}
         </section>
       </main>

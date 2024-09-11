@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
 
 // Header component
 import Header from '../components/Header'
 
 // Styles for this component
 import "../assets/sass/views/BuyAndSaveView.scss";
-import "../assets/sass/views/ConnectAndLearnView.scss";
 import "../assets/sass/components/PopUps.scss";
 
 // Images - icons
@@ -33,6 +31,7 @@ import { useGameDocumentTitle } from "../hooks/useGameDocumentTitle";
 
 // Welcome Pop up component
 import WelcomePopUp from '../components/WelcomePopUp';
+import ResultsPopUp from '../components/ResultsPopUp';
 
 const BuyAndSaveView = () => {
   // Custom title
@@ -221,7 +220,7 @@ const BuyAndSaveView = () => {
         {/* Welcome pop up */}
         {welcomePopUp && (
           <WelcomePopUp 
-            className={`popup-welcome--connect-and-learn bg-yellow-low-opacity bder-yellow-3 ${animationClass}`}
+            className={`popup-welcome--pop-up bg-yellow-low-opacity bder-yellow-3 ${animationClass}`}
             nameGame="Supervicencia Financiera"
             txtColor="#F2BB16"
             closeFunction={closeWelcomePopUp}
@@ -249,18 +248,13 @@ const BuyAndSaveView = () => {
           </div>
         )}
 
+        {/* Results Pop up */}
         {resultsPopUp && (
-          <div className={`popup-results--connect-and-learn ${animationClass}`}>
-            <div className="content-popup-results--connect-and-learn">
-              <div className="top-popup-results--connect-and-learn">
-                <h1 className="rainbow-text">Felicitaciones !</h1>
-                <h2>Has seleccionado correctamente los productos!</h2>
-                <Link to="https://forms.gle/57mQ32uRK4t4gPFg9" className="btn-continue--connect-and-learn" target='_blank'>
-                  Continuar
-                </Link>
-              </div>
-            </div>
-          </div>
+          <ResultsPopUp 
+            className={`popup-results--pop-up ${animationClass}`}
+            message="Has seleccionado correctamente los productos!"
+            formLink="https://forms.gle/57mQ32uRK4t4gPFg9"
+          />
         )}
       </main>
     </>

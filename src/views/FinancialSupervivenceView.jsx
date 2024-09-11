@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom';
 
 // Header component
 import Header from '../components/Header';
 
 // Styles for this component
 import "../assets/sass/views/FinancialSupervivenceView.scss";
-import "../assets/sass/views/ConnectAndLearnView.scss";
 import "../assets/sass/components/PopUps.scss";
 
 // React beautiful dnd components
@@ -30,6 +28,9 @@ import { useGameDocumentTitle } from "../hooks/useGameDocumentTitle";
 
 // Welcome Pop up component
 import WelcomePopUp from '../components/WelcomePopUp';
+
+// Results Pop up component
+import ResultsPopUp from '../components/ResultsPopUp';
 
 const FinancialSupervivenceView = () => {
   // Custom title
@@ -99,7 +100,7 @@ const FinancialSupervivenceView = () => {
         }
 
         // Show pop up
-        setPopUpVisible(true);
+        setPopUpClasifiedCorrectly(true);
         setAnimationClass('fade-in');
 
         setColumns((prevColumns) => ({
@@ -162,7 +163,7 @@ const FinancialSupervivenceView = () => {
   const filteredItems = columns.nonClasified.items;
 
   // Pop up states
-  const [popUpVisible, setPopUpVisible] = useState(false);
+  const [popUpClasifiedCorrectly, setPopUpClasifiedCorrectly] = useState(false);
   const [ resultsPopUp, setResultsPopUp ] = useState(false);
   const [ welcomePopUp, setWelcomePopUp ] = useState(false);
   const [animationClass, setAnimationClass] = useState("");
@@ -170,18 +171,18 @@ const FinancialSupervivenceView = () => {
 
   // Hook useEffect to close the popup auto after 1.5 sec
   useEffect(() => {
-    if (popUpVisible) {
+    if (popUpClasifiedCorrectly) {
       const timer = setTimeout(() => {
         setAnimationClass("fade-out");
         const closeTimer = setTimeout(() => {
-          setPopUpVisible(false);
+          setPopUpClasifiedCorrectly(false);
         }, 10000);
         return () => clearTimeout(closeTimer);
       }, 4000);
       return () => clearTimeout(timer);
     }
-    setPopUpVisible(false);
-  }, [popUpVisible]);
+    setPopUpClasifiedCorrectly(false);
+  }, [popUpClasifiedCorrectly]);
 
   // Close welcome pop up function
   const closeWelcomePopUp = () => {
@@ -308,7 +309,7 @@ const FinancialSupervivenceView = () => {
           {/* Welcome pop up */}
           {welcomePopUp && (
             <WelcomePopUp 
-              className={`popup-welcome--connect-and-learn bg-orange-low-opacity bder-orange-3 ${animationClass}`}
+              className={`popup-welcome--pop-up bg-orange-low-opacity bder-orange-3 ${animationClass}`}
               nameGame="Supervicencia Financiera"
               txtColor="#F28D35"
               closeFunction={closeWelcomePopUp}
@@ -320,32 +321,27 @@ const FinancialSupervivenceView = () => {
             />
           )}
 
-          {popUpVisible && (
-            <div className={`popup-cards-matched--connect-and-learn ${animationClass}`}>
-              <div className="close-popup-cards-matched--connect-and-learn">
-                <button className="btn-close-popup-cards-matched--connect-and-learn" onClick={() => setPopUpVisible(false)}>
+          {popUpClasifiedCorrectly && (
+            <div className={`popup-cards-matched--pop-up ${animationClass}`}>
+              <div className="close-popup-cards-matched--pop-up">
+                <button className="btn-close-popup-cards-matched--pop-up" onClick={() => setPopUpClasifiedCorrectly(false)}>
                   <img src={ClosePopUpIcon} alt="Cerrar" loading="lazy" />
                 </button>
               </div>
-              <div className="text-popup-cards-matched--connect-and-learn">
+              <div className="text-popup-cards-matched--pop-up">
                 <h1 className="rainbow-text">Buen trabajo!</h1>
                 <h2>Has clasificado correctamente el objeto ! </h2>
               </div>
             </div>
           )}
 
+          {/* Results Pop up */}
           {resultsPopUp && (
-            <div className={`popup-results--connect-and-learn ${animationResultsClass}`}>
-              <div className="content-popup-results--connect-and-learn">
-                <div className="top-popup-results--connect-and-learn">
-                  <h1 className="rainbow-text">Felicitaciones !</h1>
-                  <h2>Has clasificado correctamente todos los objetos!</h2>
-                  <Link to="https://forms.gle/Mr2rjfEvS8KvmTcb8" className="btn-continue--connect-and-learn" target='_blank'>
-                    Continuar
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <ResultsPopUp 
+              className={`popup-results--pop-up ${animationResultsClass}`}
+              message="Has clasificado correctamente todos los objetos!"
+              formLink="https://forms.gle/Mr2rjfEvS8KvmTcb8"
+            />
           )}
         </section>
 
