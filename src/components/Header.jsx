@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 // Styles for this component
@@ -12,25 +13,25 @@ import { Link } from 'react-router-dom';
   import Logo from "../assets/img/Logo (v.02).webp";
 
   // Menu Icon
-  import MenuIcon from "../assets/img/icons/menu.webp";
+  // import MenuIcon from "../assets/img/icons/menu.webp";
 
   // Home Icon
-  import HomeIcon from "../assets/img/icons/home.webp";
+  // import HomeIcon from "../assets/img/icons/home.webp";
 
   // Games Icon
-  import GamesIcon from "../assets/img/icons/games.webp";
+  // import GamesIcon from "../assets/img/icons/games.webp";
 
   // About Icon
-  import AboutIcon from "../assets/img/icons/about.webp";
+  // import AboutIcon from "../assets/img/icons/about.webp";
 
 const Header = (props) => {
   // Side bar Menu states
-  const [ sideBar, setSideBar ] = useState(false);
+  // const [ sideBar, setSideBar ] = useState(false);
 
   // Handle Side bar function
-  const handleSideBar = () => {
-    setSideBar(!sideBar);
-  }
+  // const handleSideBar = () => {
+  //   setSideBar(!sideBar);
+  // }
 
   return (
     <>
@@ -41,7 +42,7 @@ const Header = (props) => {
             <h1>Easy <br />Finance</h1>
           </Link>
         </nav>
-        <button className={`btn-nav-menu ${props.btnColor}`} onClick={handleSideBar}>
+        {/* <button className={`btn-nav-menu ${props.btnColor}`} onClick={handleSideBar}>
           <img src={MenuIcon} alt="Menu" />
         </button>
         <nav className={ `nav-side-bar ${props.bgColor} ${props.bderColor} ${sideBar ? "active" : ""}` }>
@@ -60,7 +61,7 @@ const Header = (props) => {
               <h2>Acerca de</h2>
             </Link>
           </ul>
-        </nav>
+        </nav> */}
       </header>
 
       {/* For have component on routes */}
