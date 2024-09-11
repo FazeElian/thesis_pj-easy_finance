@@ -7,13 +7,11 @@ import Header from '../components/Header'
 // Styles for this component
 import "../assets/sass/views/BuyAndSaveView.scss";
 import "../assets/sass/views/ConnectAndLearnView.scss";
+import "../assets/sass/components/PopUps.scss";
 
 // Images - icons
   // People
   import People from "../assets/img/BuyAndSaveView/people.webp";
-  
-  // Logo
-  import Logo from "../assets/img/Logo (v.02).webp";
 
   // Sandwich
   import SandWich from "../assets/img/BuyAndSaveView/sandwich.png";
@@ -27,14 +25,14 @@ import "../assets/sass/views/ConnectAndLearnView.scss";
   // Opposite Horizontal Arrows icon
   import SaveIcon from "../assets/img/icons/save.webp";
 
-  // Medal icon
-  import MedalIcon from "../assets/img/icons/medal.webp";
-
 // Items
 import Items from '../assets/js/BuyAndSaveItems';
 
 // Custom hook for game document title
 import { useGameDocumentTitle } from "../hooks/useGameDocumentTitle";
+
+// Welcome Pop up component
+import WelcomePopUp from '../components/WelcomePopUp';
 
 const BuyAndSaveView = () => {
   // Custom title
@@ -222,35 +220,17 @@ const BuyAndSaveView = () => {
 
         {/* Welcome pop up */}
         {welcomePopUp && (
-          <div className={`popup-welcome--connect-and-learn ${animationClass}`}>
-            <div className="close-popup-welcome--connect-and-learn">
-              <button className="btn-close-popup-welcome--connect-and-learn" onClick={closeWelcomePopUp}>
-                <img src={ClosePopUpIcon} alt="Cerrar" loading="lazy" />
-              </button>
-            </div>
-            <div className="top-popup-welcome--connect-and-learn">
-              <img src={Logo} alt="Logo" loading="lazy" />
-              <h2>Bievenido a</h2>
-              <h3>Compra y Ahorra!</h3>
-            </div>
-            <div className="bottom-popup-welcome--connect-and-learn">
-              <h2>Aquí hay algunas instrucciones antes de empezar el juego:</h2>
-              <ul className="items-bottom-popup-welcome--connect-and-learn">
-                <li className="item-bottom-popup-welcome--connect-and-learn">
-                  <img src={CartIcon} alt='' loading="lazy" />
-                  Selecciona solo lo necesario para preparar un sándwich.
-                </li>
-                <li className="item-bottom-popup-welcome--connect-and-learn">
-                  <img src={SaveIcon} alt='' loading="lazy" />
-                  No gastes más de tu presupuesto y ahorra lo máximo posible.                
-                </li>
-                <li className="item-bottom-popup-welcome--connect-and-learn">
-                  <img src={MedalIcon} alt='' loading="lazy" />
-                  Antes de finalizar tu compra, revisa si has ahorrado la cantidad necesaria. Si lo logras, ¡felicidades! Si no, vuelve a ajustar.                
-                </li>
-              </ul>
-            </div>
-          </div>
+          <WelcomePopUp 
+            className={`popup-welcome--connect-and-learn bg-yellow-low-opacity bder-yellow-3 ${animationClass}`}
+            nameGame="Supervicencia Financiera"
+            txtColor="#F2BB16"
+            closeFunction={closeWelcomePopUp}
+            imgInstruction1={CartIcon}
+            txtInstruction1="Mira el objeto en el centro de la pantalla. Decide si lo necesitas o es un gasto extra."
+            imgInstruction2={SaveIcon}
+            txtInstruction2="Usa el mouse para arrastrar el objeto hacia el lado correcto: 'Gasto' o 'Necesidad'."
+            txtInstruction3="¡Ganas puntos cada vez que clasificas correctamente! Si te equivocas, no te preocupes, intenta de nuevo y sigue practicando."
+          />
         )}
 
         {/* Instructions pop up */}

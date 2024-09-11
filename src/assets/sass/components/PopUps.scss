@@ -1,6 +1,128 @@
 // Global styles
 @import "../_GlobalStyles";
 
+.popup-welcome--connect-and-learn {
+    opacity: 0;
+    display: none;
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 600px;
+    height: 700px;
+    border-radius: 5px;
+    align-items: center;
+    font-family: $fraunces-font;
+    flex-direction: column;
+    padding: 3rem 3.5rem 0;
+    z-index: 1;
+
+    &.bounce-in {
+        display: flex;
+        animation: bounceIn 1s forwards;
+        opacity: 1;
+    }
+
+    &.bounce-out {
+        display: flex;
+        animation: bounceOut 1s forwards;
+        opacity: 1;
+    }
+
+    .close-popup-welcome--connect-and-learn {
+        display: flex;
+        width: 100%;
+        height: auto;
+        justify-content: flex-end;
+
+        .btn-close-popup-welcome--connect-and-learn {
+            width: auto;
+            height: auto;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+
+            img {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+
+    .top-popup-welcome--connect-and-learn {
+        display: flex;
+        width: 100%;
+        height: 300px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: -10px;
+        
+        img {
+            width: 170px;
+            height: 170px;
+        }
+
+        h2 {
+            font-size: 33px;
+            margin: 1rem 0 8px;
+            font-weight: 550;
+        }
+
+        h3 {
+            font-size: 33px;
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000
+            ;
+            font-weight: 600;
+        }
+    }
+
+    .bottom-popup-welcome--connect-and-learn {
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+
+        h2 {
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .items-bottom-popup-welcome--connect-and-learn{
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            list-style: none;
+            margin-top: 1.5rem;
+            gap: 1.2rem;
+
+            .item-bottom-popup-welcome--connect-and-learn{
+                display: flex;
+                width: 100%;
+                height: auto;
+                font-size: 18px;
+
+                img {
+                    width: 35px;
+                    height: 35px;
+                    margin-right: 10px;
+                    margin-top: 7px;
+                }
+            }
+        }
+    }
+}
+
 .popup-lesson-completed--glosary {
     position: absolute;
     display: none;
@@ -75,6 +197,57 @@
 
 // Responsive 1440px
 @media (max-width: 1440px) {
+    .popup-welcome--connect-and-learn {
+        width: 520px;
+        height: 600px;
+
+        .close-popup-welcome--connect-and-learn {
+            .btn-close-popup-welcome--connect-and-learn {
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+
+        .top-popup-welcome--connect-and-learn {
+            height: auto;
+            img {
+                width: 127px;
+                height: 130px;
+            }
+
+            h2 {
+                font-size: 28px;
+                margin: 12px 0 4px;
+            }
+
+            h3 {
+                font-size: 28px;
+            }
+        }
+
+        .bottom-popup-welcome--connect-and-learn {
+            h2 {
+                font-size: 16px;
+                margin: 1rem 0 0;
+            }
+
+            .items-bottom-popup-welcome--connect-and-learn {
+                margin-top: 1rem;
+
+                .item-bottom-popup-welcome--connect-and-learn {
+                    font-size: 15px;
+
+                    img {
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+            }
+        }
+    }
+
     .popup-lesson-completed--glosary {
         width: 550px;
         height: 410px;
@@ -136,6 +309,11 @@
 
 // Responsive 768px
 @media (max-width: 768px) {
+    .popup-welcome--connect-and-learn {
+        width: 70%;
+        min-width: 500px;
+    }
+
     .popup-lesson-completed--glosary {
         width: 425px;
         height: 340px;
@@ -166,8 +344,35 @@
     }
 }
 
+// Responsive 600px
+@media (max-width: 600px) {
+    .popup-welcome--connect-and-learn {
+        width: 50%;
+        min-width: 455px;
+        height: auto;
+        max-height: 600px;
+        padding: 2rem 2.5rem 2rem;
+    }
+}
+
 // Responsive 425px
 @media (max-width: 425px) {
+    .popup-welcome--connect-and-learn {
+        top: 10rem;
+        width: 90%;
+        min-width: 280px;
+        min-height: 700px;
+        padding: 3rem 2rem 2.5rem;
+
+        .top-popup-welcome--connect-and-learn {
+            text-align: center;
+        }
+
+        .bottom-popup-welcome--connect-and-learn {
+            height: auto;
+        }
+    }
+
     .popup-lesson-completed--glosary {
         width: auto;
         height: 340px;
@@ -195,5 +400,23 @@
                 margin-left: 8px;
             }
         }
+    }
+}
+
+// Responsive 360px
+@media (max-width: 360px) {
+    .popup-welcome--connect-and-learn {
+        top: 14rem;
+        min-height: 750px;
+        padding: 3rem 2rem 2.5rem;
+    }
+}
+
+// Responsive 320px
+@media (max-width: 320px) {
+    .popup-welcome--connect-and-learn {
+        top: 16rem;
+        min-height: 800px;
+        padding: 3rem 2rem 2.5rem;
     }
 }

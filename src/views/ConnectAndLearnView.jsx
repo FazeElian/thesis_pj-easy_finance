@@ -8,6 +8,7 @@ import ReactCardFlip from 'react-card-flip';
 
 // Styles for this component
 import "../assets/sass/views/ConnectAndLearnView.scss";
+import "../assets/sass/components/PopUps.scss";
 
 // Items
 import Items from "../assets/js/ConnectAndLearnItems";
@@ -25,11 +26,11 @@ import Items from "../assets/js/ConnectAndLearnItems";
   // Spin Icon
   import SpinIcon from "../assets/img/icons/spin.webp";
 
-  // Medal Icon
-  import MedalIcon from "../assets/img/icons/medal.webp";
-
 // Custom hook for game document title
 import { useGameDocumentTitle } from "../hooks/useGameDocumentTitle";
+
+// Welcome Pop up component
+import WelcomePopUp from '../components/WelcomePopUp';
 
 const ConnectAndLearnView = () => {
   // Custom title
@@ -242,35 +243,17 @@ const ConnectAndLearnView = () => {
 
           {/* Welcome pop up */}
           {welcomePopUp && (
-            <div className={`popup-welcome--connect-and-learn ${animationClass}`}>
-              <div className="close-popup-welcome--connect-and-learn">
-                <button className="btn-close-popup-welcome--connect-and-learn" onClick={closeWelcomePopUp}>
-                  <img src={ClosePopUpIcon} alt="Cerrar" loading="lazy" />
-                </button>
-              </div>
-              <div className="top-popup-welcome--connect-and-learn">
-                <img src={Logo} alt="Logo" loading="lazy" />
-                <h2>Bievenido a</h2>
-                <h3>Conecta y Aprende!</h3>
-              </div>
-              <div className="bottom-popup-welcome--connect-and-learn">
-                <h2>Aquí hay algunas instrucciones antes de empezar el juego:</h2>
-                <ul className="items-bottom-popup-welcome--connect-and-learn">
-                  <li className="item-bottom-popup-welcome--connect-and-learn">
-                    <img src={CardsIcon} alt='' loading="lazy" />
-                    Busca la tarjeta que tenga la imagen que mejor represente el concepto financiero de la otra tarjeta.
-                  </li>
-                  <li className="item-bottom-popup-welcome--connect-and-learn">
-                    <img src={SpinIcon} alt='' loading="lazy" />
-                    Haz clic en las tarjetas para voltearlas y ver qué hay debajo. ¡Intenta recordar lo que ves!                  
-                  </li>
-                  <li className="item-bottom-popup-welcome--connect-and-learn">
-                    <img src={MedalIcon} alt='' loading="lazy" />
-                    Cada vez que emparejas correctamente una imagen con su descripción, ganas puntos. ¡Trata de conseguir tantos puntos como puedas!                  
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <WelcomePopUp 
+              className={`popup-welcome--connect-and-learn bg-yellow-low-opacity bder-yellow-3 ${animationClass}`}
+              nameGame="Conecta y Aprende"
+              txtColor="#F2BB16"
+              closeFunction={closeWelcomePopUp}
+              imgInstruction1={CardsIcon}
+              txtInstruction1="Busca la tarjeta que tenga la imagen que mejor represente el concepto financiero de la otra tarjeta."
+              imgInstruction2={SpinIcon}
+              txtInstruction2="Haz clic en las tarjetas para voltearlas y ver qué hay debajo. ¡Intenta recordar lo que ves!"
+              txtInstruction3="Cada vez que emparejas correctamente una imagen con su descripción, ganas puntos. ¡Trata de conseguir tantos puntos como puedas!"
+            />
           )}
 
           {/* Matched cards pop up */}

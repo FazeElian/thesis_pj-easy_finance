@@ -109,6 +109,14 @@ $fraunces-font: "Fraunces", serif;
     background-color: $orange-medium-opacity;
 }
 
+.bg-orange-low-opacity {
+    background-color: $orange-low-opacity;
+}
+
+.bder-orange-3 {
+    border: 3px solid $orange;
+}
+
 .bg-blue-red {
     background: rgb(132,191,185);
     background: -moz-linear-gradient(90deg, 
