@@ -14,7 +14,7 @@ import "../assets/sass/components/PopUps.scss";
   import People from "../assets/img/BuyAndSaveView/people.webp";
 
   // Sandwich
-  import SandWich from "../assets/img/BuyAndSaveView/sandwich.png";
+  import SandWich from "../assets/img/BuyAndSaveView/sandwich.webp";
 
   // Close Pop up icon
   import ClosePopUpIcon from "../assets/img/icons/close-popup.webp";
