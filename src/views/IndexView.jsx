@@ -17,6 +17,9 @@ import "../assets/sass/views/IndexView.scss";
 // Custom hook for document title
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
+// Footer component
+import Footer from "../components/Footer";
+
 export default function IndexView() {
   // Custom title
   useDocumentTitle("Inicio");
@@ -66,6 +69,9 @@ export default function IndexView() {
           </div>
         </section>
       </main>
+      
+      {/* Footer */}
+      <Footer />
     </>
   );
 }
