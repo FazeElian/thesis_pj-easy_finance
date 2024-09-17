@@ -54,10 +54,6 @@ $fraunces-font: "Fraunces", serif;
     background-color: $blue;
 }
 
-.bg-blue-medium-opacity {
-    background-color: $blue-medium-opacity;
-}
-
 .bg-blue-low-opacity {
     background-color: $blue-low-opacity;
 }
@@ -111,14 +107,6 @@ $fraunces-font: "Fraunces", serif;
 
 .bg-orange-medium-opacity {
     background-color: $orange-medium-opacity;
-}
-
-.bg-orange-low-opacity {
-    background-color: $orange-low-opacity;
-}
-
-.bder-orange-3 {
-    border: 3px solid $orange;
 }
 
 .bg-blue-red {
@@ -211,7 +199,8 @@ $fraunces-font: "Fraunces", serif;
 .table-prods-w-75 {
     display: flex;
     width: 75%;
-    align-items: flex-start;
+    height: 100%;
+    align-items: center;
 
     #slct-prod {
         display: flex;
@@ -225,6 +214,7 @@ $fraunces-font: "Fraunces", serif;
 .table-prods-w-25 {
     display: flex;
     width: 25%;
+    height: 100%;
     align-items: center;
 }
 
