@@ -309,7 +309,7 @@ const FinancialSupervivenceView = () => {
           {/* Welcome pop up */}
           {welcomePopUp && (
             <WelcomePopUp 
-              className={`popup-welcome--pop-up bg-orange-low-opacity bder-orange-3 ${animationClass}`}
+              className={`popup-welcome--pop-up bg-yellow-low-opacity bder-yellow-3 ${animationClass}`}
               nameGame="Supervicencia Financiera"
               txtColor="#F28D35"
               closeFunction={closeWelcomePopUp}
