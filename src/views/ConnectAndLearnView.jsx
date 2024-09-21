@@ -196,7 +196,7 @@ const ConnectAndLearnView = () => {
         setWelcomePopUp(false);
       }, 1000);
       return () => clearTimeout(hideTimerId);
-    }, 8000); 
+    }, 15000);
 
     return () => {
       clearTimeout(showTimerId);

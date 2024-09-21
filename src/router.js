@@ -6,10 +6,7 @@ import { lazy, Suspense } from "react";
 // Views Components
     // Index
     const IndexView = lazy(() => import("./views/IndexView"));
-
-    // Games
-    const GamesView = lazy(() => import("./views/GamesView"));
-
+    
     // Glosary
     const GlosaryView = lazy(() => import("./views/GlosaryView"));
 
@@ -90,14 +87,6 @@ function Router () {
         
             {/* Games Views */}
             <Route path="juegos/*">
-                <Route 
-                    index
-                    element={
-                        <Suspense fallback={<LoadingView />}>
-                            <GamesView />
-                        </Suspense>   
-                    }
-                />
                 <Route 
                     path="conecta-y-aprende"
                     element={

@@ -202,7 +202,7 @@ const FinancialSupervivenceView = () => {
         setWelcomePopUp(false);
       }, 1000);
       return () => clearTimeout(hideTimerId);
-    }, 4000);
+    }, 15000);
   
     return () => {
       clearTimeout(showTimerId);
