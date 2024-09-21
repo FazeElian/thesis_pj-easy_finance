@@ -210,6 +210,7 @@ const ConnectAndLearnView = () => {
         bgColor="bg-yellow-low-opacity" 
         btnColor="bg-yellow"
         bderColor="bder-yellow-3"
+        btnState="true"
       />
 
       <main className="content-cards bg-blue-low-opacity">

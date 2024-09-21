@@ -196,6 +196,7 @@ const BuyAndSaveView = () => {
         bgColor="bg-blue-low-opacity" 
         btnColor="bg-blue"
         bderColor="bder-blue-3"
+        btnState="true"
       />
       
       <main className="py-top">

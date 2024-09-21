@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 // Header component
 import Header from '../components/Header';
 
+// Left Arrow Icon
+import LeftArrowComeBackIcon from "../assets/img/icons/left-arrow-come-back.webp";
+
 // Styles for this view
 import "../assets/sass/views/GlosaryView.scss";
+import "../assets/sass/views/ItemGlosaryView.scss";
 
 // Images - Icons
   // Basic Concepts
@@ -53,6 +57,10 @@ const GlosaryView = () => {
             </Link>
           </div>
         </main>
+
+        <Link to="/" className="btn-come-back--glosary">
+          <img src={LeftArrowComeBackIcon} alt="" />
+        </Link>
       </main>
     </>
   )

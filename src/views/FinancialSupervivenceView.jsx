@@ -216,6 +216,7 @@ const FinancialSupervivenceView = () => {
         bgColor="bg-yellow" 
         btnColor="bg-red"
         bderColor="bder-black-2"
+        btnState="true"
       />
 
       <main className="py-top bg-blue-red">
