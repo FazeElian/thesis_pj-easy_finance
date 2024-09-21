@@ -53,10 +53,12 @@ const FinancialSupervivenceView = () => {
   // Correct answer effect sound
   const matchSound = useRef(null);
   const shuffleSound = useRef(null);
+  const errorSound = useRef(null);
 
   useEffect(() => {
     matchSound.current = new Audio("/sounds/MatchSound.mp3");
     shuffleSound.current = new Audio("/sounds/ShufflingSound.mp3");
+    errorSound.current = new Audio("/sounds/ErrorSound.mp3");
   }, []);
 
   const shuffleArray = (array) => {
@@ -84,7 +86,10 @@ const FinancialSupervivenceView = () => {
   }, []);
 
   const onDragEnd = (result) => {
-    if (!result.destination) return;
+    if (!result.destination) {
+      errorSound.current.play();
+      return;
+    }
 
     const { source, destination } = result;
     const sourceColumn = columns[source.droppableId];
@@ -134,6 +139,8 @@ const FinancialSupervivenceView = () => {
           }
         });
       } else {
+        errorSound.current.play();
+
         setColumns((prevColumns) => ({
           nonClasified: {
             items: [movedItem, ...prevColumns.nonClasified.items]
