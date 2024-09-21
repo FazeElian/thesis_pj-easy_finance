@@ -317,7 +317,7 @@ const FinancialSupervivenceView = () => {
               txtInstruction1="Mira el objeto en el centro de la pantalla. Decide si lo necesitas o es un gasto extra."
               imgInstruction2={OppositeHorizontalArrowsIcon}
               txtInstruction2="Usa el mouse para arrastrar el objeto hacia el lado correcto: 'Gasto' o 'Necesidad'."
-              txtInstruction3="¡Ganas puntos cada vez que clasificas correctamente! Si te equivocas, no te preocupes, intenta de nuevo y sigue practicando."
+              txtInstruction3="¡Clasifica correctamente para avanzar! Si te equivocas, inténtalo de nuevo y sigue mejorando."
             />
           )}
 
