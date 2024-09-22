@@ -26,14 +26,14 @@
     // Games Console
     import GamesConsole from "../img/FinancialSupervivenceView/games-console.webp";
 
-    // Laptop
-    import Laptop from "../img/FinancialSupervivenceView/laptop.webp";
+    // HeadBands
+    import HeadBands from "../img/FinancialSupervivenceView/head-bands.webp";
 
     // Ice Cream
     import IceCream from "../img/FinancialSupervivenceView/ice-cream.webp";
 
-    // Toy Train
-    import ToyTrain from "../img/FinancialSupervivenceView/toy-train.webp";
+    // Soccer Ball
+    import SoccerBall from "../img/FinancialSupervivenceView/soccer-ball.webp";
 
 const items = [
     // Needs
@@ -84,7 +84,7 @@ const items = [
     },
     { 
         id: "10", 
-        img: Laptop,
+        img: HeadBands,
         section: "expenses" 
     },
     { 
@@ -94,7 +94,7 @@ const items = [
     },
     { 
         id: "12", 
-        img: ToyTrain,
+        img: SoccerBall,
         section: "expenses" 
     },
 ];
