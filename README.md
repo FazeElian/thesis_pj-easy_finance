@@ -19,6 +19,11 @@ This project aims to teach Financial Education to elementary school children usi
 
 <br>
 
+> [!IMPORTANT]  
+> The contributions and the code are in <b>English </b>. Neverthless, the content of this project (on live), the documentation, architecture and the thesis document are in <b>Spanish</b>. Make sure you can read and understand this language.
+
+<br>
+
 All of this by integrating game mechanics such as rewards, decision-making challenges, and point systems. This approach helps children develop practical financial skills in a fun, interactive environment. 
 Gamification allows them to explore real-life financial scenarios safely, encouraging better knowledge retention and promoting healthy financial habits from an early age.
 
