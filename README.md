@@ -2,9 +2,7 @@
   <img align="center" width="25%" src="https://easyfinance-app.netlify.app/static/media/Logo%20(v.02).da83ea2bb22187c7065d.webp" alt="Logo" />
 </div>
 
-<h1 align="center">Easy Finance</h1>
-<br>
-
+<h1 align="center">Easy Finance </h1>
 
 # 📄 Description
 This project aims to teach Financial Education to elementary school children using Gamification as the primary teaching and learning method. The goal is to introduce fundamental financial concepts such as:
