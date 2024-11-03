@@ -3,7 +3,6 @@
 </div>
 
 <h1 align="center">Easy Finance</h1>
-<h3 align="center">(Project in Progress)</h3>
 <br>
 
 
